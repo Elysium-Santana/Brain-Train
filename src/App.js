@@ -4,30 +4,31 @@ import Question from './Question';
 import { quizQuestions } from './Questions';
 
 function App() {
-  const [filtro, setFiltro] = useState(null);
+  const [filter, setFilter] = useState(null);
   const [NextIndexQuiz, setNextIndexQuiz] = useState(0);
 
   useEffect(() => {
-    let filter = quizQuestions.filter((item) => item.pontos > -1);
-    setFiltro([...filter]);
+    let quizfilter = quizQuestions.filter((item) => item.pontos > -1);
+    setFilter([...quizfilter]);
   }, []);
 
   function restart() {
     setNextIndexQuiz(0);
-    let filter = quizQuestions.filter((item) => item.pontos < 0);
-    setFiltro([...filter]);
-    filtro.length < 1 && setFiltro(null);
+    let quizfilter = quizQuestions.filter(
+      (item) => item.pontos < 0 || item.repeat > 0,
+    );
+    setFilter([...quizfilter]);
 
-    console.log(filtro);
+    filter.length < 1 && setFilter(null);
   }
 
   return (
     <div className="App">
       <h1>Brain Train</h1>
 
-      {filtro &&
-        filtro.map(
-          ({ question, options, correctAnswer, pontos, id }, index) =>
+      {filter &&
+        filter.map(
+          ({ question, options, correctAnswer, pontos, id, repeat }, index) =>
             index === NextIndexQuiz && (
               <Question
                 key={index}
@@ -39,14 +40,15 @@ function App() {
                 setNextIndexQuiz={setNextIndexQuiz}
                 NextIndexQuiz={NextIndexQuiz}
                 restart={restart}
-                filtro={filtro}
+                filter={filter}
                 id={id}
+                repeat={repeat}
               />
             ),
         )}
       <button
         onClick={() =>
-          NextIndexQuiz < filtro.length - 1
+          NextIndexQuiz < filter.length - 1
             ? setNextIndexQuiz(NextIndexQuiz + 1)
             : setNextIndexQuiz(0)
         }

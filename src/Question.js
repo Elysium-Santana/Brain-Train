@@ -10,68 +10,94 @@ const Question = ({
   setNextIndexQuiz,
   NextIndexQuiz,
   restart,
-  filtro,
+  filter,
   pontos,
+  repeat,
   id,
 }) => {
   const [resposta, setResposta] = useState();
-  const [pontuacao, setPontucao] = useState(filtro[index].pontos);
+  const [pontuacao, setPontucao] = useState(filter[index].pontos);
+  const [filterReapet, setFilterReapet] = useState(filter[index].repeat);
   const [show, setShow] = useState(false);
+  const [date, setDate] = useState();
 
   useEffect(() => {
-    let filtroId = quizQuestions.findIndex((item) => item.id === id);
-    console.log(filtroId);
-    quizQuestions[filtroId].pontos = pontuacao;
+    let filterId = quizQuestions.findIndex((item) => item.id === id);
+    quizQuestions[filterId].pontos = pontuacao;
+    filter[index].repeat = filterReapet;
+
+    if (date) {
+      quizQuestions[filterId].date = date;
+    }
+    dateAdd();
   }, [pontuacao]);
 
-  let intervalId;
-  let timeInterval = 90;
+  function dateAdd() {
+    const dataAtual = new Date();
+    let diasAdicionais = 1;
+    if (pontuacao > 3) {
+      diasAdicionais = 15;
+    } else if (pontuacao > 2) {
+      diasAdicionais = 5;
+    } else if (pontuacao > 1) {
+      diasAdicionais = 1;
+    }
+    dataAtual.setDate(dataAtual.getDate() + diasAdicionais);
 
+    const dia = dataAtual.getDate().toString().padStart(2, '0');
+    const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0');
+    const ano = dataAtual.getFullYear();
+
+    setDate(`${dia}/${mes}/${ano}`);
+  }
+
+  let timeInterval = 80;
   function colorOcilation() {
     if (timeInterval > 41) {
-      timeInterval -= 4;
-      intervalId = setTimeout(() => {
+      timeInterval -= 3;
+      setTimeout(() => {
         setShow((show) => !show);
         colorOcilation();
       }, timeInterval);
     } else {
-      goNextQuestion();
+      setTimeout(() => {
+        goNextQuestion();
+      }, 600);
     }
   }
 
   function goNextQuestion() {
-    setTimeout(
-      () =>
-        NextIndexQuiz < filtro.length - 1
-          ? setNextIndexQuiz(NextIndexQuiz + 1)
-          : restart(),
+    setResposta();
 
-      [500],
-    );
+    if (NextIndexQuiz < filter.length - 1) {
+      setNextIndexQuiz(NextIndexQuiz + 1);
+    } else {
+      restart();
+    }
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-
     if (resposta === correctAnswer) {
       setPontucao(pontuacao + 1);
-      console.log('Acertou!!!');
+      setFilterReapet(filterReapet - 1);
     } else {
-      console.log('Resposta Errada!!!');
+      setFilterReapet(filterReapet + 1);
       setPontucao(pontuacao - 2);
     }
-
     colorOcilation();
   }
 
   return (
     <form className={styles.questBox}>
-      <h1> Pontuaçao: {pontos}</h1>
+      <h1> Pontuaçao: {pontuacao}</h1>
+      <h1> Data: {date}</h1>
+      <h1> Reapet: {repeat}</h1>
 
       <h1>{question}</h1>
 
       <div>
-        {filtro &&
+        {filter.length > 0 &&
           options.map((item) => (
             <label
               className={`${styles.text} ${
