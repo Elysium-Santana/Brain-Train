@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { quizQuestions } from './Questions';
 import styles from './Question.module.css';
+import InsertItem from './InsertItem';
 
 const Question = ({
   question,
@@ -11,20 +12,19 @@ const Question = ({
   NextIndexQuiz,
   restart,
   filter,
-  pontos,
   repeat,
   id,
 }) => {
   const [resposta, setResposta] = useState();
   const [pontuacao, setPontucao] = useState(filter[index].pontos);
-  const [filterReapet, setFilterReapet] = useState(filter[index].repeat);
+  const [filterRepeat, setFilterRepeat] = useState(filter[index].repeat);
   const [show, setShow] = useState(false);
   const [date, setDate] = useState();
 
   useEffect(() => {
     let filterId = quizQuestions.findIndex((item) => item.id === id);
     quizQuestions[filterId].pontos = pontuacao;
-    filter[index].repeat = filterReapet;
+    filter[index].repeat = filterRepeat;
 
     if (date) {
       quizQuestions[filterId].date = date;
@@ -80,48 +80,51 @@ const Question = ({
     event.preventDefault();
     if (resposta === correctAnswer) {
       setPontucao(pontuacao + 1);
-      setFilterReapet(filterReapet - 1);
+      setFilterRepeat(filterRepeat - 1);
     } else {
-      setFilterReapet(filterReapet + 1);
+      setFilterRepeat(filterRepeat + 1);
       setPontucao(pontuacao - 2);
     }
     colorOcilation();
   }
 
   return (
-    <form className={styles.questBox}>
-      <h1> Pontuaçao: {pontuacao}</h1>
-      <h1> Data: {date}</h1>
-      <h1> Reapet: {repeat}</h1>
+    <>
+      <InsertItem restart={restart} />
+      <form className={styles.questBox}>
+        <h1> Pontuaçao: {pontuacao}</h1>
+        <h1> Data: {date}</h1>
+        <h1> Repeat: {repeat}</h1>
 
-      <h1>{question}</h1>
+        <h1>{question}</h1>
 
-      <div>
-        {filter.length > 0 &&
-          options.map((item) => (
-            <label
-              className={`${styles.text} ${
-                show && (item === correctAnswer ? styles.yes : styles.no)
-              } `}
-              name="quest"
-              key={item}
-            >
-              {item}{' '}
-              <input
-                className={styles.radio}
+        <div>
+          {filter.length > 0 &&
+            options.map((item) => (
+              <label
+                className={`${styles.text} ${
+                  show && (item === correctAnswer ? styles.yes : styles.no)
+                } `}
                 name="quest"
-                type="radio"
-                value={resposta}
-                checked={resposta === item}
-                onChange={() => setResposta(item)}
-              />
-            </label>
-          ))}
-        <button disabled={!resposta} onClick={handleSubmit}>
-          Confirmar{' '}
-        </button>
-      </div>
-    </form>
+                key={item}
+              >
+                {item}{' '}
+                <input
+                  className={styles.radio}
+                  name="quest"
+                  type="radio"
+                  value={resposta}
+                  checked={resposta === item}
+                  onChange={() => setResposta(item)}
+                />
+              </label>
+            ))}
+          <button disabled={!resposta} onClick={handleSubmit}>
+            Confirmar{' '}
+          </button>
+        </div>
+      </form>
+    </>
   );
 };
 
