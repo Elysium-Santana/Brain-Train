@@ -1,0 +1,27 @@
+
+
+
+.section{
+  width: 100%;
+  min-height: 100vh;
+  padding:  2rem 1rem ;
+  background: linear-gradient(to bottom right, #EA8FEA, #B9F3E4);
+}
+
+.controlsBox{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  justify-items:center;
+  align-items: center;
+  padding: 0;
+}
+.controlButton:hover{
+  color: #444;
+  background-color: #eef;
+
+}
+h1{
+  font-size: 1.825rem;
+  color: #666;
+}

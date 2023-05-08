@@ -1,62 +1,79 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import './App.css';
-import Question from './Question';
-import { quizQuestions } from './Questions';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ChooseTheme from './Components/Pages/ChooseTheme';
+import Home from './Components/Pages/Home';
+import TrainForm from './Components/Pages/TrainForm';
+// import { quizQuestions } from './Quenpxstions';
 
 function App() {
-  const [filter, setFilter] = useState(null);
-  const [NextIndexQuiz, setNextIndexQuiz] = useState(0);
+  // const [quizFiltered, setFilter] = useState(null);
+  // const [NextIndexQuiz, setNextIndexQuiz] = useState(0);
 
-  useEffect(() => {
-    let quizfilter = quizQuestions.filter((item) => item.pontos > -1);
-    setFilter([...quizfilter]);
-  }, []);
+  // useEffect(() => {
+  //   let filter = quizQuestions.filter((item) => item.poits > -1);
+  //   setFilter([...filter]);
+  // }, []);
 
-  function restart() {
-    setNextIndexQuiz(0);
-    let quizfilter = quizQuestions.filter(
-      (item) => item.pontos < 0 || item.repeat > 0,
-    );
-    setFilter([...quizfilter]);
+  // function restart() {
+  //   setNextIndexQuiz(0);
+  //   let quizfilter = quizQuestions.filter(
+  //     (item) => item.poits < 0 || item.repeat > 0,
+  //   );
+  //   setFilter([...quizfilter]);
 
-    filter.length < 1 && setFilter(null);
-  }
+  //   quizFiltered.length < 1 && setFilter(null);
+  // }
 
   return (
     <div className="App">
-      <h1>Brain Train</h1>
-
-      {filter &&
-        filter.map(
-          ({ question, options, correctAnswer, pontos, id, repeat }, index) =>
-            index === NextIndexQuiz && (
-              <Question
-                key={index}
-                question={question}
-                options={options}
-                correctAnswer={correctAnswer}
-                pontos={pontos}
-                index={index}
-                setNextIndexQuiz={setNextIndexQuiz}
-                NextIndexQuiz={NextIndexQuiz}
-                restart={restart}
-                filter={filter}
-                id={id}
-                repeat={repeat}
-              />
-            ),
-        )}
-      <button
-        onClick={() =>
-          NextIndexQuiz < filter.length - 1
-            ? setNextIndexQuiz(NextIndexQuiz + 1)
-            : setNextIndexQuiz(0)
-        }
-      >
-        Próxima {NextIndexQuiz}
-      </button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ChooseTheme/:type/*" element={<ChooseTheme />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+//   return (
+//     <div className="App">
+//       <h1>Brain Train</h1>
+
+//       {quizFiltered &&
+//         quizFiltered.map(
+//           ({ question, options, correctAnswer, poits, id, repeat }, index) =>
+//             index === NextIndexQuiz && (
+//               <Question
+//                 key={index}
+//                 question={question}
+//                 options={options}
+//                 correctAnswer={correctAnswer}
+//                 poits={poits}
+//                 index={index}
+//                 setNextIndexQuiz={setNextIndexQuiz}
+//                 NextIndexQuiz={NextIndexQuiz}
+//                 restart={restart}
+//                 quizFiltered={quizFiltered}
+//                 id={id}
+//                 repeat={repeat}
+//               />
+//             ),
+//         )}
+//       <button
+//         onClick={() =>
+//           NextIndexQuiz < quizFiltered.length - 1
+//             ? setNextIndexQuiz(NextIndexQuiz + 1)
+//             : setNextIndexQuiz(0)
+//         }
+//       >
+//         Próxima {NextIndexQuiz}
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;

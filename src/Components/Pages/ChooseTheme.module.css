@@ -1,0 +1,57 @@
+
+.backgroud ul{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.controlButton{  
+    font-size: 2rem;
+    color: #666;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+
+
+.section h1{
+  font-size: 1.825rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+.header ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin: 0;
+}
+.header{
+  padding: .5rem 0;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 3rem;
+}
+.section{
+  width: 100%;
+  min-height: 100vh;
+  padding:  2rem 1rem ;
+}
+.section.choose{ 
+  background: linear-gradient(to bottom right, #ffaacf 40%, #e5c986 100%);
+}
+.section.train{ 
+  background: linear-gradient(to bottom right, #dd7edd 0%, #f392bc 100%);
+}
+.section.create{  
+  background: linear-gradient(to bottom right, #B9F3e4 0%, #fade9b 100%);
+}

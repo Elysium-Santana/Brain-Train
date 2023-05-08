@@ -1,8 +1,25 @@
-.radio{
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:ital,wght@0,400;0,500;1,300&display=swap');
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none; 
+}
+
+/* .radio{
   display: none;
  }
  .text:has(input[type="radio"]:checked){
-   /* color: #444; */
+   color: #444;
    font-weight: 600;
    user-select: none;
    background-color: #eee;
@@ -46,4 +63,18 @@
    border-radius: 16px;
    color: #444;
  
+ } */
+
+ /* ___________________________________________________________________ */
+.material-symbols-outlined{
+  font-size: 3em;
+  color: #666;
+ }
+ .App{
+  max-width: 720px;
+  /* height: 100vh; */
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  
+
  }

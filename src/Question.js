@@ -11,35 +11,35 @@ const Question = ({
   setNextIndexQuiz,
   NextIndexQuiz,
   restart,
-  filter,
+  quizFiltered,
   repeat,
   id,
 }) => {
-  const [resposta, setResposta] = useState();
-  const [pontuacao, setPontucao] = useState(filter[index].pontos);
-  const [filterRepeat, setFilterRepeat] = useState(filter[index].repeat);
-  const [show, setShow] = useState(false);
+  const [answer, setAnswer] = useState();
+  const [localPoits, setLocalPoits] = useState(quizFiltered[index].poits);
+  const [filterRepeat, setFilterRepeat] = useState(quizFiltered[index].repeat);
+  const [showAnswers, setshowAnswers] = useState(false);
   const [date, setDate] = useState();
 
   useEffect(() => {
     let filterId = quizQuestions.findIndex((item) => item.id === id);
-    quizQuestions[filterId].pontos = pontuacao;
-    filter[index].repeat = filterRepeat;
+    quizQuestions[filterId].poits = localPoits;
+    quizFiltered[index].repeat = filterRepeat;
 
     if (date) {
       quizQuestions[filterId].date = date;
     }
     dateAdd();
-  }, [pontuacao]);
+  }, [localPoits]);
 
   function dateAdd() {
     const dataAtual = new Date();
     let diasAdicionais = 1;
-    if (pontuacao > 3) {
+    if (localPoits > 3) {
       diasAdicionais = 15;
-    } else if (pontuacao > 2) {
+    } else if (localPoits > 2) {
       diasAdicionais = 5;
-    } else if (pontuacao > 1) {
+    } else if (localPoits > 1) {
       diasAdicionais = 1;
     }
     dataAtual.setDate(dataAtual.getDate() + diasAdicionais);
@@ -56,7 +56,7 @@ const Question = ({
     if (timeInterval > 41) {
       timeInterval -= 3;
       setTimeout(() => {
-        setShow((show) => !show);
+        setshowAnswers((showAnswers) => !showAnswers);
         colorOcilation();
       }, timeInterval);
     } else {
@@ -67,9 +67,9 @@ const Question = ({
   }
 
   function goNextQuestion() {
-    setResposta();
+    setAnswer();
 
-    if (NextIndexQuiz < filter.length - 1) {
+    if (NextIndexQuiz < quizFiltered.length - 1) {
       setNextIndexQuiz(NextIndexQuiz + 1);
     } else {
       restart();
@@ -78,12 +78,12 @@ const Question = ({
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (resposta === correctAnswer) {
-      setPontucao(pontuacao + 1);
+    if (answer === correctAnswer) {
+      setLocalPoits(localPoits + 1);
       setFilterRepeat(filterRepeat - 1);
     } else {
       setFilterRepeat(filterRepeat + 1);
-      setPontucao(pontuacao - 2);
+      setLocalPoits(localPoits - 2);
     }
     colorOcilation();
   }
@@ -92,18 +92,19 @@ const Question = ({
     <>
       <InsertItem restart={restart} />
       <form className={styles.questBox}>
-        <h1> Pontuaçao: {pontuacao}</h1>
+        <h1> Pontuaçao: {localPoits}</h1>
         <h1> Data: {date}</h1>
         <h1> Repeat: {repeat}</h1>
 
         <h1>{question}</h1>
 
         <div>
-          {filter.length > 0 &&
+          {quizFiltered.length > 0 &&
             options.map((item) => (
               <label
                 className={`${styles.text} ${
-                  show && (item === correctAnswer ? styles.yes : styles.no)
+                  showAnswers &&
+                  (item === correctAnswer ? styles.yes : styles.no)
                 } `}
                 name="quest"
                 key={item}
@@ -113,13 +114,13 @@ const Question = ({
                   className={styles.radio}
                   name="quest"
                   type="radio"
-                  value={resposta}
-                  checked={resposta === item}
-                  onChange={() => setResposta(item)}
+                  value={answer}
+                  checked={answer === item}
+                  onChange={() => setAnswer(item)}
                 />
               </label>
             ))}
-          <button disabled={!resposta} onClick={handleSubmit}>
+          <button disabled={!answer} onClick={handleSubmit}>
             Confirmar{' '}
           </button>
         </div>

@@ -26,7 +26,7 @@ const InsertItem = ({ restart }) => {
       options: options.sort(() => Math.random() - 0.5),
       correctAnswer: correctAnswer,
       id: idMaker(),
-      pontos: 6,
+      poits: 6,
       repeat: 3,
       date: '',
     };
@@ -60,27 +60,27 @@ const InsertItem = ({ restart }) => {
         ></textarea>
 
         <input
-          placeholder="Resposta Correta"
+          placeholder="answer Correta"
           value={correctAnswer}
           onChange={({ target }) => setCorrectAnswer(target.value)}
         />
 
         <input
-          placeholder="Resposta Errada"
+          placeholder="answer Errada"
           value={wrongAnswer_1}
           type="text"
           onChange={({ target }) => setWrongAnswer_1(target.value)}
         />
 
         <input
-          placeholder="Resposta Errada"
+          placeholder="answer Errada"
           type="text"
           value={wrongAnswer_2}
           onChange={({ target }) => setWrongAnswer_2(target.value)}
         />
 
         <input
-          placeholder="Resposta Errada"
+          placeholder="answer Errada"
           type="text"
           value={wrongAnswer_3}
           onChange={({ target }) => setWrongAnswer_3(target.value)}
