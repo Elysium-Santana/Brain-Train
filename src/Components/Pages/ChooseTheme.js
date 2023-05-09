@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, useParams } from 'react-router-dom';
+import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import styles from './ChooseTheme.module.css';
 import TrainForm from './TrainForm';
-import Icons from '../utilities.js/Icons';
-import LinkButton_2 from '../utilities.js/LinkButton_2';
-import BaseGlass from '../utilities.js/BaseGlass';
+import Icons from '../utilities/Icons';
+import LinkButton_2 from '../utilities/LinkButton_2';
+import BaseGlass from '../utilities/BaseGlass';
 import ThemeList from './ThemeList';
 import { pre_definidas } from '../../Questions';
 import { customQuestions } from '../../Questions';
@@ -12,8 +12,23 @@ import { customQuestions } from '../../Questions';
 const ChooseTheme = () => {
   const [background_color, setBackground_color] = useState(styles.choose);
   const [data, setData] = useState();
-  const [quizFiltered, setFiltered] = useState(null);
+  const [date, setDate] = useState();
+  const [quizFiltered, setQuizFiltered] = useState();
+
   const { type } = useParams();
+  const navigate = useNavigate();
+
+  const dataAtual = new Date();
+
+  dataAtual.setDate(dataAtual.getDate());
+  function formatDate(date) {
+    const dia = date.getDate().toString().padStart(2, '0');
+    const mes = (date.getMonth() + 1).toString().padStart(2, '0');
+    const ano = date.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+  }
+  const dateFormated = formatDate(dataAtual);
+  console.log(dateFormated);
 
   useEffect(() => {
     type === 'predefined' && setData(pre_definidas);
@@ -21,7 +36,9 @@ const ChooseTheme = () => {
     type === 'customs' && setData(customQuestions);
   }, []);
 
-  useEffect(() => {}, []);
+  function toHome() {
+    navigate('/');
+  }
 
   return (
     <>
@@ -42,13 +59,24 @@ const ChooseTheme = () => {
           </nav>
         </header>
 
-        <h1>Selecione um tema para iniciar o treino!</h1>
-
         <BaseGlass>
           <Routes>
-            <Route path="/" element={<ThemeList data={data} />} />
-            <Route path="form" element={<TrainForm setData={setData} />} />
-            <Route path="form" element={<TrainForm setData={setData} />} />
+            <Route
+              path="/"
+              element={
+                <ThemeList
+                  data={data}
+                  setQuizFiltered={setQuizFiltered}
+                  dateFormated={dateFormated}
+                />
+              }
+            />
+            <Route
+              path="/form"
+              element={
+                <TrainForm quizFiltered={quizFiltered} toHome={toHome} />
+              }
+            />
           </Routes>
         </BaseGlass>
       </section>

@@ -1,0 +1,76 @@
+.linkButton_1, .answerInput{
+  font-size: 2rem;  
+  display: block; 
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: none;
+  width: 100%;
+}
+.answerInput{
+  border: solid 4px transparent;
+  user-select: none;
+}
+
+.answerInput:has(input[type="radio"]:checked){
+  color: #e0a927 ;
+  font-weight: 600;
+  user-select: none;
+  background-color: #ffe9b7;
+  border: solid 4px #e0a927 ;
+}
+.answerInput.correct:has(input[type="radio"]:checked){
+  background-color:green;
+  color: #fff;
+  
+}
+.answerInput.wrong:has(input[type="radio"]:checked){
+  background-color:red;
+  color: #fff;
+  
+}
+
+.linkButton_1, .answerInput, .linkButton_3, .navButton{
+color: #666;
+font-weight: 500;
+border-radius: 10px;
+padding: 2rem;
+background-color: #fff;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+.linkButton_3{
+  font-size: 1.25rem;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  height: 200px;
+  text-align: center;
+  width: 100%;
+}
+.linkButton_2{
+  padding: .5rem;
+}
+.baseGlass{
+  padding: 2rem 1rem;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.textBlock, .questionEdit{
+  font-size: 1.7rem;
+  color: #666;
+  border-radius: 10px;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem;
+  min-height: 300px;
+}
+.navButton:disabled{
+  opacity: .5;
+}
+.navButton{
+  /* margin: .5rem; */
+  font-size: 2rem; 
+  width: 100%;  
+  border :none ;
+}

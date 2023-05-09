@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Home.module.css';
-import LinkButton_3 from '../utilities.js/LinkButton_3';
-import Icons from '../utilities.js/Icons';
-import BaseGlass from '../utilities.js/BaseGlass';
-import TextBlock from '../utilities.js/TextBlock';
+import LinkButton_3 from '../utilities/LinkButton_3';
+import Icons from '../utilities/Icons';
+import BaseGlass from '../utilities/BaseGlass';
+import TextBlock from '../utilities/TextBlock';
 
 const Home = () => {
   return (

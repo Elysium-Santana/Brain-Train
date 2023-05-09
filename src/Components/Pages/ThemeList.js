@@ -1,13 +1,36 @@
-import React from 'react';
-import LinkButton_1 from '../utilities.js/LinkButton_1';
-import styles from './ChooseTheme.module.css';
+import React, { useState } from 'react';
+import style from '../utilities/Utilities.module.css';
+import { useNavigate } from 'react-router-dom';
 
-const ThemeList = ({ data }) => {
-  // console.log(data);
+const ThemeList = ({ data, setQuizFiltered, dateFormated }) => {
+  const navigate = useNavigate();
+  function selectTheme({ target }) {
+    const selectTheme = data.filter((item) => item.theme === target.value);
+    const selectQuestions = selectTheme[0].questions.filter(
+      (item) => item.date === dateFormated,
+    );
+
+    setQuizFiltered([
+      {
+        theme: selectTheme[0].theme,
+        questions: selectQuestions,
+      },
+    ]);
+    navigate('form');
+  }
+
   return (
     <ul>
       {data &&
-        data.map((item) => <LinkButton_1 to={'form'} children={item.theme} />)}
+        data.map((item, index) => (
+          <input
+            className={style.linkButton_1}
+            type="button"
+            key={index}
+            value={item.theme}
+            onClick={selectTheme}
+          />
+        ))}
     </ul>
   );
 };
