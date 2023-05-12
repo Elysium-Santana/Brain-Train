@@ -3,63 +3,64 @@ import TextBlock from '../utilities/TextBlock';
 import AnswerInput from '../utilities/AnswerInput';
 import NavButton from '../utilities/NavButton';
 import styles from '../utilities/Utilities.module.css';
-import { pre_definidas } from '../../Questions';
-import { customQuestions } from '../../Questions';
+import { questions } from '../../Questions';
 
-const TrainForm = ({ quizFiltered, toHome }) => {
+const TrainForm = ({ toHome, data, setMessage }) => {
   const [answer, setAnswer] = useState();
-  const [data, setData] = useState(quizFiltered && quizFiltered[0]);
-  const [date, setDate] = useState();
+  const [themeSelected, setThemeSelected] = useState(data && data[0]);
+  const [date, setDate] = useState(null);
   const [nexDate, setNexDate] = useState();
   const [nextIndexTrain, setnextIndexTrain] = useState(0);
   const [showAnswer, setshowAnswer] = useState(null);
   const [localRepeat, setLocalRepeat] = useState(null);
   const [localPoits, setLocalPoits] = useState(null);
   let timeInterval = 80;
+  let filter;
 
   useEffect(() => {
-    !quizFiltered && toHome();
+    !themeSelected && toHome();
   }, []);
 
-  function restart() {
-    let filter = data.questions.filter((item) => item.repeat > 0);
-    filter.length > 0 && setData({ theme: data.theme, questions: filter });
-  }
-
   useEffect(() => {
-    if (data) {
-      let filterThemeId = pre_definidas.findIndex(
-        (item) => item.theme === data.theme,
-      );
-      let tiny = '[filterThemeId].questions[nextIndexTrain]';
-      if (filterThemeId === -1 && localRepeat !== null) {
-        filterThemeId = customQuestions.findIndex(
-          (item) => item.theme === data.theme,
-        );
-        customQuestions[filterThemeId].questions[nextIndexTrain].points =
-          localPoits;
-        if (nexDate) {
-          customQuestions[filterThemeId].questions[nextIndexTrain].date =
-            nexDate;
-        }
-      } else if (localRepeat !== null) {
-        pre_definidas[filterThemeId].questions[nextIndexTrain].points =
-          localPoits;
-        if (nexDate) {
-          pre_definidas[filterThemeId].questions[nextIndexTrain].date = nexDate;
-        }
+    if (themeSelected) {
+      if (localPoits !== null) {
+        themeSelected.questions[nextIndexTrain].points = localPoits;
+      }
+      if (nexDate && answer) {
+        themeSelected.questions[nextIndexTrain].date = nexDate;
       }
       if (localRepeat !== null) {
-        data.questions[nextIndexTrain].repeat = localRepeat;
+        themeSelected.questions[nextIndexTrain].repeat = localRepeat;
       }
-      dateAdd();
     }
+
+    dateAdd();
   }, [localPoits]);
 
   useEffect(() => {
-    setLocalPoits(data && data.questions[nextIndexTrain].points);
-    setLocalRepeat(data && data.questions[nextIndexTrain].repeat);
+    setLocalPoits(
+      themeSelected && themeSelected.questions[nextIndexTrain].points,
+    );
+    setLocalRepeat(
+      themeSelected && themeSelected.questions[nextIndexTrain].repeat,
+    );
   }, [nextIndexTrain]);
+
+  function restart() {
+    filter = themeSelected.questions.filter((item) => {
+      item.options.sort(() => Math.random() - 0.5);
+      return item.repeat > 0;
+    });
+
+    if (filter.length > 0) {
+      setThemeSelected({ theme: themeSelected.theme, questions: filter });
+      console.log(questions);
+    } else {
+      setThemeSelected(null);
+      console.log('foi');
+      localStorage.setItem('definidas', JSON.stringify(questions));
+    }
+  }
 
   function dateAdd() {
     const dataAtual = new Date();
@@ -78,22 +79,42 @@ const TrainForm = ({ quizFiltered, toHome }) => {
       const dia = date.getDate().toString().padStart(2, '0');
       const mes = (date.getMonth() + 1).toString().padStart(2, '0');
       const ano = date.getFullYear();
-      return `${dia}/${mes}/${ano}`;
+      return `${ano}-${mes}-${dia}`;
     }
     setDate(formatDate(nextDate));
     setNexDate(formatDate(nextDate));
   }
 
   function handleSubmit(item, indexTrain) {
+    const acertoMessages = [
+      'Boa, você é fera!',
+      'Acertô miseravi! :D',
+      'Uau, mandou bem!',
+      'Show de bola! Acertou direitinho!',
+    ];
+    const erroMessages = [
+      'Errou feio, hein?',
+      'Todo mundo erraaaa ♫',
+      'Não foi dessa vez!',
+      'Errou, mas não desista!',
+      'Todo mundo erraaaa ♫',
+    ];
+
     if (indexTrain === 'next') {
       answer
         ? colorOcilation()
-        : nextIndexTrain < data.questions.length - 1 &&
+        : nextIndexTrain < themeSelected.questions.length - 1 &&
           setnextIndexTrain(nextIndexTrain + 1);
       if (item.correctAnswer === answer && answer) {
+        setMessage(
+          acertoMessages[Math.floor(Math.random() * acertoMessages.length)],
+        );
         setLocalPoits(localPoits + 1);
         setLocalRepeat(localRepeat - 1);
       } else if (answer) {
+        setMessage(
+          erroMessages[Math.floor(Math.random() * erroMessages.length)],
+        );
         setLocalRepeat(localRepeat + 1);
         setLocalPoits(localPoits - 2);
       }
@@ -118,27 +139,43 @@ const TrainForm = ({ quizFiltered, toHome }) => {
   }
 
   function goNextQuestion() {
+    const proximaPerguntaMessages = [
+      'Essa é fácil ou difícil?',
+      'Achou fácil?',
+      'Sabe a resposta?',
+      'Vamos lá!',
+    ];
+    setMessage(
+      proximaPerguntaMessages[
+        Math.floor(Math.random() * proximaPerguntaMessages.length)
+      ],
+    );
     setAnswer();
     setshowAnswer(null);
-    if (nextIndexTrain < data.questions.length - 1) {
+    if (nextIndexTrain < themeSelected.questions.length - 1) {
       setnextIndexTrain(nextIndexTrain + 1);
     } else {
-      restart();
       setnextIndexTrain(0);
+      restart();
     }
   }
-
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        {/* <h1>{'index: ' + nextIndexTrain}</h1> */}
-        <h1>{`Data: ${nexDate}`}</h1>
-        <h1>{' Repeat : ' + localRepeat}</h1>
-        <h1>{' Pontos: ' + localPoits}</h1>
-      </div>
+      {themeSelected && (
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          {/* <h1>{'index: ' + nextIndexTrain}</h1> */}
+          <h1>{`Data: ${themeSelected.questions[nextIndexTrain].date
+            .split('-')
+            .reverse()
+            .join('/')}`}</h1>
 
-      {data &&
-        data.questions.map(
+          <h1>{' Repeat : ' + localRepeat}</h1>
+          <h1>{' Pontos: ' + localPoits}</h1>
+        </div>
+      )}
+
+      {themeSelected &&
+        themeSelected.questions.map(
           (item, index) =>
             index === nextIndexTrain && (
               <section key={index}>
@@ -179,7 +216,8 @@ const TrainForm = ({ quizFiltered, toHome }) => {
                   <NavButton
                     disabled={
                       showAnswer !== null ||
-                      (data.questions.length - 1 === nextIndexTrain && !answer)
+                      (themeSelected.questions.length - 1 === nextIndexTrain &&
+                        !answer)
                     }
                     children={'Avançar'}
                     onClick={() => handleSubmit(item, 'next')}

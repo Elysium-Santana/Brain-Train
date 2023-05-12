@@ -1,4 +1,4 @@
-export const pre_definidas = [
+const pre_definidas = [
   {
     theme: 'CSS',
     questions: [
@@ -13,8 +13,8 @@ export const pre_definidas = [
         correctAnswer: 'Cascading Style Sheets',
         id: 1,
         points: 0,
-        repeat: 3,
-        date: '09/05/2023',
+        repeat: 0,
+        date: '2023-05-12',
       },
       {
         question:
@@ -28,8 +28,8 @@ export const pre_definidas = [
         correctAnswer: 'elemento { estilo }',
         id: 2,
         points: 0,
-        repeat: 3,
-        date: '',
+        repeat: 0,
+        date: '2023-05-10',
       },
       {
         question: 'Como se seleciona um elemento pelo seu ID em CSS?',
@@ -42,8 +42,8 @@ export const pre_definidas = [
         correctAnswer: '#elemento { estilo }',
         id: 3,
         points: 0,
-        repeat: 3,
-        date: '09/05/2023',
+        repeat: 0,
+        date: '2023-05-11',
       },
       {
         question: 'Como se seleciona um elemento pela sua classe em CSS?',
@@ -57,7 +57,7 @@ export const pre_definidas = [
         id: 4,
         points: 0,
         repeat: 3,
-        date: '09/05/2023',
+        date: '2023-05-02',
       },
       {
         question: 'Como definir a cor de fundo de um elemento em CSS?',
@@ -66,7 +66,7 @@ export const pre_definidas = [
         id: 5,
         points: 0,
         repeat: 3,
-        date: '',
+        date: '2023-05-16',
       },
       {
         question: 'Como centralizar um elemento na tela horizontalmente?',
@@ -80,7 +80,7 @@ export const pre_definidas = [
         id: 6,
         points: 0,
         repeat: 3,
-        date: '09/05/2023',
+        date: '2023-05-15',
       },
       {
         question: 'Como aumentar o tamanho da fonte de um elemento em CSS?',
@@ -89,7 +89,7 @@ export const pre_definidas = [
         id: 7,
         points: 0,
         repeat: 3,
-        date: '',
+        date: '2023-05-05',
       },
       {
         question:
@@ -99,7 +99,7 @@ export const pre_definidas = [
         id: 8,
         points: 0,
         repeat: 3,
-        date: '',
+        date: '2023-05-11',
       },
     ],
   },
@@ -114,7 +114,7 @@ export const pre_definidas = [
         id: 1,
         points: 0,
         repeat: 0,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question: "Qual é a função do operador '===' em JavaScript?",
@@ -128,7 +128,7 @@ export const pre_definidas = [
         id: 2,
         points: 0,
         repeat: 0,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question: "Qual é a função do método 'push' em um array em JavaScript?",
@@ -142,7 +142,7 @@ export const pre_definidas = [
         id: 3,
         points: 0,
         repeat: 0,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question: 'O que é uma closure em JavaScript?',
@@ -157,7 +157,7 @@ export const pre_definidas = [
         id: 4,
         points: 0,
         repeat: 0,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question: 'O que é o DOM em JavaScript?',
@@ -171,7 +171,7 @@ export const pre_definidas = [
         id: 5,
         points: 0,
         repeat: 0,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question: "Qual é a função do operador '&&' em JavaScript?",
@@ -185,7 +185,7 @@ export const pre_definidas = [
         id: 6,
         points: 0,
         repeat: 0,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question:
@@ -199,7 +199,7 @@ export const pre_definidas = [
         correctAnswer: 'console.log()',
         points: 0,
         repeat: 3,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question:
@@ -208,7 +208,7 @@ export const pre_definidas = [
         correctAnswer: 'number',
         points: 0,
         repeat: 3,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question:
@@ -217,7 +217,7 @@ export const pre_definidas = [
         correctAnswer: '===',
         points: 0,
         repeat: 3,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question:
@@ -226,7 +226,7 @@ export const pre_definidas = [
         correctAnswer: 'pop()',
         points: 0,
         repeat: 3,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question:
@@ -235,7 +235,7 @@ export const pre_definidas = [
         correctAnswer: 'push()',
         points: 0,
         repeat: 3,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question:
@@ -244,7 +244,7 @@ export const pre_definidas = [
         correctAnswer: 'split()',
         points: 0,
         repeat: 3,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question:
@@ -253,7 +253,7 @@ export const pre_definidas = [
         correctAnswer: 'length()',
         points: 0,
         repeat: 3,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question:
@@ -262,7 +262,7 @@ export const pre_definidas = [
         correctAnswer: '??',
         points: 0,
         repeat: 3,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question:
@@ -271,7 +271,7 @@ export const pre_definidas = [
         correctAnswer: 'spliceAll()',
         points: 0,
         repeat: 3,
-        date: '',
+        date: '1111-11-11',
       },
       {
         question:
@@ -280,12 +280,12 @@ export const pre_definidas = [
         correctAnswer: 'setTimeout()',
         points: 0,
         repeat: 3,
-        date: '',
+        date: '1111-11-11',
       },
     ],
   },
 ];
-export const customQuestions = [
+const customQuestions = [
   {
     theme: 'Geral',
     questions: [
@@ -294,18 +294,18 @@ export const customQuestions = [
         options: ['São Paulo', 'Rio de Janeiro', 'Brasília', 'Salvador'],
         correctAnswer: 'Brasília',
         id: 1,
-        points: 2,
-        repeat: 3,
-        date: '09/05/2023',
+        points: 0,
+        repeat: 0,
+        date: '1111-01-01',
       },
       {
         question: 'Qual é o maior animal terrestre?',
         options: ['Elefante', 'Girafa', 'Rinoceronte', 'Hipopótamo'],
         correctAnswer: 'Elefante',
         id: 2,
-        points: 6,
-        repeat: 3,
-        date: '',
+        points: 3,
+        repeat: 0,
+        date: '1111-11-11',
       },
       {
         question: "Quem escreveu a obra 'Grande Sertão: Veredas'?",
@@ -317,10 +317,15 @@ export const customQuestions = [
         ],
         correctAnswer: 'Guimarães Rosa',
         id: 3,
-        points: 3,
-        repeat: 3,
-        date: '09/05/2023',
+        points: 1,
+        repeat: 0,
+        date: '1111-11-11',
       },
     ],
   },
 ];
+export let questions = { pre_definidas, customQuestions };
+const questionsAlterated = window.localStorage.getItem('definidas');
+if (questionsAlterated) {
+  questions = JSON.parse(questionsAlterated);
+}

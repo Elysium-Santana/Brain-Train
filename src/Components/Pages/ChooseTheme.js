@@ -6,16 +6,29 @@ import Icons from '../utilities/Icons';
 import LinkButton_2 from '../utilities/LinkButton_2';
 import BaseGlass from '../utilities/BaseGlass';
 import ThemeList from './ThemeList';
-import { pre_definidas } from '../../Questions';
-import { customQuestions } from '../../Questions';
+import { questions } from '../../Questions';
 
 const ChooseTheme = () => {
   const [background_color, setBackground_color] = useState(styles.choose);
   const [data, setData] = useState();
-  const [date, setDate] = useState();
+  const [message, setMessage] = useState('Escolha um assunto para treinar!');
   const [quizFiltered, setQuizFiltered] = useState();
 
   const { type } = useParams();
+
+  useEffect(() => {
+    type === 'predefined' && setData(questions.pre_definidas);
+    type === 'allTrains' &&
+      setData([...questions.pre_definidas, ...questions.customQuestions]);
+    type === 'customs' && setData(questions.customQuestions);
+
+    const userLoggedRecovery = window.localStorage.getItem('user');
+    if (userLoggedRecovery) {
+      setData(JSON.parse(userLoggedRecovery));
+      console.log(userLoggedRecovery);
+    }
+  }, []);
+
   const navigate = useNavigate();
 
   const dataAtual = new Date();
@@ -28,13 +41,6 @@ const ChooseTheme = () => {
     return `${dia}/${mes}/${ano}`;
   }
   const dateFormated = formatDate(dataAtual);
-  console.log(dateFormated);
-
-  useEffect(() => {
-    type === 'predefined' && setData(pre_definidas);
-    type === 'allTrains' && setData([...pre_definidas, ...customQuestions]);
-    type === 'customs' && setData(customQuestions);
-  }, []);
 
   function toHome() {
     navigate('/');
@@ -49,15 +55,17 @@ const ChooseTheme = () => {
               <LinkButton_2
                 to={'/'}
                 children={<Icons children={'arrow_back_ios'} />}
+                onClick={() => setData(null)}
               />
 
               <LinkButton_2
                 children={<Icons children={'add_circle'} />}
-                onClick={() => setData(styles.create)}
+                onClick={() => setBackground_color(styles.create)}
               />
             </ul>
           </nav>
         </header>
+        <h1>{message}</h1>
 
         <BaseGlass>
           <Routes>
@@ -66,15 +74,23 @@ const ChooseTheme = () => {
               element={
                 <ThemeList
                   data={data}
-                  setQuizFiltered={setQuizFiltered}
-                  dateFormated={dateFormated}
+                  setData={setData}
+                  setMessage={setMessage}
+                  setBackground_color={setBackground_color}
                 />
               }
             />
             <Route
               path="/form"
               element={
-                <TrainForm quizFiltered={quizFiltered} toHome={toHome} />
+                <TrainForm
+                  quizFiltered={quizFiltered}
+                  toHome={toHome}
+                  data={data}
+                  setData={setData}
+                  setMessage={setMessage}
+                  setBackground_color={setBackground_color}
+                />
               }
             />
           </Routes>
