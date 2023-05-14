@@ -1,45 +1,60 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../utilities/Utilities.module.css';
 import style from '../Pages/ChooseTheme.module.css';
 import { useNavigate } from 'react-router-dom';
 
-const ThemeList = ({ data, setData, setMessage, setBackground_color }) => {
+const ThemeList = ({
+  data,
+  setData,
+  setMessage,
+  setBackground_color,
+  messageTexts,
+  chekcCustomOrigin,
+}) => {
   const navigate = useNavigate();
+  useEffect(() => {
+    setBackground_color(styles.choose);
+  }, []);
+
+  let selectQuestions;
+  let selectedTheme;
   const atualDate = new Date();
   atualDate.setHours(0, 0, 0, 0);
-  console.log(atualDate);
-  let selectQuestions;
+
   function selectTheme({ target }) {
+    chekcCustomOrigin(target.value);
     selectQuestions = false;
-    let selectTheme = data.filter((item) => item.theme === target.value);
-    selectQuestions = selectTheme[0].questions.filter((item) => {
+    selectedTheme = data.filter((item) => item.theme === target.value);
+    selectQuestions = selectedTheme[0].questions.filter((item) => {
       item.options.sort(() => Math.random() - 0.5);
       item.repeat = 3;
       const questionDate = new Date(item.date);
       return questionDate < atualDate;
     });
 
-    console.log(selectQuestions);
-
     if (selectQuestions.length > 0) {
       setData([
         {
-          theme: selectTheme[0].theme,
+          theme: selectedTheme[0].theme,
           questions: selectQuestions,
         },
       ]);
       navigate('form');
-      setMessage('Vamos começar!!');
-      setBackground_color(style.train);
+      setMessage(messageTexts[2]);
+    } else if (selectedTheme[0].questions.length === 0) {
+      navigate(`create/${target.value}`);
+
+      console.log('ok');
     } else {
       // setData(null);
-      setMessage('Não há nenhum treino  pendente com esse tema para hoje!');
+      setMessage(messageTexts[3]);
       selectQuestions = false;
     }
   }
 
   return (
     <ul>
+      <h1>Escolha um tema para treinar!</h1>
       {data &&
         data.map((item, index) => (
           <input

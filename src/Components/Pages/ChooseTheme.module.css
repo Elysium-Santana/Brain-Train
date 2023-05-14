@@ -45,13 +45,14 @@
   width: 100%;
   min-height: 100vh;
   padding:  2rem 1rem ;
+  position: relative;
 }
 .section.choose{ 
-  background: linear-gradient(to bottom right, #ffaacf 40%, #e5c986 100%);
+  background: linear-gradient(to bottom right, #ffaacf 0%, #e5c986 50%);
 }
 .section.train{ 
-  background: linear-gradient(to bottom right, #dd7edd 0%, #f392bc 100%);
+  background: linear-gradient(to bottom right, #dd7edd 0%, #f392bc 60%);
 }
 .section.create{  
-  background: linear-gradient(to bottom right, #B9F3e4 0%, #fade9b 100%);
+  background: linear-gradient(to bottom right, #9bdbca 0%, #fade9b 80%);
 }

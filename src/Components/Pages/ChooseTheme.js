@@ -1,49 +1,59 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
+import {
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+  useParams,
+} from 'react-router-dom';
 import styles from './ChooseTheme.module.css';
 import TrainForm from './TrainForm';
 import Icons from '../utilities/Icons';
-import LinkButton_2 from '../utilities/LinkButton_2';
+import NavButton_2 from '../utilities/NavButton_2';
 import BaseGlass from '../utilities/BaseGlass';
 import ThemeList from './ThemeList';
 import { questions } from '../../Questions';
+import Modal from './Modal';
+import CreateNewQuestion from './CreateNewQuestion';
 
 const ChooseTheme = () => {
-  const [background_color, setBackground_color] = useState(styles.choose);
+  const [background_color, setBackground_color] = useState();
   const [data, setData] = useState();
-  const [message, setMessage] = useState('Escolha um assunto para treinar!');
-  const [quizFiltered, setQuizFiltered] = useState();
+  const [message, setMessage] = useState();
+  const [IndexFormQuestion, setIndexFormQuestion] = useState(0);
+  const [isCustomOrigin, setIsCustomOrigin] = useState(null);
+  const location = useLocation();
 
+  const messageTexts = [
+    'Crie um tema para seu treino diário.',
+    'Desafio concluído.',
+    'Vamos começar!!',
+    'Nenhuma pendência com esse tema para hoje. Escolha outro tema ou tente mais tarde.',
+    'Dados Repetidos. Por favor, cheque as respostas.',
+    'Pergunta adicionada com sucesso!',
+  ];
+
+  const navigate = useNavigate();
   const { type } = useParams();
 
   useEffect(() => {
+    setBackground_color(styles.choose);
     type === 'predefined' && setData(questions.pre_definidas);
     type === 'allTrains' &&
       setData([...questions.pre_definidas, ...questions.customQuestions]);
     type === 'customs' && setData(questions.customQuestions);
-
-    const userLoggedRecovery = window.localStorage.getItem('user');
-    if (userLoggedRecovery) {
-      setData(JSON.parse(userLoggedRecovery));
-      console.log(userLoggedRecovery);
-    }
+    type === 'criate' && setMessage(messageTexts[0]);
   }, []);
 
-  const navigate = useNavigate();
-
-  const dataAtual = new Date();
-
-  dataAtual.setDate(dataAtual.getDate());
-  function formatDate(date) {
-    const dia = date.getDate().toString().padStart(2, '0');
-    const mes = (date.getMonth() + 1).toString().padStart(2, '0');
-    const ano = date.getFullYear();
-    return `${dia}/${mes}/${ano}`;
+  function chekcCustomOrigin(name) {
+    setIsCustomOrigin(
+      questions.customQuestions.some((item) => item.theme === name),
+    );
+    console.log(isCustomOrigin && isCustomOrigin);
   }
-  const dateFormated = formatDate(dataAtual);
 
-  function toHome() {
-    navigate('/');
+  function toHome(place) {
+    navigate(place);
   }
 
   return (
@@ -52,31 +62,80 @@ const ChooseTheme = () => {
         <header className={styles.header}>
           <nav>
             <ul>
-              <LinkButton_2
-                to={'/'}
+              <NavButton_2
                 children={<Icons children={'arrow_back_ios'} />}
-                onClick={() => setData(null)}
+                onClick={() => {
+                  setData(null);
+                  toHome('/');
+                }}
               />
-
-              <LinkButton_2
+              <NavButton_2
                 children={<Icons children={'add_circle'} />}
-                onClick={() => setBackground_color(styles.create)}
+                value={''}
+                onClick={() => {
+                  if (
+                    isCustomOrigin === true &&
+                    location.pathname.includes('form')
+                  ) {
+                    setIsCustomOrigin(null);
+                    toHome(`create/${data[0].theme}`);
+                  }
+                }}
+              />
+              <NavButton_2
+                children={<Icons children={'border_color'} />}
+                value={''}
+                onClick={() => {
+                  if (
+                    isCustomOrigin === true &&
+                    location.pathname.includes('form')
+                  ) {
+                    // setIsCustomOrigin(null);
+                    toHome(`create/edit_213715`);
+                  }
+                }}
               />
             </ul>
           </nav>
         </header>
-        <h1>{message}</h1>
-
+        {message && (
+          <Modal
+            chekcCustomOrigin={chekcCustomOrigin}
+            messageTexts={messageTexts}
+            message={message}
+            setMessage={setMessage}
+            toHome={toHome}
+            data={data}
+            setData={setData}
+            setBackground_color={setBackground_color}
+          />
+        )}
         <BaseGlass>
           <Routes>
             <Route
               path="/"
               element={
                 <ThemeList
+                  chekcCustomOrigin={chekcCustomOrigin}
                   data={data}
                   setData={setData}
                   setMessage={setMessage}
+                  messageTexts={messageTexts}
                   setBackground_color={setBackground_color}
+                />
+              }
+            />
+            <Route
+              path="/create/:type/"
+              element={
+                <CreateNewQuestion
+                  toHome={toHome}
+                  setData={setData}
+                  setMessage={setMessage}
+                  messageTexts={messageTexts}
+                  setBackground_color={setBackground_color}
+                  data={data}
+                  IndexFormQuestion={IndexFormQuestion}
                 />
               }
             />
@@ -84,11 +143,14 @@ const ChooseTheme = () => {
               path="/form"
               element={
                 <TrainForm
-                  quizFiltered={quizFiltered}
+                  setIndexFormQuestion={setIndexFormQuestion}
+                  IndexFormQuestion={IndexFormQuestion}
                   toHome={toHome}
                   data={data}
                   setData={setData}
                   setMessage={setMessage}
+                  messageTexts={messageTexts}
+                  isCustomOrigin={isCustomOrigin}
                   setBackground_color={setBackground_color}
                 />
               }

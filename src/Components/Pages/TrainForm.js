@@ -3,14 +3,23 @@ import TextBlock from '../utilities/TextBlock';
 import AnswerInput from '../utilities/AnswerInput';
 import NavButton from '../utilities/NavButton';
 import styles from '../utilities/Utilities.module.css';
+import style from './ChooseTheme.module.css';
 import { questions } from '../../Questions';
+import NavButton_2 from '../utilities/NavButton_2';
+import Icons from '../utilities/Icons';
 
-const TrainForm = ({ toHome, data, setMessage }) => {
+const TrainForm = ({
+  toHome,
+  data,
+  setMessage,
+  messageTexts,
+  setBackground_color,
+  setIndexFormQuestion,
+  IndexFormQuestion,
+}) => {
   const [answer, setAnswer] = useState();
   const [themeSelected, setThemeSelected] = useState(data && data[0]);
-  const [date, setDate] = useState(null);
   const [nexDate, setNexDate] = useState();
-  const [nextIndexTrain, setnextIndexTrain] = useState(0);
   const [showAnswer, setshowAnswer] = useState(null);
   const [localRepeat, setLocalRepeat] = useState(null);
   const [localPoits, setLocalPoits] = useState(null);
@@ -18,19 +27,20 @@ const TrainForm = ({ toHome, data, setMessage }) => {
   let filter;
 
   useEffect(() => {
-    !themeSelected && toHome();
+    setBackground_color(style.train);
+    !themeSelected && toHome('/');
   }, []);
 
   useEffect(() => {
     if (themeSelected) {
       if (localPoits !== null) {
-        themeSelected.questions[nextIndexTrain].points = localPoits;
+        themeSelected.questions[IndexFormQuestion].points = localPoits;
       }
       if (nexDate && answer) {
-        themeSelected.questions[nextIndexTrain].date = nexDate;
+        themeSelected.questions[IndexFormQuestion].date = nexDate;
       }
       if (localRepeat !== null) {
-        themeSelected.questions[nextIndexTrain].repeat = localRepeat;
+        themeSelected.questions[IndexFormQuestion].repeat = localRepeat;
       }
     }
 
@@ -39,17 +49,17 @@ const TrainForm = ({ toHome, data, setMessage }) => {
 
   useEffect(() => {
     setLocalPoits(
-      themeSelected && themeSelected.questions[nextIndexTrain].points,
+      themeSelected && themeSelected.questions[IndexFormQuestion].points,
     );
     setLocalRepeat(
-      themeSelected && themeSelected.questions[nextIndexTrain].repeat,
+      themeSelected && themeSelected.questions[IndexFormQuestion].repeat,
     );
-  }, [nextIndexTrain]);
+  }, [IndexFormQuestion]);
 
   function restart() {
     filter = themeSelected.questions.filter((item) => {
       item.options.sort(() => Math.random() - 0.5);
-      return item.repeat > 0;
+      return item.repeat > 0 || item.point < 1;
     });
 
     if (filter.length > 0) {
@@ -57,7 +67,7 @@ const TrainForm = ({ toHome, data, setMessage }) => {
       console.log(questions);
     } else {
       setThemeSelected(null);
-      console.log('foi');
+      setMessage(messageTexts[1]);
       localStorage.setItem('definidas', JSON.stringify(questions));
     }
   }
@@ -65,15 +75,14 @@ const TrainForm = ({ toHome, data, setMessage }) => {
   function dateAdd() {
     const dataAtual = new Date();
     const nextDate = new Date();
-    let diasAdicionais;
+    let diasAdicionais = 0;
     if (localPoits > 6) {
       diasAdicionais = 15;
     } else if (localPoits > 3) {
       diasAdicionais = 5;
-    } else {
+    } else if (localPoits > 1) {
       diasAdicionais = 1;
     }
-    dataAtual.setDate(dataAtual.getDate());
     nextDate.setDate(dataAtual.getDate() + diasAdicionais);
     function formatDate(date) {
       const dia = date.getDate().toString().padStart(2, '0');
@@ -81,45 +90,25 @@ const TrainForm = ({ toHome, data, setMessage }) => {
       const ano = date.getFullYear();
       return `${ano}-${mes}-${dia}`;
     }
-    setDate(formatDate(nextDate));
+    // setDate(formatDate(nextDate));
     setNexDate(formatDate(nextDate));
   }
 
   function handleSubmit(item, indexTrain) {
-    const acertoMessages = [
-      'Boa, você é fera!',
-      'Acertô miseravi! :D',
-      'Uau, mandou bem!',
-      'Show de bola! Acertou direitinho!',
-    ];
-    const erroMessages = [
-      'Errou feio, hein?',
-      'Todo mundo erraaaa ♫',
-      'Não foi dessa vez!',
-      'Errou, mas não desista!',
-      'Todo mundo erraaaa ♫',
-    ];
-
     if (indexTrain === 'next') {
       answer
         ? colorOcilation()
-        : nextIndexTrain < themeSelected.questions.length - 1 &&
-          setnextIndexTrain(nextIndexTrain + 1);
+        : IndexFormQuestion < themeSelected.questions.length - 1 &&
+          setIndexFormQuestion(IndexFormQuestion + 1);
       if (item.correctAnswer === answer && answer) {
-        setMessage(
-          acertoMessages[Math.floor(Math.random() * acertoMessages.length)],
-        );
         setLocalPoits(localPoits + 1);
         setLocalRepeat(localRepeat - 1);
       } else if (answer) {
-        setMessage(
-          erroMessages[Math.floor(Math.random() * erroMessages.length)],
-        );
         setLocalRepeat(localRepeat + 1);
         setLocalPoits(localPoits - 2);
       }
-    } else if (indexTrain === 'back' && nextIndexTrain > 0) {
-      setnextIndexTrain(nextIndexTrain - 1);
+    } else if (indexTrain === 'back' && IndexFormQuestion > 0) {
+      setIndexFormQuestion(IndexFormQuestion - 1);
       setAnswer();
     }
   }
@@ -139,45 +128,66 @@ const TrainForm = ({ toHome, data, setMessage }) => {
   }
 
   function goNextQuestion() {
-    const proximaPerguntaMessages = [
-      'Essa é fácil ou difícil?',
-      'Achou fácil?',
-      'Sabe a resposta?',
-      'Vamos lá!',
-    ];
-    setMessage(
-      proximaPerguntaMessages[
-        Math.floor(Math.random() * proximaPerguntaMessages.length)
-      ],
-    );
     setAnswer();
     setshowAnswer(null);
-    if (nextIndexTrain < themeSelected.questions.length - 1) {
-      setnextIndexTrain(nextIndexTrain + 1);
+    if (IndexFormQuestion < themeSelected.questions.length - 1) {
+      setIndexFormQuestion(IndexFormQuestion + 1);
     } else {
-      setnextIndexTrain(0);
+      setIndexFormQuestion(0);
       restart();
     }
   }
+
+  function deleteQuestion() {
+    const custemIndexTheme = questions.customQuestions.findIndex(
+      (item) => item.theme === themeSelected.theme,
+    );
+    // const updatedQuestions = [...themeSelected.questions];
+    // updatedQuestions.splice(IndexFormQuestion, 1);
+
+    // setThemeSelected({
+    //   theme: themeSelected.theme,
+    //   questions: updatedQuestions,
+    // });
+
+    questions.customQuestions[custemIndexTheme].questions.splice(
+      IndexFormQuestion,
+      1,
+    );
+    // themeSelected.questions.splice(IndexFormQuestion, 1);
+
+    // questions.customQuestions.push(themeSelected);
+    themeSelected.questions.length === 0 && setMessage(messageTexts[1]);
+    setThemeSelected(questions.customQuestions[custemIndexTheme]);
+
+    setIndexFormQuestion(0);
+    console.log(questions.customQuestions[0].questions);
+    console.log(themeSelected.questions);
+  }
   return (
     <>
-      {themeSelected && (
+      {themeSelected && themeSelected.questions.length > 0 && (
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          {/* <h1>{'index: ' + nextIndexTrain}</h1> */}
-          <h1>{`Data: ${themeSelected.questions[nextIndexTrain].date
+          {/* <h1>{'index: ' + IndexFormQuestion}</h1> */}
+          <h1>{`Data: ${themeSelected.questions[IndexFormQuestion].date
             .split('-')
             .reverse()
             .join('/')}`}</h1>
 
           <h1>{' Repeat : ' + localRepeat}</h1>
           <h1>{' Pontos: ' + localPoits}</h1>
+          <NavButton_2
+            onClick={deleteQuestion}
+            children={<Icons children={'delete'} />}
+          />
         </div>
       )}
 
       {themeSelected &&
+        themeSelected.questions.length > 0 &&
         themeSelected.questions.map(
           (item, index) =>
-            index === nextIndexTrain && (
+            index === IndexFormQuestion && (
               <section key={index}>
                 <TextBlock
                   children={item.question}
@@ -211,16 +221,18 @@ const TrainForm = ({ toHome, data, setMessage }) => {
                   <NavButton
                     children={'Voltar'}
                     onClick={() => handleSubmit(item, 'back')}
-                    disabled={nextIndexTrain === 0 || showAnswer !== null}
+                    disabled={IndexFormQuestion === 0 || showAnswer !== null}
                   />
                   <NavButton
+                    style={answer && { color: 'green' }}
                     disabled={
                       showAnswer !== null ||
-                      (themeSelected.questions.length - 1 === nextIndexTrain &&
+                      (themeSelected.questions.length - 1 ===
+                        IndexFormQuestion &&
                         !answer)
                     }
-                    children={'Avançar'}
                     onClick={() => handleSubmit(item, 'next')}
+                    children={answer ? 'Confirmar' : 'Avançar'}
                   />
                 </div>
               </section>
