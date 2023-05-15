@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from '../utilities/Utilities.module.css';
 import style from '../Pages/ChooseTheme.module.css';
-import { useNavigate } from 'react-router-dom';
+import { json, useLocation, useNavigate } from 'react-router-dom';
+import { questions } from '../../Questions';
 
 const ThemeList = ({
   data,
@@ -10,14 +11,26 @@ const ThemeList = ({
   setBackground_color,
   messageTexts,
   chekcCustomOrigin,
+  OriginAndThemeTCatch,
 }) => {
+  const [deletables, setDeletables] = useState([]);
+  const location = useLocation();
+
   const navigate = useNavigate();
   useEffect(() => {
     setBackground_color(styles.choose);
   }, []);
+  let selectedTheme;
+  let isCustom = location.pathname.includes('customs');
+  useEffect(() => {
+    if (data && data !== null && isCustom) {
+      questions.customQuestions = data;
+    }
+    console.log(questions.customQuestions);
+    console.log(data);
+  }, [data]);
 
   let selectQuestions;
-  let selectedTheme;
   const atualDate = new Date();
   atualDate.setHours(0, 0, 0, 0);
 
@@ -46,25 +59,63 @@ const ThemeList = ({
 
       console.log('ok');
     } else {
-      // setData(null);
       setMessage(messageTexts[3]);
       selectQuestions = false;
     }
   }
 
+  function handleChange({ target }) {
+    const { checked, value } = target;
+    if (checked) {
+      setDeletables([...deletables, target.value]);
+    } else {
+      setDeletables(deletables.filter((item) => item !== value));
+    }
+  }
+
+  function deleteItem() {
+    setData(data.filter((item) => !deletables.includes(item.theme)));
+    setDeletables([]);
+  }
+
   return (
     <ul>
-      <h1>Escolha um tema para treinar!</h1>
+      <h1 id="teste">Escolha um tema para treinar!</h1>
       {data &&
         data.map((item, index) => (
-          <input
-            className={styles.linkButton_1}
-            type="button"
-            key={index}
-            value={item.theme}
-            onClick={selectTheme}
-          />
+          <li style={{ display: 'flex', alignContent: 'center' }} key={index}>
+            <input
+              className={styles.linkButton_1}
+              type="button"
+              value={item.theme}
+              onClick={selectTheme}
+            />
+            <input
+              value={item.theme}
+              style={{
+                width: '40px',
+                height: '40px',
+                display: !isCustom && 'none',
+              }}
+              type="checkbox"
+              checked={deletables.includes(item.theme)}
+              name={item.theme}
+              onChange={handleChange}
+            />
+          </li>
         ))}
+      <input
+        style={{ padding: '1rem 3rem', fontSize: '1.5rem' }}
+        type="button"
+        value="deletar"
+        onClick={deleteItem}
+      />
+      <input
+        style={{ padding: '1rem 3rem', fontSize: '1.5rem' }}
+        type="button"
+        value="show"
+        onClick={() => {}}
+      />
     </ul>
   );
 };

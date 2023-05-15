@@ -18,7 +18,7 @@ import CreateNewQuestion from './CreateNewQuestion';
 
 const ChooseTheme = () => {
   const [background_color, setBackground_color] = useState();
-  const [data, setData] = useState();
+  const [data, setData] = useState(null);
   const [message, setMessage] = useState();
   const [IndexFormQuestion, setIndexFormQuestion] = useState(0);
   const [isCustomOrigin, setIsCustomOrigin] = useState(null);
@@ -45,11 +45,29 @@ const ChooseTheme = () => {
     type === 'criate' && setMessage(messageTexts[0]);
   }, []);
 
+  function OriginAndThemeTCatch(name) {
+    let origin = questions.pre_definidas.some((item) => item.theme === name);
+    let indexTeme;
+    if (origin) {
+      indexTeme = questions.pre_definidas.findIndex(
+        (item) => item.theme === name,
+      );
+    } else {
+      indexTeme = questions.customQuestions.findIndex(
+        (item) => item.theme === name,
+      );
+    }
+
+    return origin
+      ? [questions.pre_definidas[indexTeme]]
+      : [questions.customQuestions[indexTeme]];
+  }
+  // console.log(OriginAndThemeTCatch('Javascript'));
+
   function chekcCustomOrigin(name) {
     setIsCustomOrigin(
       questions.customQuestions.some((item) => item.theme === name),
     );
-    console.log(isCustomOrigin && isCustomOrigin);
   }
 
   function toHome(place) {
@@ -116,6 +134,7 @@ const ChooseTheme = () => {
               path="/"
               element={
                 <ThemeList
+                  OriginAndThemeTCatch={OriginAndThemeTCatch}
                   chekcCustomOrigin={chekcCustomOrigin}
                   data={data}
                   setData={setData}

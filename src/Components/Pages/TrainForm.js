@@ -154,9 +154,7 @@ const TrainForm = ({
       IndexFormQuestion,
       1,
     );
-    // themeSelected.questions.splice(IndexFormQuestion, 1);
 
-    // questions.customQuestions.push(themeSelected);
     themeSelected.questions.length === 0 && setMessage(messageTexts[1]);
     setThemeSelected(questions.customQuestions[custemIndexTheme]);
 
