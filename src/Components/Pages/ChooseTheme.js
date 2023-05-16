@@ -21,7 +21,8 @@ const ChooseTheme = () => {
   const [data, setData] = useState(null);
   const [message, setMessage] = useState();
   const [IndexFormQuestion, setIndexFormQuestion] = useState(0);
-  const [isCustomOrigin, setIsCustomOrigin] = useState(null);
+  const [toggleMenu, setToggleMenu] = useState(null);
+  const [showDeletables, setShowDeletables] = useState(null);
   const location = useLocation();
 
   const messageTexts = [
@@ -64,61 +65,115 @@ const ChooseTheme = () => {
   }
   // console.log(OriginAndThemeTCatch('Javascript'));
 
-  function chekcCustomOrigin(name) {
-    setIsCustomOrigin(
-      questions.customQuestions.some((item) => item.theme === name),
-    );
-  }
-
   function toHome(place) {
     navigate(place);
+  }
+
+  function deleteQuestion() {
+    setData([
+      {
+        theme: data[0].theme,
+
+        questions: data[0].questions.filter(
+          (item) => item !== data[0].questions[IndexFormQuestion],
+        ),
+      },
+    ]);
+    // setIndexFormQuestion(0);
   }
 
   return (
     <>
       <section className={`${styles.section} ${background_color}`}>
-        <header className={styles.header}>
-          <nav>
-            <ul>
-              <NavButton_2
-                children={<Icons children={'arrow_back_ios'} />}
-                onClick={() => {
-                  setData(null);
-                  toHome('/');
-                }}
-              />
-              <NavButton_2
-                children={<Icons children={'add_circle'} />}
-                value={''}
-                onClick={() => {
-                  if (
-                    isCustomOrigin === true &&
-                    location.pathname.includes('form')
-                  ) {
-                    setIsCustomOrigin(null);
-                    toHome(`create/${data[0].theme}`);
-                  }
-                }}
-              />
-              <NavButton_2
-                children={<Icons children={'border_color'} />}
-                value={''}
-                onClick={() => {
-                  if (
-                    isCustomOrigin === true &&
-                    location.pathname.includes('form')
-                  ) {
-                    // setIsCustomOrigin(null);
-                    toHome(`create/edit_213715`);
-                  }
-                }}
-              />
+        <header
+          className={styles.header}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '0.5rem',
+          }}
+        >
+          <NavButton_2
+            children={<Icons children={'arrow_back_ios'} />}
+            onClick={() => {
+              setToggleMenu((toggleMenu) => !toggleMenu);
+              setData(null);
+              toHome('/');
+              //VOLTAR
+            }}
+          />
+          <nav
+            style={{
+              position: 'relative',
+            }}
+          >
+            <NavButton_2
+              children={<Icons children={'settings'} />}
+              onClick={() => {
+                if (location.pathname.includes('customs')) {
+                  setToggleMenu((toggleMenu) => !toggleMenu);
+                }
+              }}
+            />
+
+            <ul
+              className={toggleMenu}
+              style={{
+                visibility: toggleMenu ? 'visible' : 'hidden',
+                display: 'block',
+                position: 'absolute',
+                backgroundColor: '#fff',
+                padding: '0',
+                borderRadius: '10px',
+                height: toggleMenu ? '300%' : '0%',
+                transition: '.2s',
+                overflowY: 'hidden',
+              }}
+            >
+              <li style={{ borderBottom: '2px solid #eee' }}>
+                <NavButton_2
+                  children={<Icons children={'add_circle'} />}
+                  value={''}
+                  onClick={() => {
+                    if (location.pathname.includes('form')) {
+                      toHome(`create/${data[0].theme}`);
+                    }
+                    setToggleMenu((toggleMenu) => !toggleMenu);
+                  }}
+                />
+              </li>
+              <li style={{ borderBottom: '2px solid #eee' }}>
+                <NavButton_2
+                  children={<Icons children={'border_color'} />}
+                  value={''}
+                  onClick={() => {
+                    if (location.pathname.includes('form')) {
+                      toHome(`create/edit_213715`);
+                    }
+                    setToggleMenu((toggleMenu) => !toggleMenu);
+                  }}
+                />
+              </li>
+              <li style={{ borderBottom: '2px solid #eee' }}>
+                <NavButton_2
+                  children={<Icons children={'delete'} />}
+                  onClick={() => {
+                    setToggleMenu((toggleMenu) => !toggleMenu);
+
+                    !location.pathname.includes('form') &&
+                      location.pathname.includes('customs') &&
+                      setShowDeletables(() => !showDeletables);
+
+                    location.pathname.includes('form') && deleteQuestion();
+                  }}
+                />
+              </li>
             </ul>
           </nav>
         </header>
         {message && (
           <Modal
-            chekcCustomOrigin={chekcCustomOrigin}
             messageTexts={messageTexts}
             message={message}
             setMessage={setMessage}
@@ -134,13 +189,13 @@ const ChooseTheme = () => {
               path="/"
               element={
                 <ThemeList
-                  OriginAndThemeTCatch={OriginAndThemeTCatch}
-                  chekcCustomOrigin={chekcCustomOrigin}
                   data={data}
                   setData={setData}
                   setMessage={setMessage}
                   messageTexts={messageTexts}
                   setBackground_color={setBackground_color}
+                  showDeletables={showDeletables}
+                  setShowDeletables={setShowDeletables}
                 />
               }
             />
@@ -169,7 +224,6 @@ const ChooseTheme = () => {
                   setData={setData}
                   setMessage={setMessage}
                   messageTexts={messageTexts}
-                  isCustomOrigin={isCustomOrigin}
                   setBackground_color={setBackground_color}
                 />
               }

@@ -11,23 +11,25 @@ const ThemeList = ({
   setBackground_color,
   messageTexts,
   chekcCustomOrigin,
-  OriginAndThemeTCatch,
+  showDeletables,
+  setShowDeletables,
 }) => {
   const [deletables, setDeletables] = useState([]);
   const location = useLocation();
 
+  let isCustom = location.pathname.includes('customs');
   const navigate = useNavigate();
   useEffect(() => {
     setBackground_color(styles.choose);
+    console.log('aqui' + showDeletables);
+    setShowDeletables(!showDeletables);
   }, []);
   let selectedTheme;
-  let isCustom = location.pathname.includes('customs');
+
   useEffect(() => {
     if (data && data !== null && isCustom) {
       questions.customQuestions = data;
     }
-    console.log(questions.customQuestions);
-    console.log(data);
   }, [data]);
 
   let selectQuestions;
@@ -35,7 +37,6 @@ const ThemeList = ({
   atualDate.setHours(0, 0, 0, 0);
 
   function selectTheme({ target }) {
-    chekcCustomOrigin(target.value);
     selectQuestions = false;
     selectedTheme = data.filter((item) => item.theme === target.value);
     selectQuestions = selectedTheme[0].questions.filter((item) => {
@@ -73,7 +74,7 @@ const ThemeList = ({
     }
   }
 
-  function deleteItem() {
+  function deleteItemTheme() {
     setData(data.filter((item) => !deletables.includes(item.theme)));
     setDeletables([]);
   }
@@ -95,7 +96,7 @@ const ThemeList = ({
               style={{
                 width: '40px',
                 height: '40px',
-                display: !isCustom && 'none',
+                display: !showDeletables ? 'block' : 'none',
               }}
               type="checkbox"
               checked={deletables.includes(item.theme)}
@@ -105,16 +106,14 @@ const ThemeList = ({
           </li>
         ))}
       <input
-        style={{ padding: '1rem 3rem', fontSize: '1.5rem' }}
+        style={{
+          padding: '1rem 3rem',
+          fontSize: '1.5rem',
+          display: !showDeletables ? 'block' : 'none',
+        }}
         type="button"
         value="deletar"
-        onClick={deleteItem}
-      />
-      <input
-        style={{ padding: '1rem 3rem', fontSize: '1.5rem' }}
-        type="button"
-        value="show"
-        onClick={() => {}}
+        onClick={deleteItemTheme}
       />
     </ul>
   );

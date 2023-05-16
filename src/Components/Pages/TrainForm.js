@@ -11,6 +11,7 @@ import Icons from '../utilities/Icons';
 const TrainForm = ({
   toHome,
   data,
+  setData,
   setMessage,
   messageTexts,
   setBackground_color,
@@ -30,6 +31,10 @@ const TrainForm = ({
     setBackground_color(style.train);
     !themeSelected && toHome('/');
   }, []);
+
+  useEffect(() => {
+    setThemeSelected(data && data[0]);
+  }, [data]);
 
   useEffect(() => {
     if (themeSelected) {
@@ -138,30 +143,6 @@ const TrainForm = ({
     }
   }
 
-  function deleteQuestion() {
-    const custemIndexTheme = questions.customQuestions.findIndex(
-      (item) => item.theme === themeSelected.theme,
-    );
-    // const updatedQuestions = [...themeSelected.questions];
-    // updatedQuestions.splice(IndexFormQuestion, 1);
-
-    // setThemeSelected({
-    //   theme: themeSelected.theme,
-    //   questions: updatedQuestions,
-    // });
-
-    questions.customQuestions[custemIndexTheme].questions.splice(
-      IndexFormQuestion,
-      1,
-    );
-
-    themeSelected.questions.length === 0 && setMessage(messageTexts[1]);
-    setThemeSelected(questions.customQuestions[custemIndexTheme]);
-
-    setIndexFormQuestion(0);
-    console.log(questions.customQuestions[0].questions);
-    console.log(themeSelected.questions);
-  }
   return (
     <>
       {themeSelected && themeSelected.questions.length > 0 && (
@@ -174,10 +155,6 @@ const TrainForm = ({
 
           <h1>{' Repeat : ' + localRepeat}</h1>
           <h1>{' Pontos: ' + localPoits}</h1>
-          <NavButton_2
-            onClick={deleteQuestion}
-            children={<Icons children={'delete'} />}
-          />
         </div>
       )}
 
