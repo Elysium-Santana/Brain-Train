@@ -7,6 +7,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import styles from './ChooseTheme.module.css';
+import style from '../utilities/Utilities.module.css';
 import TrainForm from './TrainForm';
 import Icons from '../utilities/Icons';
 import NavButton_2 from '../utilities/NavButton_2';
@@ -43,29 +44,29 @@ const ChooseTheme = () => {
     type === 'allTrains' &&
       setData([...questions.pre_definidas, ...questions.customQuestions]);
     type === 'customs' && setData(questions.customQuestions);
-    type === 'criate' && setMessage(messageTexts[0]);
+    type === 'create' && setMessage(messageTexts[0]);
   }, []);
 
-  function OriginAndThemeTCatch(name) {
-    let origin = questions.pre_definidas.some((item) => item.theme === name);
-    let indexTeme;
-    if (origin) {
-      indexTeme = questions.pre_definidas.findIndex(
-        (item) => item.theme === name,
-      );
-    } else {
-      indexTeme = questions.customQuestions.findIndex(
-        (item) => item.theme === name,
-      );
-    }
+  // function OriginAndThemeTCatch(name) {
+  //   let origin = questions.pre_definidas.some((item) => item.theme === name);
+  //   let indexTeme;
+  //   if (origin) {
+  //     indexTeme = questions.pre_definidas.findIndex(
+  //       (item) => item.theme === name,
+  //     );
+  //   } else {
+  //     indexTeme = questions.customQuestions.findIndex(
+  //       (item) => item.theme === name,
+  //     );
+  //   }
 
-    return origin
-      ? [questions.pre_definidas[indexTeme]]
-      : [questions.customQuestions[indexTeme]];
-  }
+  //   return origin
+  //     ? [questions.pre_definidas[indexTeme]]
+  //     : [questions.customQuestions[indexTeme]];
+  // }
   // console.log(OriginAndThemeTCatch('Javascript'));
 
-  function toHome(place) {
+  function goTo(place) {
     navigate(place);
   }
 
@@ -99,7 +100,7 @@ const ChooseTheme = () => {
             onClick={() => {
               setToggleMenu((toggleMenu) => !toggleMenu);
               setData(null);
-              toHome('/');
+              goTo('/');
               //VOLTAR
             }}
           />
@@ -118,7 +119,7 @@ const ChooseTheme = () => {
             />
 
             <ul
-              className={toggleMenu}
+              className={toggleMenu && toggleMenu}
               style={{
                 visibility: toggleMenu ? 'visible' : 'hidden',
                 display: 'block',
@@ -137,7 +138,7 @@ const ChooseTheme = () => {
                   value={''}
                   onClick={() => {
                     if (location.pathname.includes('form')) {
-                      toHome(`create/${data[0].theme}`);
+                      goTo(`create/${data[0].theme}`);
                     }
                     setToggleMenu((toggleMenu) => !toggleMenu);
                   }}
@@ -149,7 +150,7 @@ const ChooseTheme = () => {
                   value={''}
                   onClick={() => {
                     if (location.pathname.includes('form')) {
-                      toHome(`create/edit_213715`);
+                      goTo(`create/edit_213715`);
                     }
                     setToggleMenu((toggleMenu) => !toggleMenu);
                   }}
@@ -177,13 +178,13 @@ const ChooseTheme = () => {
             messageTexts={messageTexts}
             message={message}
             setMessage={setMessage}
-            toHome={toHome}
+            goTo={goTo}
             data={data}
             setData={setData}
             setBackground_color={setBackground_color}
           />
         )}
-        <BaseGlass>
+        <div className={style.baseGlass}>
           <Routes>
             <Route
               path="/"
@@ -203,7 +204,7 @@ const ChooseTheme = () => {
               path="/create/:type/"
               element={
                 <CreateNewQuestion
-                  toHome={toHome}
+                  goTo={goTo}
                   setData={setData}
                   setMessage={setMessage}
                   messageTexts={messageTexts}
@@ -219,7 +220,7 @@ const ChooseTheme = () => {
                 <TrainForm
                   setIndexFormQuestion={setIndexFormQuestion}
                   IndexFormQuestion={IndexFormQuestion}
-                  toHome={toHome}
+                  goTo={goTo}
                   data={data}
                   setData={setData}
                   setMessage={setMessage}
@@ -229,7 +230,7 @@ const ChooseTheme = () => {
               }
             />
           </Routes>
-        </BaseGlass>
+        </div>
       </section>
     </>
   );

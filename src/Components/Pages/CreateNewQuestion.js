@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import styles from '../utilities/Utilities.module.css';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import NavButton from '../utilities/NavButton';
 import { useState } from 'react';
 import { questions } from '../../Questions';
-import style from './ChooseTheme.module.css';
+import background from './ChooseTheme.module.css';
+import stylesCreate from './CreateNewQuestion.module.css';
 
 const CreateNewQuestion = ({
-  toHome,
+  goTo,
   setData,
   setMessage,
   messageTexts,
@@ -22,9 +23,11 @@ const CreateNewQuestion = ({
   const [wrongAnswer_3, setWrongAnswer_3] = useState('');
   const [theme, setTheme] = useState();
   const { type } = useParams();
+
   const textAreaFocus = useRef(null);
+
   useEffect(() => {
-    setBackground_color(style.create);
+    setBackground_color(background.create);
     function editQuestion() {
       if (type === 'edit_213715' && data) {
         setTheme(data[0]?.theme);
@@ -65,6 +68,7 @@ const CreateNewQuestion = ({
       wrongAnswer_3,
       correctAnswer,
     ];
+
     let equalAnsverCheck = options.filter((item) => {
       return options.indexOf(item) !== options.lastIndexOf(item);
     });
@@ -73,7 +77,6 @@ const CreateNewQuestion = ({
         question: question,
         options: options,
         correctAnswer: correctAnswer,
-        id: '1',
         points: 0,
         repeat: 3,
         date: '1111-11-11',
@@ -96,7 +99,7 @@ const CreateNewQuestion = ({
   }
 
   return (
-    <form style={{ width: '100%' }}>
+    <form style={{ width: '100%' }} className={stylesCreate.form}>
       <textarea
         ref={textAreaFocus}
         className={styles.questionEdit}
@@ -106,47 +109,50 @@ const CreateNewQuestion = ({
         value={question}
         onChange={({ target }) => setQuestion(target.value)}
       ></textarea>
-      <input
-        style={{ color: 'green' }}
-        type="text"
-        className={styles.answerEditInput}
-        placeholder="Sua resposta CERTA"
-        value={correctAnswer}
-        onChange={({ target }) => setCorrectAnswer(target.value)}
-      />
-      <input
-        type="text"
-        style={{ color: 'red' }}
-        className={styles.answerEditInput}
-        placeholder="Sua resposta ERRADA"
-        value={wrongAnswer_1}
-        onChange={({ target }) => setWrongAnswer_1(target.value)}
-      />
-      <input
-        type="text"
-        style={{ color: 'red' }}
-        className={styles.answerEditInput}
-        placeholder="Sua resposta ERRADA"
-        value={wrongAnswer_2}
-        onChange={({ target }) => setWrongAnswer_2(target.value)}
-      />
-      <input
-        type="text"
-        style={{ color: 'red' }}
-        className={styles.answerEditInput}
-        placeholder="Sua resposta ERRADA"
-        value={wrongAnswer_3}
-        onChange={({ target }) => setWrongAnswer_3(target.value)}
-      />
+      <div className={stylesCreate.questionsBox}>
+        <input
+          style={{ color: 'green', border: '2px solid green ' }}
+          type="text"
+          className={styles.answerEditInput}
+          placeholder="Sua resposta CERTA"
+          value={correctAnswer}
+          onChange={({ target }) => setCorrectAnswer(target.value)}
+        />
+        <input
+          type="text"
+          style={{ color: 'red', border: '2px solid red ' }}
+          className={styles.answerEditInput}
+          placeholder="Sua resposta ERRADA"
+          value={wrongAnswer_1}
+          onChange={({ target }) => setWrongAnswer_1(target.value)}
+        />
+        <input
+          type="text"
+          style={{ color: 'red', border: '2px solid red ' }}
+          className={styles.answerEditInput}
+          placeholder="Sua resposta ERRADA"
+          value={wrongAnswer_2}
+          onChange={({ target }) => setWrongAnswer_2(target.value)}
+        />
+        <input
+          type="text"
+          style={{ color: 'red', border: '2px solid red ' }}
+          className={styles.answerEditInput}
+          placeholder="Sua resposta ERRADA"
+          value={wrongAnswer_3}
+          onChange={({ target }) => setWrongAnswer_3(target.value)}
+        />
+      </div>
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '2rem 0',
+          // padding: '2rem 0',
           gap: '1rem',
           width: '100%',
         }}
+        className={stylesCreate.buttonsBox}
       >
         <NavButton
           children={'Criar'}
@@ -164,7 +170,7 @@ const CreateNewQuestion = ({
           children={data ? 'Começar!' : 'Cancelar'}
           onClick={(event) => {
             event.preventDefault();
-            data ? toHome('/ChooseTheme/customs/form') : toHome('/');
+            data ? goTo('/ChooseTheme/customs/form') : goTo('/');
           }}
         />
       </div>

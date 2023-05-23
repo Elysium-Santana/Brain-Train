@@ -3,13 +3,14 @@ import TextBlock from '../utilities/TextBlock';
 import AnswerInput from '../utilities/AnswerInput';
 import NavButton from '../utilities/NavButton';
 import styles from '../utilities/Utilities.module.css';
-import style from './ChooseTheme.module.css';
+import stylesForm from '../Pages/TrainForm.module.css';
+import background from './ChooseTheme.module.css';
 import { questions } from '../../Questions';
 import NavButton_2 from '../utilities/NavButton_2';
 import Icons from '../utilities/Icons';
 
 const TrainForm = ({
-  toHome,
+  goTo,
   data,
   setData,
   setMessage,
@@ -28,8 +29,8 @@ const TrainForm = ({
   let filter;
 
   useEffect(() => {
-    setBackground_color(style.train);
-    !themeSelected && toHome('/');
+    setBackground_color(background.train);
+    !themeSelected && goTo('/');
   }, []);
 
   useEffect(() => {
@@ -142,51 +143,55 @@ const TrainForm = ({
       restart();
     }
   }
+  // {themeSelected && themeSelected.questions.length > 0 && (
+  //   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+  //     {/* <h1>{'index: ' + IndexFormQuestion}</h1>
+  //     <h1>{`Data: ${themeSelected.questions[IndexFormQuestion].date
+  //       .split('-')
+  //       .reverse()
+  //       .join('/')}`}</h1>
+
+  //     <h1>{' Repeat : ' + localRepeat}</h1>
+  //     <h1>{' Pontos: ' + localPoits}</h1> */}
+  //   </div>
+  // )}
 
   return (
     <>
-      {themeSelected && themeSelected.questions.length > 0 && (
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          {/* <h1>{'index: ' + IndexFormQuestion}</h1> */}
-          <h1>{`Data: ${themeSelected.questions[IndexFormQuestion].date
-            .split('-')
-            .reverse()
-            .join('/')}`}</h1>
-
-          <h1>{' Repeat : ' + localRepeat}</h1>
-          <h1>{' Pontos: ' + localPoits}</h1>
-        </div>
-      )}
-
       {themeSelected &&
         themeSelected.questions.length > 0 &&
         themeSelected.questions.map(
           (item, index) =>
             index === IndexFormQuestion && (
-              <section key={index}>
-                <TextBlock
-                  children={item.question}
-                  cha={item.question.length}
-                />
-                {item.options.map((itemOptions, indexOptions) => (
-                  <AnswerInput
-                    cha={itemOptions.le}
-                    showAnsver={
-                      showAnswer &&
-                      (itemOptions === item.correctAnswer
-                        ? `${styles.correct}`
-                        : `${styles.wrong}`)
-                    }
-                    key={indexOptions}
-                    label={itemOptions}
-                    type={'radio'}
-                    name={'quest'}
-                    value={answer}
-                    checked={answer === itemOptions}
-                    onChange={() => setAnswer(itemOptions)}
+              <section key={index} className={stylesForm.section}>
+                <div className={stylesForm.question}>
+                  <TextBlock
+                    children={item.question}
+                    cha={item.question.length}
                   />
-                ))}
+                </div>
+                <div className={stylesForm.answerBox}>
+                  {item.options.map((itemOptions, indexOptions) => (
+                    <AnswerInput
+                      cha={itemOptions.le}
+                      showAnsver={
+                        showAnswer &&
+                        (itemOptions === item.correctAnswer
+                          ? `${styles.correct}`
+                          : `${styles.wrong}`)
+                      }
+                      key={indexOptions}
+                      label={itemOptions}
+                      type={'radio'}
+                      name={'quest'}
+                      value={answer}
+                      checked={answer === itemOptions}
+                      onChange={() => setAnswer(itemOptions)}
+                    />
+                  ))}
+                </div>
                 <div
+                  className={stylesForm.boxButtons}
                   style={{
                     display: 'flex',
                     justifyContent: 'center',

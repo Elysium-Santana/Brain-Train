@@ -3,27 +3,27 @@ import NavButton from '../utilities/NavButton';
 import { questions } from '../../Questions';
 import AnswerEditInput from '../utilities/AnswerEditInput';
 import styles from './ChooseTheme.module.css';
+import Boxbuttons from './Boxbuttons';
 
 const Modal = ({
   message,
   setMessage,
-  toHome,
+  goTo,
   messageTexts,
   setBackground_color,
   chekcCustomOrigin,
 }) => {
   const [themeValue, setThemeValue] = useState('');
 
-  function handlesubmit(event) {
-    event.preventDefault();
+  function handleCreate(event) {
+    // event.preventDefault();
     questions.customQuestions.push({
       theme: themeValue,
       questions: [],
     });
     setMessage(null);
-    toHome(`create/${themeValue}`);
+    goTo(`create/${themeValue}`);
     setBackground_color(styles.create);
-    chekcCustomOrigin(themeValue);
   }
 
   return (
@@ -42,69 +42,53 @@ const Modal = ({
           backgroundColor: 'rgba(0, 0 , 0 , 0.5)',
           padding: '2rem',
           color: '#000',
+          zIndex: '10',
         }}
       >
-        <h1 style={{ color: '#fff', fontSize: '2rem', fontWeight: 400 }}>
-          {message}
-        </h1>
-        {message === messageTexts[1] ? (
-          <NavButton
-            children={'Voltar ao menu principal.'}
-            onClick={() => toHome('/')}
-          />
-        ) : message === messageTexts[0] ? (
-          <>
-            <AnswerEditInput
-              type={'text'}
-              onChange={({ target }) => setThemeValue(target.value)}
-              value={themeValue}
-            />
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '2rem 0',
-                gap: '1rem',
-                width: '100%',
-              }}
-            >
-              <NavButton
-                children={'Sim'}
-                onClick={handlesubmit}
-                disabled={!themeValue}
+        <div
+          style={{
+            backgroundColor: 'rgba(255,255,255,0.7)',
+            padding: '2rem',
+            minWidth: '400px',
+            borderRadius: '4px',
+          }}
+        >
+          <h1 style={{ color: '#555', fontSize: '1rem', marginBottom: '1rem' }}>
+            {message}
+          </h1>
+          {message === messageTexts[0] && (
+            <>
+              <AnswerEditInput
+                type={'text'}
+                onChange={({ target }) => setThemeValue(target.value)}
+                value={themeValue}
               />
-              <NavButton
-                children={'Não'}
-                onClick={(event) => {
+              <Boxbuttons
+                firstChildren={'Sim'}
+                firstOnClick={handleCreate}
+                firstDisabled={!themeValue}
+                secondChildren={'Não'}
+                secondOnClick={(event) => {
                   event.preventDefault();
-                  toHome('/');
+                  goTo('/');
                 }}
               />
-            </div>
-          </>
-        ) : message === messageTexts[5] ? (
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '2rem 0',
-              gap: '1rem',
-              width: '100%',
-            }}
-          >
+            </>
+          )}
+          {message === messageTexts[1] && (
             <NavButton
-              children={'OK'}
-              onClick={(event) => {
-                event.preventDefault();
-                setMessage(null);
-              }}
+              children={'Voltar ao menu principal.'}
+              onClick={() => goTo('/')}
             />
-          </div>
-        ) : (
-          <NavButton children={'Ok'} onClick={() => setMessage(null)} />
-        )}
+          )}
+
+          {message === messageTexts[2] ||
+          message === messageTexts[3] ||
+          message === messageTexts[4] ||
+          message === messageTexts[5] ? (
+            <NavButton children={'Ok'} onClick={() => setMessage(null)} />
+          ) : null}
+        </div>
       </section>
     </>
   );

@@ -1,0 +1,31 @@
+.form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* width: 100%; */
+  grid-column: 1/-1;
+  grid-row: 1/3;
+  gap: 1rem;
+}
+.form textarea{
+  grid-row: 1/2;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+}
+.questionsBox{
+  display: flex;
+  flex-direction: column;
+  grid-area: 1/1;
+  grid-row: 1 / 3;
+  gap: 1rem;
+  /* height: 100%; */
+}
+.buttonsBox{
+  grid-area: 1/2;
+  grid-row: 2/3;
+  /* gap: ; */
+  height: 100%;
+}

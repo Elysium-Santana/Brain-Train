@@ -21,7 +21,6 @@ const ThemeList = ({
   const navigate = useNavigate();
   useEffect(() => {
     setBackground_color(styles.choose);
-    console.log('aqui' + showDeletables);
     setShowDeletables(!showDeletables);
   }, []);
   let selectedTheme;
@@ -80,8 +79,7 @@ const ThemeList = ({
   }
 
   return (
-    <ul>
-      <h1 id="teste">Escolha um tema para treinar!</h1>
+    <ul className={styles.themeList}>
       {data &&
         data.map((item, index) => (
           <li style={{ display: 'flex', alignContent: 'center' }} key={index}>

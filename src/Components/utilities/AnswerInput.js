@@ -16,7 +16,7 @@ const AnswerInput = ({
       <label
         name={name}
         className={styles.answerInput + ` ${showAnsver && showAnsver}`}
-        style={{ fontSize: cha > 38 && '1.5rem' }}
+        // style={{ fontSize: cha > 38 && '1.5rem' }}
       >
         {label}
         <input

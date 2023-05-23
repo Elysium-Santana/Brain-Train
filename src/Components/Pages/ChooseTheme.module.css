@@ -1,9 +1,9 @@
 
-.backgroud ul{
+/* .backgroud ul{
   display: flex;
   flex-direction: column;
   padding: 0;
-}
+} */
 .controlButton{  
     font-size: 2rem;
     color: #666;
@@ -34,18 +34,21 @@
   align-items: center;
   padding: 0 1rem;
   margin: 0;
+  z-index: 10;
+  border: 1px solid #eee;
 }
 .header{
+ 
   padding: .5rem 0;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.3);
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .section{
   width: 100%;
-  min-height: 100vh;
+  max-height:500px;
   padding:  2rem 1rem ;
-  position: relative;
+  align-self: center;
 }
 .section.choose{ 
   background: linear-gradient(to bottom right, #ffaacf 0%, #e5c986 50%);
