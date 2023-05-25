@@ -29,7 +29,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ChooseTheme/:type/*" element={<ChooseTheme />} />
+          <Route path="/ChooseTheme/:param/*" element={<ChooseTheme />} />
         </Routes>
       </BrowserRouter>
     </div>

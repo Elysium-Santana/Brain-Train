@@ -43,6 +43,10 @@ font-family: 'Poppins', sans-serif;
 border: 2px solid transparent ;
 outline: none;
 }
+.linkButton_1{
+  align-items: center;
+}
+
 .linkButton_1:hover, .answerInput:hover, .linkButton_3:hover, .navButton:hover,.answerEditInput:hover{
   background-color:rgba(255, 255, 255, 0.8);
   color: #333;

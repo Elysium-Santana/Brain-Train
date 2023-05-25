@@ -8,6 +8,7 @@ import background from './ChooseTheme.module.css';
 import { questions } from '../../Questions';
 import NavButton_2 from '../utilities/NavButton_2';
 import Icons from '../utilities/Icons';
+import { useLocation } from 'react-router-dom';
 
 const TrainForm = ({
   goTo,
@@ -25,6 +26,7 @@ const TrainForm = ({
   const [showAnswer, setshowAnswer] = useState(null);
   const [localRepeat, setLocalRepeat] = useState(null);
   const [localPoits, setLocalPoits] = useState(null);
+  const location = useLocation();
   let timeInterval = 80;
   let filter;
 
@@ -34,7 +36,15 @@ const TrainForm = ({
   }, []);
 
   useEffect(() => {
-    setThemeSelected(data && data[0]);
+    if (location.pathname.includes('customs')) {
+      setThemeSelected(data && data[0]);
+      console.log(data);
+      const themes = questions.customQuestions.filter(
+        (item) => item.theme !== data[0].theme,
+      );
+      questions.customQuestions = [data[0], ...themes];
+      console.log(questions.customQuestions);
+    }
   }, [data]);
 
   useEffect(() => {

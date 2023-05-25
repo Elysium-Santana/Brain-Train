@@ -32,39 +32,25 @@ const ChooseTheme = () => {
     'Vamos começar!!',
     'Nenhuma pendência com esse tema para hoje. Escolha outro tema ou tente mais tarde.',
     'Dados Repetidos. Por favor, cheque as respostas.',
-    'Pergunta adicionada com sucesso!',
+    'Questão adicionada com sucesso!',
+    'Tem certeza de que deseja excluir essa questão? ',
+    'Dados excluídos',
+    'Conteúdo editado.',
+    'Sua lista de questões para esse tema esta vazia. Deseja adicionar uma questão? ',
+    'Deseja salvar as alterações?',
   ];
 
   const navigate = useNavigate();
-  const { type } = useParams();
+  const { param } = useParams();
 
   useEffect(() => {
     setBackground_color(styles.choose);
-    type === 'predefined' && setData(questions.pre_definidas);
-    type === 'allTrains' &&
+    param === 'predefined' && setData(questions.pre_definidas);
+    param === 'allTrains' &&
       setData([...questions.pre_definidas, ...questions.customQuestions]);
-    type === 'customs' && setData(questions.customQuestions);
-    type === 'create' && setMessage(messageTexts[0]);
+    param === 'customs' && setData(questions.customQuestions);
+    param === 'create' && setMessage(messageTexts[0]);
   }, []);
-
-  // function OriginAndThemeTCatch(name) {
-  //   let origin = questions.pre_definidas.some((item) => item.theme === name);
-  //   let indexTeme;
-  //   if (origin) {
-  //     indexTeme = questions.pre_definidas.findIndex(
-  //       (item) => item.theme === name,
-  //     );
-  //   } else {
-  //     indexTeme = questions.customQuestions.findIndex(
-  //       (item) => item.theme === name,
-  //     );
-  //   }
-
-  //   return origin
-  //     ? [questions.pre_definidas[indexTeme]]
-  //     : [questions.customQuestions[indexTeme]];
-  // }
-  // console.log(OriginAndThemeTCatch('Javascript'));
 
   function goTo(place) {
     navigate(place);
@@ -80,7 +66,7 @@ const ChooseTheme = () => {
         ),
       },
     ]);
-    // setIndexFormQuestion(0);
+    setIndexFormQuestion(0);
   }
 
   return (
@@ -119,7 +105,6 @@ const ChooseTheme = () => {
             />
 
             <ul
-              className={toggleMenu && toggleMenu}
               style={{
                 visibility: toggleMenu ? 'visible' : 'hidden',
                 display: 'block',
@@ -139,6 +124,11 @@ const ChooseTheme = () => {
                   onClick={() => {
                     if (location.pathname.includes('form')) {
                       goTo(`create/${data[0].theme}`);
+                    } else if (
+                      location.pathname.includes('customs') &&
+                      !location.pathname.includes('form')
+                    ) {
+                      setMessage(messageTexts[0]);
                     }
                     setToggleMenu((toggleMenu) => !toggleMenu);
                   }}
@@ -150,7 +140,7 @@ const ChooseTheme = () => {
                   value={''}
                   onClick={() => {
                     if (location.pathname.includes('form')) {
-                      goTo(`create/edit_213715`);
+                      goTo(`create/edit`);
                     }
                     setToggleMenu((toggleMenu) => !toggleMenu);
                   }}
@@ -166,7 +156,9 @@ const ChooseTheme = () => {
                       location.pathname.includes('customs') &&
                       setShowDeletables(() => !showDeletables);
 
-                    location.pathname.includes('form') && deleteQuestion();
+                    // location.pathname.includes('form') && deleteQuestion();
+                    location.pathname.includes('form') &&
+                      setMessage(messageTexts[6]);
                   }}
                 />
               </li>
@@ -175,12 +167,12 @@ const ChooseTheme = () => {
         </header>
         {message && (
           <Modal
+            data={data}
+            deleteQuestion={deleteQuestion}
             messageTexts={messageTexts}
             message={message}
             setMessage={setMessage}
             goTo={goTo}
-            data={data}
-            setData={setData}
             setBackground_color={setBackground_color}
           />
         )}
@@ -201,7 +193,7 @@ const ChooseTheme = () => {
               }
             />
             <Route
-              path="/create/:type/"
+              path="/create/:param/"
               element={
                 <CreateNewQuestion
                   goTo={goTo}

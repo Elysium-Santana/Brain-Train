@@ -22,14 +22,14 @@ const CreateNewQuestion = ({
   const [wrongAnswer_2, setWrongAnswer_2] = useState('');
   const [wrongAnswer_3, setWrongAnswer_3] = useState('');
   const [theme, setTheme] = useState();
-  const { type } = useParams();
+  const { param } = useParams();
 
   const textAreaFocus = useRef(null);
 
   useEffect(() => {
     setBackground_color(background.create);
     function editQuestion() {
-      if (type === 'edit_213715' && data) {
+      if (param === 'edit' && data) {
         setTheme(data[0]?.theme);
         setQuestion(data[0].questions[IndexFormQuestion].question);
         setCorrectAnswer(
@@ -59,7 +59,7 @@ const CreateNewQuestion = ({
   function handleSubmit(event) {
     event.preventDefault();
     const index = questions.customQuestions.findIndex((item) =>
-      type !== 'edit_213715' ? item.theme === type : item.theme === theme,
+      param !== 'edit' ? item.theme === param : item.theme === theme,
     );
 
     const options = [
@@ -82,7 +82,7 @@ const CreateNewQuestion = ({
         date: '1111-11-11',
       };
       questions.customQuestions[index].questions.push(item);
-      type === 'edit_213715' &&
+      param === 'edit' &&
         questions.customQuestions[index].questions.splice(IndexFormQuestion, 1);
       setCorrectAnswer('');
       setWrongAnswer_1('');
@@ -92,7 +92,9 @@ const CreateNewQuestion = ({
       setData([questions.customQuestions[index]]);
       textAreaFocus.current.focus();
       localStorage.setItem('definidas', JSON.stringify(questions));
-      setMessage(messageTexts[5]);
+      param === 'edit'
+        ? setMessage(messageTexts[8])
+        : setMessage(messageTexts[5]);
     } else {
       setMessage(messageTexts[4]);
     }
@@ -112,33 +114,33 @@ const CreateNewQuestion = ({
       <div className={stylesCreate.questionsBox}>
         <input
           style={{ color: 'green', border: '2px solid green ' }}
-          type="text"
+          param="text"
           className={styles.answerEditInput}
-          placeholder="Sua resposta CERTA"
+          placeholder="Resposta CORRETA"
           value={correctAnswer}
           onChange={({ target }) => setCorrectAnswer(target.value)}
         />
         <input
-          type="text"
+          param="text"
           style={{ color: 'red', border: '2px solid red ' }}
           className={styles.answerEditInput}
-          placeholder="Sua resposta ERRADA"
+          placeholder="resposta INCORRETA"
           value={wrongAnswer_1}
           onChange={({ target }) => setWrongAnswer_1(target.value)}
         />
         <input
-          type="text"
+          param="text"
           style={{ color: 'red', border: '2px solid red ' }}
           className={styles.answerEditInput}
-          placeholder="Sua resposta ERRADA"
+          placeholder="resposta INCORRETA"
           value={wrongAnswer_2}
           onChange={({ target }) => setWrongAnswer_2(target.value)}
         />
         <input
-          type="text"
+          param="text"
           style={{ color: 'red', border: '2px solid red ' }}
           className={styles.answerEditInput}
-          placeholder="Sua resposta ERRADA"
+          placeholder="resposta INCORRETA"
           value={wrongAnswer_3}
           onChange={({ target }) => setWrongAnswer_3(target.value)}
         />
@@ -148,14 +150,13 @@ const CreateNewQuestion = ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          // padding: '2rem 0',
           gap: '1rem',
           width: '100%',
         }}
         className={stylesCreate.buttonsBox}
       >
         <NavButton
-          children={'Criar'}
+          children={param === 'edit' ? 'Editar' : 'Criar'}
           onClick={handleSubmit}
           disabled={
             !question ||
