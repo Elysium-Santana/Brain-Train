@@ -13,6 +13,7 @@ const Modal = ({
   setBackground_color,
   deleteQuestion,
   data,
+  deleteTheme,
 }) => {
   const [themeValue, setThemeValue] = useState('');
 
@@ -81,6 +82,29 @@ const Modal = ({
               onClick={() => goTo('/')}
             />
           )}
+          {message === messageTexts[12] && (
+            <NavButton
+              children={'Ok'}
+              onClick={() => {
+                data && data.length === 0
+                  ? setMessage(messageTexts[13])
+                  : setMessage(null);
+              }}
+            />
+          )}
+          {message === messageTexts[13] && (
+            <Boxbuttons
+              firstChildren={'Sim'}
+              firstOnClick={() => {
+                setMessage(messageTexts[0]);
+              }}
+              secondChildren={'Não'}
+              secondOnClick={() => {
+                setMessage(null);
+                goTo('/');
+              }}
+            />
+          )}
 
           {message === messageTexts[2] ||
           message === messageTexts[3] ||
@@ -109,6 +133,19 @@ const Modal = ({
               secondOnClick={() => {
                 setMessage(null);
                 goTo('/');
+              }}
+            />
+          )}
+          {message === messageTexts[11] && (
+            <Boxbuttons
+              firstChildren={'Sim'}
+              firstOnClick={() => {
+                setMessage(null);
+                deleteTheme();
+              }}
+              secondChildren={'Não'}
+              secondOnClick={() => {
+                setMessage(null);
               }}
             />
           )}

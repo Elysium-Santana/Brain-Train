@@ -73,7 +73,6 @@ outline: none;
   font-size: 1rem;
 }
 .baseGlass{
-  /* position: relative; */
   padding:  1rem;
   border-radius: 20px;
   gap: 1rem;
@@ -89,16 +88,15 @@ outline: none;
   flex-direction: column;
   overflow-y: scroll;
   grid-column: 1/-1;
-  padding-right: 1rem;
-  height: 300px;
+  height: 230px;
   max-height: 100%;
   gap: 1rem;
 }
-.themeList li{
+/* .themeList li{
   position: relative;
   display: block;
 
-}
+} */
 
 .textBlock, .questionEdit{
   font-size: 1rem;

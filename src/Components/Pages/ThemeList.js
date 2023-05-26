@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../utilities/Utilities.module.css';
-import style from '../Pages/ChooseTheme.module.css';
-import { json, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { questions } from '../../Questions';
 
 const ThemeList = ({
@@ -10,11 +9,11 @@ const ThemeList = ({
   setMessage,
   setBackground_color,
   messageTexts,
-  chekcCustomOrigin,
   showDeletables,
   setShowDeletables,
+  deletables,
+  setDeletables,
 }) => {
-  const [deletables, setDeletables] = useState([]);
   const location = useLocation();
 
   let isCustom = location.pathname.includes('customs');
@@ -73,47 +72,57 @@ const ThemeList = ({
     }
   }
 
-  function deleteItemTheme() {
-    setData(data.filter((item) => !deletables.includes(item.theme)));
-    setDeletables([]);
-  }
-
   return (
-    <ul className={styles.themeList}>
-      {data &&
-        data.map((item, index) => (
-          <li style={{ display: 'flex', alignContent: 'center' }} key={index}>
-            <input
-              className={styles.linkButton_1}
-              type="button"
-              value={item.theme}
-              onClick={selectTheme}
-            />
-            <input
-              value={item.theme}
-              style={{
-                width: '40px',
-                height: '40px',
-                display: !showDeletables ? 'block' : 'none',
-              }}
-              type="checkbox"
-              checked={deletables.includes(item.theme)}
-              name={item.theme}
-              onChange={handleChange}
-            />
-          </li>
-        ))}
-      <input
-        style={{
-          padding: '1rem 3rem',
-          fontSize: '1.5rem',
-          display: !showDeletables ? 'block' : 'none',
-        }}
-        type="button"
-        value="deletar"
-        onClick={deleteItemTheme}
-      />
-    </ul>
+    <>
+      <ul className={styles.themeList}>
+        {data &&
+          data.map((item, index) => (
+            <li
+              style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}
+              key={index}
+            >
+              <input
+                className={styles.linkButton_1}
+                type="button"
+                value={item.theme}
+                onClick={selectTheme}
+              />
+              <input
+                value={item.theme}
+                style={{
+                  width: '30px',
+                  height: '30px',
+                  display: !showDeletables ? 'block' : 'none',
+                }}
+                type="checkbox"
+                checked={deletables.includes(item.theme)}
+                name={item.theme}
+                onChange={handleChange}
+              />
+            </li>
+          ))}
+      </ul>
+
+      {!showDeletables && data && data.length > 0 && (
+        <div
+          style={{
+            gridColumn: '1/-1',
+            paddingTop: '1rem',
+            borderTop: '2px solid rgba( 0, 0 ,0 ,0.2)',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <input
+            style={{ width: '200px' }}
+            className={styles.navButton}
+            type="button"
+            value="Deletar"
+            onClick={() => setMessage(messageTexts[11])}
+          />
+        </div>
+      )}
+    </>
   );
 };
 

@@ -23,7 +23,8 @@ const ChooseTheme = () => {
   const [message, setMessage] = useState();
   const [IndexFormQuestion, setIndexFormQuestion] = useState(0);
   const [toggleMenu, setToggleMenu] = useState(null);
-  const [showDeletables, setShowDeletables] = useState(null);
+  const [showDeletables, setShowDeletables] = useState(false);
+  const [deletables, setDeletables] = useState([]);
   const location = useLocation();
 
   const messageTexts = [
@@ -34,14 +35,21 @@ const ChooseTheme = () => {
     'Dados Repetidos. Por favor, cheque as respostas.',
     'Questão adicionada com sucesso!',
     'Tem certeza de que deseja excluir essa questão? ',
-    'Dados excluídos',
+    'Dados excluídos.',
     'Conteúdo editado.',
     'Sua lista de questões para esse tema esta vazia. Deseja adicionar uma questão? ',
     'Deseja salvar as alterações?',
+    'Todas as questões contidas neste tema serão excluídas. Deseja excluir o tema? ',
+    'Tema excluído.',
+    'Sua lista de temas esta vazia. Deseja um tema?',
   ];
 
   const navigate = useNavigate();
   const { param } = useParams();
+
+  useEffect(() => {
+    setShowDeletables(!showDeletables);
+  }, [location]);
 
   useEffect(() => {
     setBackground_color(styles.choose);
@@ -67,6 +75,12 @@ const ChooseTheme = () => {
       },
     ]);
     setIndexFormQuestion(0);
+  }
+
+  function deleteTheme() {
+    setData(data.filter((item) => !deletables.includes(item.theme)));
+    setDeletables([]);
+    setMessage(messageTexts[12]);
   }
 
   return (
@@ -155,8 +169,6 @@ const ChooseTheme = () => {
                     !location.pathname.includes('form') &&
                       location.pathname.includes('customs') &&
                       setShowDeletables(() => !showDeletables);
-
-                    // location.pathname.includes('form') && deleteQuestion();
                     location.pathname.includes('form') &&
                       setMessage(messageTexts[6]);
                   }}
@@ -167,6 +179,7 @@ const ChooseTheme = () => {
         </header>
         {message && (
           <Modal
+            deleteTheme={deleteTheme}
             data={data}
             deleteQuestion={deleteQuestion}
             messageTexts={messageTexts}
@@ -187,6 +200,8 @@ const ChooseTheme = () => {
                   setMessage={setMessage}
                   messageTexts={messageTexts}
                   setBackground_color={setBackground_color}
+                  deletables={deletables}
+                  setDeletables={setDeletables}
                   showDeletables={showDeletables}
                   setShowDeletables={setShowDeletables}
                 />
