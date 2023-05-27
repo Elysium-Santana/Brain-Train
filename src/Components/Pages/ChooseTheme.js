@@ -11,11 +11,13 @@ import style from '../utilities/Utilities.module.css';
 import TrainForm from './TrainForm';
 import Icons from '../utilities/Icons';
 import NavButton_2 from '../utilities/NavButton_2';
-import BaseGlass from '../utilities/BaseGlass';
 import ThemeList from './ThemeList';
 import { questions } from '../../Questions';
 import Modal from './Modal';
 import CreateNewQuestion from './CreateNewQuestion';
+import settingsOff from '../../img/settingsOff.svg';
+import repeat from '../../img/repeat.svg';
+import CortexBatery from '../utilities/CortexBatery';
 
 const ChooseTheme = () => {
   const [background_color, setBackground_color] = useState();
@@ -25,6 +27,7 @@ const ChooseTheme = () => {
   const [toggleMenu, setToggleMenu] = useState(null);
   const [showDeletables, setShowDeletables] = useState(false);
   const [deletables, setDeletables] = useState([]);
+  const [localRepeat, setLocalRepeat] = useState(null);
   const location = useLocation();
 
   const messageTexts = [
@@ -32,16 +35,18 @@ const ChooseTheme = () => {
     'Desafio concluído.',
     'Vamos começar!!',
     'Nenhuma pendência com esse tema para hoje. Escolha outro tema ou tente mais tarde.',
-    'Dados Repetidos. Por favor, cheque as respostas.',
+    'Dados Repetidos. Por favor, cheque os campos.',
     'Questão adicionada com sucesso!',
     'Tem certeza de que deseja excluir essa questão? ',
-    'Dados excluídos.',
+    'Questão excluída.',
     'Conteúdo editado.',
     'Sua lista de questões para esse tema esta vazia. Deseja adicionar uma questão? ',
     'Deseja salvar as alterações?',
     'Todas as questões contidas neste tema serão excluídas. Deseja excluir o tema? ',
     'Tema excluído.',
-    'Sua lista de temas esta vazia. Deseja um tema?',
+    'Sua lista de temas esta vazia. Deseja criar um tema?',
+    'Palavras grandes demais podem dificultar sua memorização. Por favor, cheque os campos.',
+    'Ação indisponível. Para ter acesso a conteúdos customizaveis, volte ao menu inicial e selecione a opção "Personalizados".',
   ];
 
   const navigate = useNavigate();
@@ -86,15 +91,7 @@ const ChooseTheme = () => {
   return (
     <>
       <section className={`${styles.section} ${background_color}`}>
-        <header
-          className={styles.header}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '0.5rem',
-          }}
-        >
+        <header className={styles.header}>
           <NavButton_2
             children={<Icons children={'arrow_back_ios'} />}
             onClick={() => {
@@ -104,31 +101,59 @@ const ChooseTheme = () => {
               //VOLTAR
             }}
           />
+          {location.pathname.includes('form') &&
+            data &&
+            data[0].questions[IndexFormQuestion].date !== '1111-11-11' && (
+              <div className={styles.status}>
+                <ul>
+                  <li style={{ display: 'flex', alignItems: 'center' }}>
+                    <Icons children={'calendar_month'} />
+                    <p>
+                      {data[0].questions[IndexFormQuestion].date
+                        .split('-')
+                        .reverse()
+                        .join('/')}
+                    </p>
+                  </li>
+                  <li>
+                    <CortexBatery nivel={localRepeat} />
+                  </li>
+                </ul>
+              </div>
+            )}
           <nav
             style={{
               position: 'relative',
             }}
           >
-            <NavButton_2
-              children={<Icons children={'settings'} />}
-              onClick={() => {
-                if (location.pathname.includes('customs')) {
+            {location.pathname.includes('customs') &&
+            !location.pathname.includes('create') ? (
+              <NavButton_2
+                children={<Icons children={'settings'} />}
+                onClick={() => {
                   setToggleMenu((toggleMenu) => !toggleMenu);
+                }}
+              />
+            ) : (
+              <NavButton_2
+                onClick={() =>
+                  !location.pathname.includes('create') &&
+                  setMessage(messageTexts[15])
                 }
-              }}
-            />
+                children={<img src={settingsOff} />}
+              />
+            )}
 
             <ul
+              className={styles.menu}
               style={{
                 visibility: toggleMenu ? 'visible' : 'hidden',
-                display: 'block',
-                position: 'absolute',
-                backgroundColor: '#fff',
-                padding: '0',
-                borderRadius: '10px',
-                height: toggleMenu ? '300%' : '0%',
-                transition: '.2s',
-                overflowY: 'hidden',
+
+                height: toggleMenu
+                  ? location.pathname.includes('form')
+                    ? '300%'
+                    : '200%'
+                  : '0%',
               }}
             >
               <li style={{ borderBottom: '2px solid #eee' }}>
@@ -148,18 +173,21 @@ const ChooseTheme = () => {
                   }}
                 />
               </li>
-              <li style={{ borderBottom: '2px solid #eee' }}>
-                <NavButton_2
-                  children={<Icons children={'border_color'} />}
-                  value={''}
-                  onClick={() => {
-                    if (location.pathname.includes('form')) {
-                      goTo(`create/edit`);
-                    }
-                    setToggleMenu((toggleMenu) => !toggleMenu);
-                  }}
-                />
-              </li>
+              {location.pathname.includes('form') && (
+                <li style={{ borderBottom: '2px solid #eee' }}>
+                  <NavButton_2
+                    children={<Icons children={'border_color'} />}
+                    value={''}
+                    onClick={() => {
+                      if (location.pathname.includes('form')) {
+                        goTo(`create/edit`);
+                      }
+                      setToggleMenu((toggleMenu) => !toggleMenu);
+                    }}
+                  />
+                </li>
+              )}
+
               <li style={{ borderBottom: '2px solid #eee' }}>
                 <NavButton_2
                   children={<Icons children={'delete'} />}
@@ -179,6 +207,8 @@ const ChooseTheme = () => {
         </header>
         {message && (
           <Modal
+            IndexFormQuestion={IndexFormQuestion}
+            setIndexFormQuestion={setIndexFormQuestion}
             deleteTheme={deleteTheme}
             data={data}
             deleteQuestion={deleteQuestion}
@@ -225,6 +255,8 @@ const ChooseTheme = () => {
               path="/form"
               element={
                 <TrainForm
+                  localRepeat={localRepeat}
+                  setLocalRepeat={setLocalRepeat}
                   setIndexFormQuestion={setIndexFormQuestion}
                   IndexFormQuestion={IndexFormQuestion}
                   goTo={goTo}

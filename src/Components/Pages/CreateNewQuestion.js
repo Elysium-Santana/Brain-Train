@@ -46,15 +46,31 @@ const CreateNewQuestion = ({
       }
     }
     editQuestion();
-    setData(null);
+    // setData(null);
   }, []);
 
-  // function idMaker() {
-  //   const id = question[0].reduce((a, c) => {
-  //     return a > c.id ? a : c.id;
-  //   }, 0);
-  //   return id + 1;
-  // }
+  const filds = [
+    question.trim().split(' '),
+    correctAnswer.trim().split(' '),
+    wrongAnswer_1.trim().split(' '),
+    wrongAnswer_2.trim().split(' '),
+    wrongAnswer_3.trim().split(' '),
+  ];
+
+  function maxChaForWord(word) {
+    const WordTest = word.some((item) => {
+      const tooBigWord = item.length > 17;
+      return tooBigWord;
+    });
+    return WordTest;
+  }
+
+  let tooBigWordsController = filds.some((item) => {
+    const tooBigWord = maxChaForWord(item) === true;
+    return tooBigWord;
+  });
+
+  console.log(tooBigWordsController);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -72,7 +88,7 @@ const CreateNewQuestion = ({
     let equalAnsverCheck = options.filter((item) => {
       return options.indexOf(item) !== options.lastIndexOf(item);
     });
-    if (equalAnsverCheck.length === 0) {
+    if (equalAnsverCheck.length === 0 && !tooBigWordsController) {
       let item = {
         question: question,
         options: options,
@@ -95,6 +111,8 @@ const CreateNewQuestion = ({
       param === 'edit'
         ? setMessage(messageTexts[8])
         : setMessage(messageTexts[5]);
+    } else if (tooBigWordsController) {
+      setMessage(messageTexts[14]);
     } else {
       setMessage(messageTexts[4]);
     }
@@ -102,48 +120,69 @@ const CreateNewQuestion = ({
 
   return (
     <form style={{ width: '100%' }} className={stylesCreate.form}>
-      <textarea
-        ref={textAreaFocus}
-        className={styles.questionEdit}
-        cols="30"
-        rows="10"
-        placeholder="Escreva sua Pergunta"
-        value={question}
-        onChange={({ target }) => setQuestion(target.value)}
-      ></textarea>
-      <div className={stylesCreate.questionsBox}>
-        <input
-          style={{ color: 'green', border: '2px solid green ' }}
-          param="text"
-          className={styles.answerEditInput}
-          placeholder="Resposta CORRETA"
-          value={correctAnswer}
-          onChange={({ target }) => setCorrectAnswer(target.value)}
-        />
-        <input
-          param="text"
-          style={{ color: 'red', border: '2px solid red ' }}
-          className={styles.answerEditInput}
-          placeholder="resposta INCORRETA"
-          value={wrongAnswer_1}
-          onChange={({ target }) => setWrongAnswer_1(target.value)}
-        />
-        <input
-          param="text"
-          style={{ color: 'red', border: '2px solid red ' }}
-          className={styles.answerEditInput}
-          placeholder="resposta INCORRETA"
-          value={wrongAnswer_2}
-          onChange={({ target }) => setWrongAnswer_2(target.value)}
-        />
-        <input
-          param="text"
-          style={{ color: 'red', border: '2px solid red ' }}
-          className={styles.answerEditInput}
-          placeholder="resposta INCORRETA"
-          value={wrongAnswer_3}
-          onChange={({ target }) => setWrongAnswer_3(target.value)}
-        />
+      <div className={stylesCreate.questionBox}>
+        <textarea
+          maxLength="180"
+          ref={textAreaFocus}
+          className={styles.questionEdit}
+          cols="30"
+          rows="7"
+          placeholder="Escreva sua Pergunta"
+          value={question}
+          onChange={({ target }) => setQuestion(target.value)}
+        ></textarea>
+        <span>{question.length + '/180'}</span>
+      </div>
+
+      <div className={stylesCreate.answersBox}>
+        <li>
+          <input
+            maxLength="60"
+            style={{ color: 'green', border: '2px solid green ' }}
+            param="text"
+            className={styles.answerEditInput}
+            placeholder="Resposta CORRETA"
+            value={correctAnswer}
+            onChange={({ target }) => setCorrectAnswer(target.value)}
+          />
+          <span>{correctAnswer.length + '/60'}</span>
+        </li>
+        <li>
+          <input
+            maxLength="60"
+            param="text"
+            style={{ color: 'red', border: '2px solid red ' }}
+            className={styles.answerEditInput}
+            placeholder="Resposta INCORRETA"
+            value={wrongAnswer_1}
+            onChange={({ target }) => setWrongAnswer_1(target.value)}
+          />
+          <span>{wrongAnswer_1.length + '/60'}</span>
+        </li>
+        <li>
+          <input
+            maxLength="60"
+            param="text"
+            style={{ color: 'red', border: '2px solid red ' }}
+            className={styles.answerEditInput}
+            placeholder="Resposta INCORRETA"
+            value={wrongAnswer_2}
+            onChange={({ target }) => setWrongAnswer_2(target.value)}
+          />
+          <span>{wrongAnswer_2.length + '/60'}</span>
+        </li>
+        <li>
+          <input
+            maxLength="60"
+            param="text"
+            style={{ color: 'red', border: '2px solid red ' }}
+            className={styles.answerEditInput}
+            placeholder="Resposta INCORRETA"
+            value={wrongAnswer_3}
+            onChange={({ target }) => setWrongAnswer_3(target.value)}
+          />
+          <span>{wrongAnswer_3.length + '/60'}</span>
+        </li>
       </div>
       <div
         style={{
@@ -167,11 +206,14 @@ const CreateNewQuestion = ({
           }
         />
         <NavButton
-          style={data && { color: 'green' }}
-          children={data ? 'Começar!' : 'Cancelar'}
+          // style={data && { color: 'green' }}
+          children={data[0].questions.length > 0 ? 'Treinar' : 'voltar ao menu'}
+          // children={data ? 'Começar!' : 'Cancelar'}
           onClick={(event) => {
             event.preventDefault();
-            data ? goTo('/ChooseTheme/customs/form') : goTo('/');
+            data[0].questions.length > 0
+              ? goTo('/ChooseTheme/customs/form')
+              : goTo('/');
           }}
         />
       </div>

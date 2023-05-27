@@ -296,7 +296,7 @@ const customQuestions = [
         id: 1,
         points: 0,
         repeat: 0,
-        date: '1111-01-01',
+        date: '1111-11-11',
       },
       {
         question: 'Qual é o maior animal terrestre?',

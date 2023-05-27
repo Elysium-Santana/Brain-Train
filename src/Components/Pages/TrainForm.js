@@ -19,12 +19,13 @@ const TrainForm = ({
   setBackground_color,
   setIndexFormQuestion,
   IndexFormQuestion,
+  localRepeat,
+  setLocalRepeat,
 }) => {
   const [answer, setAnswer] = useState();
   const [themeSelected, setThemeSelected] = useState(data && data[0]);
   const [nexDate, setNexDate] = useState();
   const [showAnswer, setshowAnswer] = useState(null);
-  const [localRepeat, setLocalRepeat] = useState(null);
   const [localPoits, setLocalPoits] = useState(null);
   const location = useLocation();
   let timeInterval = 80;
@@ -36,9 +37,8 @@ const TrainForm = ({
   }, []);
 
   useEffect(() => {
-    if (location.pathname.includes('customs')) {
+    if (location.pathname.includes('customs') && data) {
       setThemeSelected(data && data[0]);
-      console.log(data);
       const themes = questions.customQuestions.filter(
         (item) => item.theme !== data[0].theme,
       );
@@ -153,18 +153,6 @@ const TrainForm = ({
       restart();
     }
   }
-  // {themeSelected && themeSelected.questions.length > 0 && (
-  //   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-  //     {/* <h1>{'index: ' + IndexFormQuestion}</h1>
-  //     <h1>{`Data: ${themeSelected.questions[IndexFormQuestion].date
-  //       .split('-')
-  //       .reverse()
-  //       .join('/')}`}</h1>
-
-  //     <h1>{' Repeat : ' + localRepeat}</h1>
-  //     <h1>{' Pontos: ' + localPoits}</h1> */}
-  //   </div>
-  // )}
 
   return (
     <>
@@ -212,6 +200,13 @@ const TrainForm = ({
                     children={'Voltar'}
                     onClick={() => handleSubmit(item, 'back')}
                     disabled={IndexFormQuestion === 0 || showAnswer !== null}
+                    backIcon={
+                      <Icons
+                        children={`${
+                          IndexFormQuestion === 0 ? 'lock' : 'arrow_back_ios'
+                        }`}
+                      />
+                    }
                   />
                   <NavButton
                     style={answer && { color: 'green' }}
@@ -223,6 +218,19 @@ const TrainForm = ({
                     }
                     onClick={() => handleSubmit(item, 'next')}
                     children={answer ? 'Confirmar' : 'Avançar'}
+                    frontIcon={
+                      !answer && (
+                        <Icons
+                          children={`${
+                            themeSelected.questions.length - 1 !==
+                            IndexFormQuestion
+                              ? 'arrow_forward_ios'
+                              : 'lock'
+                          }`}
+                        />
+                      )
+                    }
+                    backIcon={answer && <Icons children={'ads_click'} />}
                   />
                 </div>
               </section>

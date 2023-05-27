@@ -107,6 +107,8 @@ const Modal = ({
           )}
 
           {message === messageTexts[2] ||
+          message === messageTexts[14] ||
+          message === messageTexts[15] ||
           message === messageTexts[3] ||
           message === messageTexts[4] ||
           message === messageTexts[5] ||
@@ -153,8 +155,8 @@ const Modal = ({
             <NavButton
               children={'Ok'}
               onClick={() => {
-                setMessage(null);
                 goTo('/ChooseTheme/customs/form');
+                setMessage(null);
               }}
             />
           )}
