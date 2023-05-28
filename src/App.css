@@ -24,6 +24,7 @@ ul{
   font-family: 'Poppins', sans-serif;
   display: flex;
   height: 100vh;
+  padding: .5rem 0;
  }
  @media (max-width:470px) {
   .material-symbols-outlined{
