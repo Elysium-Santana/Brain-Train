@@ -28,15 +28,21 @@
 }
 @media (max-width:720px) {
   .section{    
-    grid-template-columns: 1fr;        
+    grid-template-columns: 1fr; 
+    /* grid-template-rows: 1;  */
+    align-content: space-around;      
+    height: 100%;
   }
   .answerBox{   
     grid-area: initial;
     grid-row:initial;
+    grid-row:2;
     gap: .5rem;  
   }
   .question{
     grid-area:initial;
+    grid-row: initial;
+    height: 100%;
    
   }
   .boxButtons{
