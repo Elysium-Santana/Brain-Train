@@ -107,8 +107,10 @@ const ChooseTheme = () => {
                   <Icons children={'calendar_month'} />
                   <p>
                     {data &&
+                    data[0].questions.length > 0 &&
                     data[0].questions[IndexFormQuestion].date !== '1111-11-11'
-                      ? data[0].questions[IndexFormQuestion].date
+                      ? data[0].questions.length > 0 &&
+                        data[0].questions[IndexFormQuestion].date
                           .split('-')
                           .reverse()
                           .join('/')

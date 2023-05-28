@@ -14,6 +14,7 @@ const Modal = ({
   deleteQuestion,
   data,
   deleteTheme,
+  setData,
 }) => {
   const [themeValue, setThemeValue] = useState('');
 
@@ -23,6 +24,7 @@ const Modal = ({
       questions: [],
     });
     setMessage(null);
+    setData(null);
     goTo(`create/${themeValue}`);
     setBackground_color(styles.create);
   }
