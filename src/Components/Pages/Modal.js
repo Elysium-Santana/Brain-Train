@@ -2,7 +2,7 @@ import { useState } from 'react';
 import NavButton from '../utilities/NavButton';
 import { questions } from '../../Questions';
 import AnswerEditInput from '../utilities/AnswerEditInput';
-import styles from './ChooseTheme.module.css';
+import styles from './Home.module.css';
 import Boxbuttons from './Boxbuttons';
 
 const Modal = ({
@@ -165,7 +165,7 @@ const Modal = ({
             <NavButton
               children={'Ok'}
               onClick={() => {
-                goTo('/ChooseTheme/customs/form');
+                goTo('/Home/customs/form');
                 setMessage(null);
               }}
             />

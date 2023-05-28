@@ -4,7 +4,7 @@ import AnswerInput from '../utilities/AnswerInput';
 import NavButton from '../utilities/NavButton';
 import styles from '../utilities/Utilities.module.css';
 import stylesForm from '../Pages/TrainForm.module.css';
-import background from './ChooseTheme.module.css';
+import background from './Home.module.css';
 import { questions } from '../../Questions';
 import NavButton_2 from '../utilities/NavButton_2';
 import Icons from '../utilities/Icons';

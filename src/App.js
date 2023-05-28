@@ -1,8 +1,8 @@
 // import { useEffect, useState } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ChooseTheme from './Components/Pages/ChooseTheme';
 import Home from './Components/Pages/Home';
+import Menu from './Components/Pages/Menu';
 // import { quizQuestions } from './Quenpxstions';
 
 function App() {
@@ -28,8 +28,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/ChooseTheme/:param/*" element={<ChooseTheme />} />
+          <Route path="/" element={<Menu />} />
+          <Route path="/Home/:param/*" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>

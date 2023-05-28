@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../Pages/ChooseTheme.module.css';
+import styles from '../Pages/Home.module.css';
 
 const CortexBateryIcon = ({ nivel }) => {
   return (

@@ -190,12 +190,12 @@ outline: none;
     gap: 1rem;
     display: flex;
     flex-direction: column;
-    height:100%; 
+    height:calc(100vh - 90px); 
     max-height: 100%; 
     align-items:space-between;
   }
   .themeList{     
-    height:100%;
+    height:calc(100vh - 150px);
     max-height: 100%;
     gap: .5rem;
   }  

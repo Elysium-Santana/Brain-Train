@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import NavButton from '../utilities/NavButton';
 import { useState } from 'react';
 import { questions } from '../../Questions';
-import background from './ChooseTheme.module.css';
+import background from './Home.module.css';
 import stylesCreate from './CreateNewQuestion.module.css';
 
 const CreateNewQuestion = ({
@@ -138,7 +138,7 @@ const CreateNewQuestion = ({
         <li>
           <input
             maxLength="60"
-            style={{ color: 'green', border: '2px solid green ' }}
+            style={{ color: 'green', border: '1px solid green ' }}
             param="text"
             className={styles.answerEditInput}
             placeholder="Resposta CORRETA"
@@ -151,7 +151,7 @@ const CreateNewQuestion = ({
           <input
             maxLength="60"
             param="text"
-            style={{ color: 'red', border: '2px solid red ' }}
+            style={{ color: 'red', border: '1px solid red ' }}
             className={styles.answerEditInput}
             placeholder="Resposta INCORRETA"
             value={wrongAnswer_1}
@@ -163,7 +163,7 @@ const CreateNewQuestion = ({
           <input
             maxLength="60"
             param="text"
-            style={{ color: 'red', border: '2px solid red ' }}
+            style={{ color: 'red', border: '1px solid red ' }}
             className={styles.answerEditInput}
             placeholder="Resposta INCORRETA"
             value={wrongAnswer_2}
@@ -175,7 +175,7 @@ const CreateNewQuestion = ({
           <input
             maxLength="60"
             param="text"
-            style={{ color: 'red', border: '2px solid red ' }}
+            style={{ color: 'red', border: '1px solid red ' }}
             className={styles.answerEditInput}
             placeholder="Resposta INCORRETA"
             value={wrongAnswer_3}
@@ -212,7 +212,7 @@ const CreateNewQuestion = ({
           onClick={(event) => {
             event.preventDefault();
             data && data[0].questions.length > 0
-              ? goTo('/ChooseTheme/customs/form')
+              ? goTo('/Home/customs/form')
               : goTo('/');
           }}
         />
