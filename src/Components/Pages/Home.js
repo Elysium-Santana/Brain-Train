@@ -11,10 +11,25 @@ const Home = () => {
       <section className={styles.section}>
         <h1 className={styles.text}>Brain Train</h1>
         <BaseGlass>
-          <p className={styles.questionEdit}>
-            {
-              'Bem-vindo ao Brain Train - o aplicativo perfeito para treinar e melhorar sua capacidade de memorização! Com o Brain Train, você pode criar sua própria lista de temas personalizados, selecionar temas já existentes ou até mesmo misturar ambos!'
-            }
+          <p className={styles.questionEdit} style={{ overflowY: 'scroll' }}>
+            Bem-vindo ao Brain Train, o aplicativo que irá ajudá-lo a treinar
+            seus conhecimentos! Aqui você pode criar uma lista personalizada de
+            perguntas sobre os assuntos que está estudando no momento. <br />
+            <br /> O aplicativo oferece um quiz personalizado para testar seu
+            conhecimento e consolidar o que aprendeu. Além disso, o Brain Train
+            possui um treino diário especial que identifica as questões que você
+            mais erra com frequência. O objetivo é estimular sua memorização e
+            fortalecer seus pontos fracos. <br />
+            <br />
+            Quanto mais acertar uma questão, mais distante no tempo ela voltará
+            a aparecer no treino. Caso erre uma pergunta, ela será penalizada,
+            retornando com mais frequência e mais próxima da data atual.
+            <br />
+            <br /> O Brain Train adapta-se ao seu desempenho, focando nas áreas
+            em que você mais precisa de prática. <br />
+            <br />
+            Nosso objetivo é ajudá-lo a melhorar constantemente seus
+            conhecimentos e obter um aprendizado efetivo.
           </p>
 
           <div>
