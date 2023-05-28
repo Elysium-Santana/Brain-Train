@@ -214,6 +214,7 @@ const ChooseTheme = () => {
             setIndexFormQuestion={setIndexFormQuestion}
             deleteTheme={deleteTheme}
             data={data}
+            setData={setData}
             deleteQuestion={deleteQuestion}
             messageTexts={messageTexts}
             message={message}

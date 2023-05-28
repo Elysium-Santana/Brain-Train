@@ -14,12 +14,12 @@ const Home = () => {
           <p className={styles.questionEdit} style={{ overflowY: 'scroll' }}>
             Bem-vindo ao Brain Train, o aplicativo que irá ajudá-lo a treinar
             seus conhecimentos! Aqui você pode criar uma lista personalizada de
-            perguntas sobre os assuntos que está estudando no momento. <br />
-            <br /> O aplicativo oferece um quiz personalizado para testar seu
-            conhecimento e consolidar o que aprendeu. Além disso, o Brain Train
-            possui um treino diário especial que identifica as questões que você
-            mais erra com frequência. O objetivo é estimular sua memorização e
-            fortalecer seus pontos fracos. <br />
+            temas sobre os assuntos que está estudando no momento. <br />
+            <br /> O aplicativo oferece a possibilidade personalizar um quiz
+            para testar seu conhecimento e consolidar o que aprendeu. Além
+            disso, o Brain Train possui um modo de treino diário especial que
+            identifica as questões que você mais erra com frequência. O objetivo
+            é estimular sua memorização e fortalecer seus pontos fracos. <br />
             <br />
             Quanto mais acertar uma questão, mais distante no tempo ela voltará
             a aparecer no treino. Caso erre uma pergunta, ela será penalizada,
