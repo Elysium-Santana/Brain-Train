@@ -50,18 +50,26 @@ const Modal = ({
           style={{
             backgroundColor: 'rgba(255,255,255,0.7)',
             padding: '2rem',
-            minWidth: '400px',
+            minWidth: '370px',
             maxWidth: '500px',
             borderRadius: '4px',
           }}
         >
-          <h1 style={{ color: '#555', fontSize: '1rem', marginBottom: '1rem' }}>
+          <h1
+            style={{
+              color: '#555',
+              fontSize: '1rem',
+              marginBottom: '1rem',
+              textAlign: 'center',
+            }}
+          >
             {message}
           </h1>
           {message === messageTexts[0] && (
             <>
               <AnswerEditInput
                 type={'text'}
+                maxLength="20"
                 onChange={({ target }) => setThemeValue(target.value)}
                 value={themeValue}
               />

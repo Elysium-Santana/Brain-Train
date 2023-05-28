@@ -27,6 +27,7 @@ const TrainForm = ({
   const [nexDate, setNexDate] = useState();
   const [showAnswer, setshowAnswer] = useState(null);
   const [localPoits, setLocalPoits] = useState(null);
+  const [enterAnimate, setEnterAnimate] = useState();
   const location = useLocation();
   let timeInterval = 80;
   let filter;
@@ -34,6 +35,7 @@ const TrainForm = ({
   useEffect(() => {
     setBackground_color(background.train);
     !themeSelected && goTo('/');
+    setEnterAnimate(true);
   }, []);
 
   useEffect(() => {
@@ -84,7 +86,7 @@ const TrainForm = ({
     } else {
       setThemeSelected(null);
       setMessage(messageTexts[1]);
-      localStorage.setItem('definidas', JSON.stringify(questions));
+      localStorage.setItem('defined', JSON.stringify(questions));
     }
   }
 
@@ -106,7 +108,6 @@ const TrainForm = ({
       const ano = date.getFullYear();
       return `${ano}-${mes}-${dia}`;
     }
-    // setDate(formatDate(nextDate));
     setNexDate(formatDate(nextDate));
   }
 
@@ -138,11 +139,19 @@ const TrainForm = ({
       }, timeInterval);
     } else {
       setTimeout(() => {
-        goNextQuestion();
+        setEnterAnimate(null);
+        animateTime();
       }, 600);
     }
   }
-
+  function animateTime() {
+    setTimeout(() => {
+      goNextQuestion();
+      setTimeout(() => {
+        setEnterAnimate(true);
+      }, 200);
+    }, 500);
+  }
   function goNextQuestion() {
     setAnswer();
     setshowAnswer(null);
@@ -164,6 +173,7 @@ const TrainForm = ({
               <section key={index} className={stylesForm.section}>
                 <div className={stylesForm.question}>
                   <TextBlock
+                    enterAnimate={enterAnimate && `${styles.active}`}
                     children={item.question}
                     cha={item.question.length}
                   />
@@ -171,7 +181,7 @@ const TrainForm = ({
                 <div className={stylesForm.answerBox}>
                   {item.options.map((itemOptions, indexOptions) => (
                     <AnswerInput
-                      cha={itemOptions.le}
+                      enterAnimate={enterAnimate && `${styles.active}`}
                       showAnsver={
                         showAnswer &&
                         (itemOptions === item.correctAnswer
@@ -179,6 +189,7 @@ const TrainForm = ({
                           : `${styles.wrong}`)
                       }
                       key={indexOptions}
+                      index={indexOptions}
                       label={itemOptions}
                       type={'radio'}
                       name={'quest'}

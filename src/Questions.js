@@ -1,4 +1,4 @@
-const pre_definidas = [
+const predefined = [
   {
     theme: 'CSS',
     questions: [
@@ -287,7 +287,7 @@ const pre_definidas = [
 ];
 const customQuestions = [
   {
-    theme: 'Geral',
+    theme: 'Conhecimentos gerais',
     questions: [
       {
         question: 'Qual é a capital do Brasil?',
@@ -324,8 +324,8 @@ const customQuestions = [
     ],
   },
 ];
-export let questions = { pre_definidas, customQuestions };
-const questionsAlterated = window.localStorage.getItem('definidas');
+export let questions = { predefined, customQuestions };
+const questionsAlterated = window.localStorage.getItem('defined');
 if (questionsAlterated) {
   questions = JSON.parse(questionsAlterated);
 }

@@ -25,3 +25,9 @@ ul{
   display: flex;
   height: 100vh;
  }
+ @media (max-width:470px) {
+  .material-symbols-outlined{
+    font-size: 1.5em;
+    
+   }
+}

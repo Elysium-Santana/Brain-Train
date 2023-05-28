@@ -107,7 +107,7 @@ const CreateNewQuestion = ({
       setQuestion('');
       setData([questions.customQuestions[index]]);
       textAreaFocus.current.focus();
-      localStorage.setItem('definidas', JSON.stringify(questions));
+      localStorage.setItem('defined', JSON.stringify(questions));
       param === 'edit'
         ? setMessage(messageTexts[8])
         : setMessage(messageTexts[5]);
@@ -206,12 +206,12 @@ const CreateNewQuestion = ({
           }
         />
         <NavButton
-          // style={data && { color: 'green' }}
-          children={data[0].questions.length > 0 ? 'Treinar' : 'voltar ao menu'}
-          // children={data ? 'Começar!' : 'Cancelar'}
+          children={
+            data && data[0].questions.length > 0 ? 'Treinar' : 'voltar ao menu'
+          }
           onClick={(event) => {
             event.preventDefault();
-            data[0].questions.length > 0
+            data && data[0].questions.length > 0
               ? goTo('/ChooseTheme/customs/form')
               : goTo('/');
           }}

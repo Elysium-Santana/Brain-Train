@@ -11,11 +11,11 @@ const Home = () => {
       <section className={styles.section}>
         <h1 className={styles.text}>Brain Train</h1>
         <BaseGlass>
-          <TextBlock
-            children={
+          <p className={styles.questionEdit}>
+            {
               'Bem-vindo ao Brain Train - o aplicativo perfeito para treinar e melhorar sua capacidade de memorização! Com o Brain Train, você pode criar sua própria lista de temas personalizados, selecionar temas já existentes ou até mesmo misturar ambos!'
             }
-          />
+          </p>
 
           <div>
             <h1 style={{ marginBottom: '1rem' }}>

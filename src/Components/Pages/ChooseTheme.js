@@ -16,8 +16,7 @@ import { questions } from '../../Questions';
 import Modal from './Modal';
 import CreateNewQuestion from './CreateNewQuestion';
 import settingsOff from '../../img/settingsOff.svg';
-import repeat from '../../img/repeat.svg';
-import CortexBatery from '../utilities/CortexBatery';
+import CortexBateryIcon from '../utilities/CortexBateryIcon';
 
 const ChooseTheme = () => {
   const [background_color, setBackground_color] = useState();
@@ -58,9 +57,9 @@ const ChooseTheme = () => {
 
   useEffect(() => {
     setBackground_color(styles.choose);
-    param === 'predefined' && setData(questions.pre_definidas);
+    param === 'predefined' && setData(questions.predefined);
     param === 'allTrains' &&
-      setData([...questions.pre_definidas, ...questions.customQuestions]);
+      setData([...questions.predefined, ...questions.customQuestions]);
     param === 'customs' && setData(questions.customQuestions);
     param === 'create' && setMessage(messageTexts[0]);
   }, []);
@@ -101,26 +100,28 @@ const ChooseTheme = () => {
               //VOLTAR
             }}
           />
-          {location.pathname.includes('form') &&
-            data &&
-            data[0].questions[IndexFormQuestion].date !== '1111-11-11' && (
-              <div className={styles.status}>
-                <ul>
-                  <li style={{ display: 'flex', alignItems: 'center' }}>
-                    <Icons children={'calendar_month'} />
-                    <p>
-                      {data[0].questions[IndexFormQuestion].date
-                        .split('-')
-                        .reverse()
-                        .join('/')}
-                    </p>
-                  </li>
-                  <li>
-                    <CortexBatery nivel={localRepeat} />
-                  </li>
-                </ul>
-              </div>
-            )}
+          {location.pathname.includes('form') && data && (
+            <div className={styles.status}>
+              <ul>
+                <li style={{ display: 'flex', alignItems: 'center' }}>
+                  <Icons children={'calendar_month'} />
+                  <p>
+                    {data &&
+                    data[0].questions[IndexFormQuestion].date !== '1111-11-11'
+                      ? data[0].questions[IndexFormQuestion].date
+                          .split('-')
+                          .reverse()
+                          .join('/')
+                      : '00/00/0000'}
+                  </p>
+                </li>
+                <li>
+                  <CortexBateryIcon nivel={localRepeat} />
+                  <p>{data && data[0].theme}</p>
+                </li>
+              </ul>
+            </div>
+          )}
           <nav
             style={{
               position: 'relative',

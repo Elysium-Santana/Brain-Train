@@ -38,8 +38,9 @@
   gap: 1rem;
 }
 .status ul li:last-child {
-  border-left: #666 solid 2px;
-  padding-left: 1rem;
+  border-left: rgba(0, 0, 0, 0.2) solid 2px;
+  padding: 0 1rem;
+  gap :.5rem
 }
 .menu {
   display: block; 
@@ -70,6 +71,7 @@
   max-height:500px;
   padding:  2rem 1rem ;
   align-self: center;
+  margin-left: 1rem;
 }
 
 body:has(.section.choose){
@@ -84,3 +86,56 @@ body:has(.section.create){
 
   background: linear-gradient(to bottom right, #9bdbca 0%, #fade9b 80%);
 }
+@media (max-width:720px) {
+  .section{
+    width: 100%;
+    max-height:100%;
+    padding: 0 1rem ;
+    margin:0 1rem;
+  }
+  .header{
+    margin-bottom: .5rem;
+  }
+  .status{
+    align-self: center;
+    padding: 3px ;
+    height: max-content;
+  }
+  .status ul{
+    gap: .3rem;
+  }
+  .status ul li:last-child {
+    padding: 0 .3rem;
+    gap :.3rem;
+  }
+  .status p{
+    font-size: .8rem;
+    line-height: .825;
+  }
+
+}
+@media (max-width:470px) {
+  
+  .section{    
+    margin:0 .5rem;
+    padding: 0;
+  }
+  .status p{
+    font-size: .62rem;
+    line-height: .825;
+  }
+  
+  
+  .cortexBateryIcon{
+    width: 22px;
+    height: 22px;
+  }
+  .material-symbols-outlined{
+    font-size: .9em;
+    
+   }
+  
+}
+
+
+

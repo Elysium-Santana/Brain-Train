@@ -47,6 +47,26 @@
 .buttonsBox{
   grid-area: 1/2;
   grid-row: 2/3;
-  /* gap: ; */
   height: 100%;
+}
+@media (max-width:720px) {
+  .form{    
+    grid-template-columns: 1fr;    
+    
+  }
+  .answersBox{   
+    grid-area: initial;
+    grid-row:initial;
+    gap: .5rem;
+  
+  }
+  .question{
+    grid-area:initial;
+  }
+  .buttonsBox{
+    grid-area:initial;
+    grid-row: initial;
+  }
+
+  
 }

@@ -54,6 +54,7 @@ const ThemeList = ({
       navigate('form');
       setMessage(messageTexts[2]);
     } else if (selectedTheme[0].questions.length === 0) {
+      setData(null);
       navigate(`create/${target.value}`);
 
       console.log('ok');

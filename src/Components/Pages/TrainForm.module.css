@@ -4,9 +4,11 @@
   width: 100%;
   grid-column: 1/-1;
   gap: 1rem;
+  overflow-x: hidden;
 }
 .answerBox{
   display: flex;
+  position: relative;
   flex-direction: column;
   grid-area: 1/1;
   grid-row: 1 / 4;
@@ -16,6 +18,7 @@
 .question{
   grid-area: 1/2;
   height: 100%;
+  position: relative;
 }
 .boxButtons{
   grid-area: 1/2;
@@ -23,3 +26,24 @@
   /* gap: ; */
   height: 100%;
 }
+@media (max-width:720px) {
+  .section{    
+    grid-template-columns: 1fr;        
+  }
+  .answerBox{   
+    grid-area: initial;
+    grid-row:initial;
+    gap: .5rem;  
+  }
+  .question{
+    grid-area:initial;
+   
+  }
+  .boxButtons{
+    grid-area:initial;
+    grid-row: initial;
+  }
+
+  
+}
+
