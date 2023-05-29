@@ -9,8 +9,8 @@ const Menu = () => {
   return (
     <>
       <section className={styles.section}>
-        <h1 className={styles.text}>Brain Train</h1>
-        <BaseGlass>
+        <h1>Brain Train</h1>
+        <div className={styles.menuContent}>
           <p className={styles.questionEdit} style={{ overflowY: 'scroll' }}>
             Bem-vindo ao Brain Train, o aplicativo que irá ajudá-lo a treinar
             seus conhecimentos! Aqui você pode criar uma lista personalizada de
@@ -59,7 +59,7 @@ const Menu = () => {
               />
             </ul>
           </div>
-        </BaseGlass>
+        </div>
       </section>
     </>
   );

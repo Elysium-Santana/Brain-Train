@@ -9,14 +9,14 @@ body{
   flex-direction: column;
   align-self: center;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   padding:  2rem 1rem ;
 }
 .section p{
   padding-top: 1rem;  
   font-size: .8rem;
   color: #666;
-  border-radius: 10px;
+  border-radius: 4px;
   padding:1rem;
   background-color: #fff;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
@@ -40,22 +40,52 @@ body{
   background-color: #eef;
 
 }
-h1{
+.menuContent{
+  padding:  1rem;
+  border-radius: 10px;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  min-height:200px;  
+}
+ .section > h1{
   font-size: 1.825rem;
   color: #666;
   margin-left: 1rem;
 }
+.menuContent h1 {
+  font-size: 1rem;
+  color:#666;
+ }
 @media (max-width:720px) {
-  .section{
-   
+  .section{   
     width: 100%;
     height:100%;
     padding: 1rem ;
   }
+  .menuContent{
+    grid-template-columns: 1fr;
+  }
   .section p{
-    align-self:start;
-   
+    align-self:start;   
     height: 200px;
   }
+ 
+}
+@media (max-height:420px) {
+  .section p{
+    align-self:center;   
+    height:100%;
+  }
+  
+   .menuContent{
+    height: 200%;
+  }
+  .section{
+    padding: .5rem;
+  }
+ 
 }
 

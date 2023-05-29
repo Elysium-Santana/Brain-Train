@@ -5,6 +5,7 @@
   grid-column: 1/-1;
   gap: 1rem;
   overflow-x: hidden;
+  min-height:200px;
 }
 .answerBox{
   display: flex;
@@ -30,8 +31,8 @@
   .section{    
     grid-template-columns: 1fr; 
     align-content: space-around;      
-    height: 100%;
-  }
+    height:100%;
+      }
   .answerBox{   
     grid-area: initial;
     grid-row:initial;
@@ -51,4 +52,20 @@
 
   
 }
+@media (max-height:420px) {
+  .section{
+    height:240px;
+    gap: .2rem;
+  }
+  .answerBox{       
+    gap: .2rem;  
+  }
+  .question{   
+    padding: 0;   
+  }
+  .boxButtons{
+   gap: .5rem;
+   padding: 0 ;
 
+  }
+}

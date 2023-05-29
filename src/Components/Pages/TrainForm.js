@@ -204,7 +204,6 @@ const TrainForm = ({
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    gap: '1rem',
                   }}
                 >
                   <NavButton

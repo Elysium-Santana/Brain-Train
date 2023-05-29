@@ -119,7 +119,9 @@ const ThemeList = ({
             className={styles.navButton}
             type="button"
             value="Deletar"
-            onClick={() => setMessage(messageTexts[11])}
+            onClick={() => {
+              deletables.length > 0 && setMessage(messageTexts[11]);
+            }}
           />
         </div>
       )}
