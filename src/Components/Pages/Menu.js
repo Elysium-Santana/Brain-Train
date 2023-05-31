@@ -2,14 +2,18 @@ import React from 'react';
 import styles from './Menu.module.css';
 import LinkButton_3 from '../utilities/LinkButton_3';
 import Icons from '../utilities/Icons';
-import BaseGlass from '../utilities/BaseGlass';
-import TextBlock from '../utilities/TextBlock';
-
+import logo from '../../img/logo.svg';
 const Menu = () => {
   return (
     <>
       <section className={styles.section}>
-        <h1>Brain Train</h1>
+        <img
+          width="270px"
+          height="54px"
+          style={{ alignSelf: 'center', marginBottom: '.5rem' }}
+          src={logo}
+          alt=""
+        />
         <div className={styles.menuContent}>
           <p className={styles.questionEdit} style={{ overflowY: 'scroll' }}>
             Bem-vindo ao Brain Train, o aplicativo que irá ajudá-lo a treinar
