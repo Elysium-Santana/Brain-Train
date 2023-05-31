@@ -8,8 +8,8 @@ const Menu = () => {
     <>
       <section className={styles.section}>
         <img
-          width="270px"
-          height="54px"
+          width="200px"
+          height="40px"
           style={{ alignSelf: 'center', marginBottom: '.5rem' }}
           src={logo}
           alt=""
