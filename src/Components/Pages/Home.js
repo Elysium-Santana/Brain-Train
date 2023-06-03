@@ -30,22 +30,22 @@ const Home = () => {
   const location = useLocation();
 
   const messageTexts = [
-    'Crie um tema para seu treino diário.',
+    'Crie um tema para o seu treino diário.',
     'Desafio concluído.',
-    'Vamos começar!!',
-    'Nenhuma pendência com esse tema para hoje. Escolha outro tema ou tente mais tarde.',
-    'Dados Repetidos. Por favor, cheque os campos.',
+    'Vamos começar!',
+    'Nenhuma pendência com esse tema agendada para hoje. Escolha outro tema ou tente amanhã.',
+    'Dados repetidos. Por favor, verifique os campos.',
     'Questão adicionada com sucesso!',
-    'Tem certeza de que deseja excluir essa questão? ',
+    'Tem certeza de que deseja excluir essa questão?',
     'Questão excluída.',
     'Conteúdo editado.',
-    'Sua lista de questões para esse tema esta vazia. Deseja adicionar uma questão? ',
+    'Sua lista de questões para esse tema está vazia. Deseja adicionar uma questão?',
     'Deseja salvar as alterações?',
-    'Todas as questões contidas neste tema serão excluídas. Deseja excluir o tema? ',
+    'Todas as questões contidas neste tema serão excluídas. Deseja excluir o tema?',
     'Tema excluído.',
-    'Sua lista de temas esta vazia. Deseja criar um tema?',
-    'Palavras grandes demais podem dificultar sua memorização. Por favor, cheque os campos.',
-    'Ação indisponível. Para ter acesso a conteúdos customizaveis, volte ao menu inicial e selecione a opção "Personalizados".',
+    'Sua lista de temas está vazia. Deseja criar um tema?',
+    'Palavras muito grandes dificultam a assimilação do conteúdo. Por favor, verifique os campos.',
+    'Ação indisponível. Para ter acesso a conteúdos personalizáveis, volte ao menu inicial e selecione a opção "Personalizados".',
   ];
 
   const navigate = useNavigate();

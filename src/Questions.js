@@ -284,6 +284,151 @@ const predefined = [
       },
     ],
   },
+
+  {
+    theme: 'ReactJs',
+    questions: [
+      {
+        question: 'O que é ReactJS?',
+        options: [
+          'Uma biblioteca de JavaScript para construção de interfaces de usuário.',
+          'Uma linguagem de programação para desenvolvimento web.',
+          'Um sistema operacional desenvolvido pela Facebook.',
+          'Uma estrutura para criação de bancos de dados.',
+        ],
+        correctAnswer:
+          'Uma biblioteca de JavaScript para construção de interfaces de usuário.',
+        points: 2,
+        repeat: 0,
+        date: '1111-11-11',
+      },
+      {
+        question: 'Quais são os principais conceitos do ReactJS?',
+        options: [
+          'Componentes, estado (state) e propriedades (props).',
+          'Variáveis, loops e condicionais.',
+          'Banco de dados, autenticação e criptografia.',
+          'APIs REST, GraphQL e WebSocket.',
+        ],
+        correctAnswer: 'Componentes, estado (state) e propriedades (props).',
+        points: 3,
+        repeat: 0,
+        date: '1111-11-11',
+      },
+      {
+        question: 'O que é JSX no contexto do ReactJS?',
+        options: [
+          'Uma linguagem de marcação usada para escrever componentes React.',
+          'Um formato de arquivo de configuração usado no React.',
+          'Uma biblioteca para gerenciamento de estado no React.',
+          'Uma abreviação para JavaScript XML.',
+        ],
+        correctAnswer:
+          'Uma linguagem de marcação usada para escrever componentes React.',
+        points: 2,
+        repeat: 0,
+        date: '1111-11-11',
+      },
+      {
+        question: 'Como criar um componente funcional no ReactJS?',
+        options: [
+          'Usando a classe `Component` do React.',
+          'Usando a palavra-chave `function` e retornando JSX.',
+          'Definindo uma variável com a função do componente.',
+          'Importando um módulo específico do React para criação de componentes funcionais.',
+        ],
+        correctAnswer: 'Usando a palavra-chave `function` e retornando JSX.',
+        points: 2,
+        repeat: 0,
+        date: '1111-11-11',
+      },
+      {
+        question: 'O que é o estado (state) em um componente ReactJS?',
+        options: [
+          'Uma propriedade que define a aparência visual de um componente.',
+          'Uma função que manipula eventos de clique em um componente.',
+          'Uma forma de persistir dados localmente em um componente.',
+          'Um objeto que armazena dados específicos de um componente.',
+        ],
+        correctAnswer:
+          'Um objeto que armazena dados específicos de um componente.',
+        points: 3,
+        repeat: 0,
+        date: '1111-11-11',
+      },
+      {
+        question:
+          'Como passar propriedades (props) para um componente ReactJS?',
+        options: [
+          'Através de uma variável global no escopo do componente.',
+          'Usando a sintaxe `props={...}` ao renderizar o componente.',
+          'Definindo as propriedades diretamente no arquivo de configuração do React.',
+          'Passando-as como argumentos ao chamar o componente.',
+        ],
+        correctAnswer: 'Passando-as como argumentos ao chamar o componente.',
+        points: 2,
+        repeat: 0,
+        date: '1111-11-11',
+      },
+      {
+        question:
+          'Quais são os principais métodos do ciclo de vida de um componente ReactJS?',
+        options: [
+          'start(), update(), finish()',
+          'componentDidMount(), componentDidUpdate(), componentWillUnmount()',
+          'create(), render(), destroy()',
+          'init(), execute(), cleanup()',
+        ],
+        correctAnswer:
+          'componentDidMount(), componentDidUpdate(), componentWillUnmount()',
+        points: 3,
+        repeat: 0,
+        date: '1111-11-11',
+      },
+      {
+        question: 'O que é o React Router e para que ele é usado?',
+        options: [
+          'Uma biblioteca para gerenciamento de estado no ReactJS.',
+          'Uma ferramenta para realizar testes automatizados em componentes React.',
+          'Um pacote que permite a criação de animações complexas em componentes React.',
+          'Uma solução para o roteamento e navegação em aplicações React.',
+        ],
+        correctAnswer:
+          'Uma solução para o roteamento e navegação em aplicações React.',
+        points: 2,
+        repeat: 0,
+        date: '1111-11-11',
+      },
+      {
+        question:
+          'Quais são os principais métodos de renderização condicional no ReactJS?',
+        options: [
+          'if-else, switch-case',
+          'renderIf(), renderSwitch()',
+          'ifRender(), switchRender()',
+          'if statement, operador ternário',
+        ],
+        correctAnswer: 'if statement, operador ternário',
+        points: 2,
+        repeat: 0,
+        date: '1111-11-11',
+      },
+      {
+        question: 'Como lidar com formulários no ReactJS?',
+        options: [
+          'Usando somente tags de input HTML.',
+          'Importando uma biblioteca externa para gerenciamento de formulários.',
+          'Definindo um estado (state) separado para cada campo de formulário.',
+          'Utilizando o estado (state) do componente e manipulando eventos de formulário.',
+        ],
+        correctAnswer:
+          'Utilizando o estado (state) do componente e manipulando eventos de formulário.',
+        points: 3,
+        repeat: 0,
+        date: '1111-11-11',
+      },
+    ],
+  },
 ];
 const customQuestions = [
   {
@@ -294,7 +439,7 @@ const customQuestions = [
         options: ['São Paulo', 'Rio de Janeiro', 'Brasília', 'Salvador'],
         correctAnswer: 'Brasília',
         id: 1,
-        points: 0,
+        points: 2,
         repeat: 0,
         date: '1111-11-11',
       },
@@ -303,7 +448,7 @@ const customQuestions = [
         options: ['Elefante', 'Girafa', 'Rinoceronte', 'Hipopótamo'],
         correctAnswer: 'Elefante',
         id: 2,
-        points: 3,
+        points: 7,
         repeat: 0,
         date: '1111-11-11',
       },
@@ -317,7 +462,7 @@ const customQuestions = [
         ],
         correctAnswer: 'Guimarães Rosa',
         id: 3,
-        points: 1,
+        points: 4,
         repeat: 0,
         date: '1111-11-11',
       },

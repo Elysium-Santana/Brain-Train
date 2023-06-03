@@ -6,14 +6,12 @@ import styles from '../utilities/Utilities.module.css';
 import stylesForm from '../Pages/TrainForm.module.css';
 import background from './Home.module.css';
 import { questions } from '../../Questions';
-import NavButton_2 from '../utilities/NavButton_2';
 import Icons from '../utilities/Icons';
 import { useLocation } from 'react-router-dom';
 
 const TrainForm = ({
   goTo,
   data,
-  setData,
   setMessage,
   messageTexts,
   setBackground_color,
@@ -45,7 +43,6 @@ const TrainForm = ({
         (item) => item.theme !== data[0].theme,
       );
       questions.customQuestions = [data[0], ...themes];
-      console.log(questions.customQuestions);
     }
   }, [data]);
 
@@ -82,7 +79,6 @@ const TrainForm = ({
 
     if (filter.length > 0) {
       setThemeSelected({ theme: themeSelected.theme, questions: filter });
-      console.log(questions);
     } else {
       setThemeSelected(null);
       setMessage(messageTexts[1]);
@@ -117,7 +113,7 @@ const TrainForm = ({
         ? colorOcilation()
         : IndexFormQuestion < themeSelected.questions.length - 1 &&
           setIndexFormQuestion(IndexFormQuestion + 1);
-      if (item.correctAnswer === answer && answer) {
+      if (item.correctAnswer === answer && answer && localPoits < 10) {
         setLocalPoits(localPoits + 1);
         setLocalRepeat(localRepeat - 1);
       } else if (answer) {

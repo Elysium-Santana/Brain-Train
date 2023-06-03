@@ -39,7 +39,7 @@ const ThemeList = ({
     selectedTheme = data.filter((item) => item.theme === target.value);
     selectQuestions = selectedTheme[0].questions.filter((item) => {
       item.options.sort(() => Math.random() - 0.5);
-      item.repeat = 3;
+      item.repeat = item.points > 6 ? 1 : item.points > 3 ? 2 : 3;
       const questionDate = new Date(item.date);
       return questionDate < atualDate;
     });
@@ -56,8 +56,6 @@ const ThemeList = ({
     } else if (selectedTheme[0].questions.length === 0) {
       setData(null);
       navigate(`create/${target.value}`);
-
-      console.log('ok');
     } else {
       setMessage(messageTexts[3]);
       selectQuestions = false;

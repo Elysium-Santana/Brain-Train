@@ -23,8 +23,9 @@ Bem-vindo ao repositório do Brain Train! Este é um aplicativo que desenvolvi p
 - Acesse o Brain Train no seu navegador.
 - Explore os temas disponíveis ou crie seus próprios temas.
 - Insira manualmente as questões relacionadas aos temas selecionados.
-- Comece a revisar as questões diariamente e acompanhe seu progresso.<br>
+- Após escolher um tema, apenas serão exibidas as perguntas agendadas para o dia atual ou para o dia anterior.
+- Após concluir o desafio, as perguntas que você respondeu serão agendadas com base no seu desempenho.
+- Comece a revisar as questões diariamente e acompanhe seu progresso.
+  <br>
 
-Espero que o Brain Train seja útil em sua jornada de aprendizado e revisão. Aproveite o aplicativo e bons estudos!<br>
-
-Atenciosamente, Elisio Santana
+Espero que o Brain Train seja útil em sua jornada de aprendizado e revisão. Aproveite o aplicativo e bons estudos!
