@@ -7,10 +7,15 @@ body{
 .section{
   display: flex;
   flex-direction: column;
-  align-self: center;
+  /* align-self: center; */
   width: 100%;
+justify-content: center;  
   height: 100vh;
   padding:  2rem 1rem ;
+  max-height:600px;
+  padding: 0.2rem 1rem ;
+  align-self: center;
+  /* margin-left: 1rem; */
 }
 .section p{
   padding-top: 1rem;  
