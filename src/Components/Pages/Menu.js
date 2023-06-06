@@ -43,7 +43,7 @@ const Menu = () => {
             <ul className={styles.controlsBox}>
               <LinkButton_3
                 to={'/Home/predefined'}
-                children={'Temas pré Definidos'}
+                children={'Temas predefinidos'}
                 icon={<Icons children={'approval_delegation'} />}
               />
               <LinkButton_3
