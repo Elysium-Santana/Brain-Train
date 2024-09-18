@@ -91,11 +91,11 @@ const TrainForm = ({
     const nextDate = new Date();
     let diasAdicionais = 0;
     if (localPoits > 6) {
-      diasAdicionais = 15;
+      diasAdicionais = 0;
     } else if (localPoits > 3) {
-      diasAdicionais = 5;
+      diasAdicionais = 0;
     } else if (localPoits > 1) {
-      diasAdicionais = 1;
+      diasAdicionais = 0;
     }
     nextDate.setDate(dataAtual.getDate() + diasAdicionais);
     function formatDate(date) {
