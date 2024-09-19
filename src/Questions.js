@@ -776,274 +776,367 @@ const customQuestions = [
     theme:'Aula-2',
     questions:[
       {
-        question: 'O que é um processo em termos de computação?',
-        options: ['Um programa armazenado no disco', 'Um programa em execução', 'Um arquivo de sistema', 'Uma configuração do sistema operacional'],
-        correctAnswer: 'Um programa em execução',
+        question: "Em que consiste a estrutura de um Sistema Operacional (SO)?",
+        options: [
+          "Apenas gerenciamento de memória",
+          "Gerenciamento de processos e dispositivos",
+          "Gerenciamento de arquivos e proteção",
+          "Gerência de processador/processos, memória, dispositivos, arquivos e proteção"
+        ],
+        correctAnswer: "Gerência de processador/processos, memória, dispositivos, arquivos e proteção",
+        id: 6,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Como funcionavam os sistemas em lote (batch)?",
+        options: [
+          "Executavam múltiplos jobs ao mesmo tempo",
+          "Executavam 1 job por vez",
+          "Permitiam multitarefa",
+          "Não utilizavam memória"
+        ],
+        correctAnswer: "Executavam 1 job por vez",
+        id: 7,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que caracteriza a multiprogramação nos sistemas atuais?",
+        options: [
+          "Várias atividades simultâneas e processamento muito rápido",
+          "Apenas uma atividade por vez",
+          "Execução sequencial de tarefas",
+          "Dependência de sistemas batch"
+        ],
+        correctAnswer: "Várias atividades simultâneas e processamento muito rápido",
+        id: 8,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que caracteriza os sistemas monoprocessados?",
+        options: [
+          "Paralelismo de alta granularidade",
+          "Real paralelismo",
+          "Falsa sensação de paralelismo",
+          "Execução simultânea de múltiplos processos"
+        ],
+        correctAnswer: "Falsa sensação de paralelismo",
+        id: 9,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Como os sistemas multiprocessados operam?",
+        options: [
+          "Falsa sensação de paralelismo",
+          "Paralelismo de alta granularidade",
+          "Apenas um processador",
+          "Execução sequencial de tarefas"
+        ],
+        correctAnswer: "Paralelismo de alta granularidade",
+        id: 10,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual a função principal de um Sistema Operacional?",
+        options: [
+          "Executar um único processo",
+          "Coordenar acesso a recursos e gerenciar múltiplas requisições de processos",
+          "Apenas gerenciar memória",
+          "Controlar o uso da rede"
+        ],
+        correctAnswer: "Coordenar acesso a recursos e gerenciar múltiplas requisições de processos",
+        id: 11,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "De acordo com Andrew S. Tanenbaum, o que é um processo?",
+        options: [
+          "Um programa em execução",
+          "Um programa armazenado no disco",
+          "Um arquivo de dados",
+          "Um dispositivo de entrada/saída"
+        ],
+        correctAnswer: "Um programa em execução",
         id: 12,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Como um processo é iniciado quando um arquivo é clicado duas vezes?',
-        options: ['O sistema operacional ignora o clique', 'O sistema operacional solicita ao processador para iniciar o arquivo', 'O sistema operacional verifica o tipo do arquivo e inicia o programa apropriado', 'O sistema operacional abre o arquivo diretamente'],
-        correctAnswer: 'O sistema operacional verifica o tipo do arquivo e inicia o programa apropriado',
+        question: "O que um processo contém, de acordo com os tópicos abordados?",
+        options: [
+          "Endereçamento em memória, programa em execução e troca de contexto",
+          "Somente identificadores",
+          "Apenas o programa em execução",
+          "Somente endereçamento em memória"
+        ],
+        correctAnswer: "Endereçamento em memória, programa em execução e troca de contexto",
         id: 13,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Como um processo é iniciado quando um arquivo é clicado duas vezes?',
-        options: ['O sistema operacional ignora o clique', 'O sistema operacional solicita ao processador para iniciar o arquivo', 'O sistema operacional verifica o tipo do arquivo e inicia o programa apropriado', 'O sistema operacional abre o arquivo diretamente'],
-        correctAnswer: 'O sistema operacional verifica o tipo do arquivo e inicia o programa apropriado',
-        id: 13,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'O que acontece quando você clica duas vezes em um arquivo de e-book?',
-        options: ['O e-book é excluído', 'O sistema operacional abre um processador de texto para visualizar o e-book', 'O sistema operacional fecha todos os programas abertos', 'O sistema operacional instala um novo programa'],
-        correctAnswer: 'O sistema operacional abre um processador de texto para visualizar o e-book',
+        question: "Quais são as áreas principais de um processo em memória e suas funções?",
+        options: [
+          "Seção de texto, seção de dados, heap e pilha",
+          "Somente a seção de texto e a pilha",
+          "Apenas o heap e a seção de dados",
+          "Somente variáveis globais e parâmetros de função"
+        ],
+        correctAnswer: "Seção de texto, seção de dados, heap e pilha",
         id: 14,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual é o papel do sistema operacional ao iniciar um programa?',
-        options: ['Desinstalar o programa', 'Verificar a integridade do arquivo', 'Consultar a lista de programas capazes de executar o arquivo e solicitar o uso do processador', 'Criar um novo arquivo'],
-        correctAnswer: 'Consultar a lista de programas capazes de executar o arquivo e solicitar o uso do processador',
+        question: "Qual área de um processo em memória contém o código do programa e o contador do programa?",
+        options: [
+          "Seção de texto",
+          "Seção de dados",
+          "Heap",
+          "Pilha"
+        ],
+        correctAnswer: "Seção de texto",
         id: 15,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual é a diferença principal entre sistemas operacionais para computadores em lote e computadores pessoais?',
-        options: ['Os computadores pessoais executam um processo por vez, enquanto os sistemas em lote executam vários processos ao mesmo tempo.', 'Os computadores pessoais podem executar vários processos simultaneamente, enquanto os sistemas em lote normalmente executam um processo por vez.', 'Os sistemas em lote não suportam multitarefa, enquanto os computadores pessoais suportam multitarefa.', 'Não há diferença significativa entre os dois tipos de sistemas operacionais.'],
-        correctAnswer: 'Os computadores pessoais podem executar vários processos simultaneamente, enquanto os sistemas em lote normalmente executam um processo por vez.',
-        id: 12,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'O que é mostrado na aba de processos do Gerenciador de Tarefas do Windows?',
-        options: ['A lista de arquivos abertos pelo sistema', 'Os programas e processos em execução coordenados pelo sistema operacional', 'A quantidade de memória física disponível', 'O histórico de navegação na internet'],
-        correctAnswer: 'Os programas e processos em execução coordenados pelo sistema operacional',
-        id: 13,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'Qual comando é usado no Linux para listar os processos em execução?',
-        options: ['ls', 'ps', 'top', 'df'],
-        correctAnswer: 'ps',
-        id: 14,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'O que caracteriza um processo em um sistema operacional?',
-        options: ['Somente o código-fonte do programa', 'Somente o uso de CPU', 'A combinação de código-fonte, dados, recursos de sistema e contexto de execução', 'A quantidade de memória física utilizada'],
-        correctAnswer: 'A combinação de código-fonte, dados, recursos de sistema e contexto de execução',
-        id: 15,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'Por que os sistemas operacionais de computadores pessoais devem suportar multitarefa?',
-        options: ['Para permitir que vários programas sejam executados simultaneamente, como navegação na internet e reprodução de música', 'Para reduzir o uso de memória', 'Para aumentar a complexidade do sistema', 'Para impedir que o usuário altere as configurações do sistema'],
-        correctAnswer: 'Para permitir que vários programas sejam executados simultaneamente, como navegação na internet e reprodução de música',
+        question: "Onde são armazenadas as variáveis globais de um processo?",
+        options: [
+          "Seção de dados",
+          "Seção de texto",
+          "Heap",
+          "Pilha"
+        ],
+        correctAnswer: "Seção de dados",
         id: 16,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual seção de um processo contém o código do programa, o contador do programa e o conteúdo dos registradores do processador?',
-        options: ['Seção de Dados', 'Heap', 'Pilha', 'Seção de Texto'],
-        correctAnswer: 'Seção de Texto',
-        id: 12,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'Qual área de um processo é responsável por armazenar variáveis globais?',
-        options: ['Seção de Texto', 'Heap', 'Pilha', 'Seção de Dados'],
-        correctAnswer: 'Seção de Dados',
-        id: 13,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'Qual área do processo representa o espaço para alocação dinâmica de memória durante a execução?',
-        options: ['Seção de Dados', 'Heap', 'Pilha', 'Seção de Texto'],
-        correctAnswer: 'Heap',
-        id: 14,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'Onde são armazenados dados temporários como parâmetros de função, endereços de retorno e variáveis locais?',
-        options: ['Heap', 'Seção de Dados', 'Pilha', 'Seção de Texto'],
-        correctAnswer: 'Pilha',
-        id: 15,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'Qual seção do processo pode aumentar de tamanho à medida que o processo é executado?',
-        options: ['Seção de Texto', 'Seção de Dados', 'Heap e Pilha', 'Heap'],
-        correctAnswer: 'Heap e Pilha',
-        id: 16,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'Qual é uma das situações em que um processo pode ser criado, segundo Tanenbaum?',
-        options: ['Início do sistema', 'Criação de um novo usuário', 'Atualização de software', 'Desligamento do sistema'],
-        correctAnswer: 'Início do sistema',
-        id: 12,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'Qual comando geralmente é usado para criar um novo processo por um processo em execução?',
-        options: ['Executar', 'Start', 'Fork', 'Run'],
-        correctAnswer: 'Fork',
-        id: 13,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'O que caracteriza o término normal voluntário de um processo?',
-        options: ['Erro fatal', 'Solicitação do usuário para encerrar', 'Execução de um processo em lote', 'Criação de um novo processo'],
-        correctAnswer: 'Solicitação do usuário para encerrar',
-        id: 14,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'O que é um término por erro voluntário de um processo?',
-        options: ['Quando o processo cumpre sua finalidade com sucesso', 'Quando o processo informa um erro fatal e encerra', 'Quando o processo é criado por outro processo', 'Quando um processo em lote é finalizado'],
-        correctAnswer: 'Quando o processo informa um erro fatal e encerra',
-        id: 15,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'Qual situação descreve a criação de um processo mediante tarefas em lote?',
-        options: ['Criação durante o início do sistema', 'Solicitação do usuário', 'Processos em lote são executados até o fim', 'Criação por outro processo em execução'],
-        correctAnswer: 'Processos em lote são executados até o fim',
-        id: 16,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'O que caracteriza um erro fatal involuntário durante a execução de um processo?',
-        options: ['Instrução ilegal ou não planejada', 'Solicitação do usuário para encerrar', 'Término por erro fatal', 'Criação de um novo processo'],
-        correctAnswer: 'Instrução ilegal ou não planejada',
+        question: "Qual área de um processo em memória é usada para alocação dinâmica de memória durante a execução?",
+        options: [
+          "Heap",
+          "Pilha",
+          "Seção de dados",
+          "Seção de texto"
+        ],
+        correctAnswer: "Heap",
         id: 17,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual comando é usado no Linux para cancelar um processo involuntariamente?',
-        options: ['kill', 'stop', 'end', 'remove'],
-        correctAnswer: 'kill',
+        question: "Qual área do processo contém dados temporários como parâmetros de função e variáveis locais?",
+        options: [
+          "Pilha",
+          "Heap",
+          "Seção de dados",
+          "Seção de texto"
+        ],
+        correctAnswer: "Pilha",
         id: 18,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Como é chamado o término de um processo devido a um erro não tratado, que faz com que o programa trave e emita mensagens de erro?',
-        options: ['Erro fatal involuntário', 'Término normal voluntário', 'Cancelamento por outro processo involuntário', 'Erro fatal voluntário'],
-        correctAnswer: 'Erro fatal involuntário',
+        question: "O que são recursos em um sistema operacional?",
+        options: [
+          "Componentes necessários para a execução de um processo",
+          "Apenas hardware físico",
+          "Somente software",
+          "Dados temporários do sistema"
+        ],
+        correctAnswer: "Componentes necessários para a execução de um processo",
         id: 19,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual técnica é utilizada para finalizar um programa que não responde às solicitações dos dispositivos de entrada?',
-        options: ['Cancelamento por outro processo involuntário', 'Erro fatal voluntário', 'Criação de um novo processo', 'Execução de tarefas em lote'],
-        correctAnswer: 'Cancelamento por outro processo involuntário',
+        question: "Quais dos seguintes são exemplos de recursos necessários para a execução de um processo?",
+        options: [
+          "Tempo de CPU, registradores, memória, arquivos e dispositivos de entrada/saída",
+          "Apenas arquivos e memória",
+          "Somente tempo de CPU e registradores",
+          "Somente dispositivos de entrada/saída"
+        ],
+        correctAnswer: "Tempo de CPU, registradores, memória, arquivos e dispositivos de entrada/saída",
         id: 20,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual é a diferença entre término por erro e término por erro fatal?',
-        options: ['Tratamento da exceção de erro durante o desenvolvimento', 'Finalização por outro processo', 'Erro fatal involuntário', 'Criação de um novo processo'],
-        correctAnswer: 'Tratamento da exceção de erro durante o desenvolvimento',
+        question: "Término normal voluntário, término por erro, erro fatal involuntário e cancelamento por outro processo são exemplos de:",
+        options: [
+          "Situações de destruição de processos",
+          "Exceções de memória",
+          "Gerenciamento de arquivos",
+          "Recursos de sistema"
+        ],
+        correctAnswer: "Situações de destruição de processos",
         id: 21,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual é o estado de um processo quando ele está aguardando uma resposta externa, como a de um dispositivo de E/S?',
-        options: ['Novo', 'Em execução', 'Em espera', 'Pronto'],
-        correctAnswer: 'Em espera',
-        id: 17,
+        question: "O que é uma interrupção em um sistema operacional?",
+        options: [
+          "Um sinal de hardware que informa a ocorrência de um evento",
+          "Um processo que está aguardando resposta externa",
+          "Um erro de execução de programa",
+          "Uma função de gerenciamento de memória"
+        ],
+        correctAnswer: "Um sinal de hardware que informa a ocorrência de um evento",
+        id: 27,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual estado é atribuído a um processo quando ele está aguardando ser atribuído a um processador?',
-        options: ['Novo', 'Em execução', 'Em espera', 'Pronto'],
-        correctAnswer: 'Pronto',
-        id: 18,
+        question: "O que são threads em um processo?",
+        options: [
+          "Atividades (tarefas) que um processo executa",
+          "Unidades de armazenamento de dados",
+          "Componentes de hardware",
+          "Tipos de processos"
+        ],
+        correctAnswer: "Atividades (tarefas) que um processo executa",
+        id: 28,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual estado um processo está em quando suas instruções estão sendo executadas?',
-        options: ['Novo', 'Em execução', 'Em espera', 'Concluído'],
-        correctAnswer: 'Em execução',
-        id: 19,
+        question: "Qual é uma característica dos processos monothread?",
+        options: [
+          "1 batch job = 1 thread",
+          "Execução simultânea de múltiplas threads",
+          "Uso de múltiplos núcleos de processador",
+          "Execução apenas em sistemas multithread"
+        ],
+        correctAnswer: "1 batch job = 1 thread",
+        id: 29,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual estado é atribuído a um processo que acabou de ser criado e está aguardando para ser iniciado?',
-        options: ['Novo', 'Pronto', 'Em execução', 'Concluído'],
-        correctAnswer: 'Novo',
-        id: 20,
+        question: "Qual é um exemplo de processo multithread?",
+        options: [
+          "Computadores domésticos",
+          "Sistemas de processamento em lote",
+          "Batch jobs",
+          "Programas de linha de comando"
+        ],
+        correctAnswer: "Computadores domésticos",
+        id: 30,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Quando um processo termina sua execução, qual estado ele alcança?',
-        options: ['Novo', 'Em execução', 'Em espera', 'Concluído'],
-        correctAnswer: 'Concluído',
-        id: 21,
+        question: "O que é uma condição de corrida em sistemas operacionais?",
+        options: [
+          "Um processo dependendo do resultado de outro para continuar",
+          "Um erro de hardware",
+          "Um tipo de memória volátil",
+          "Uma técnica de gerenciamento de processos"
+        ],
+        correctAnswer: "Um processo dependendo do resultado de outro para continuar",
+        id: 31,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
+      },
+      {
+        question: "O que é a solução de Peterson em sistemas operacionais?",
+        options: [
+          "Uma fila de acessos à região crítica",
+          "Uma técnica de gerenciamento de memória",
+          "Um algoritmo de criptografia",
+          "Uma estratégia de alocação de recursos"
+        ],
+        correctAnswer: "Uma fila de acessos à região crítica",
+        id: 33,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é a principal desvantagem da solução de Peterson?",
+        options: [
+          "Espera ociosa",
+          "Baixa eficiência na alocação de memória",
+          "Complexidade de implementação",
+          "Alto consumo de CPU"
+        ],
+        correctAnswer: "Espera ociosa",
+        id: 34,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que é um escalonador em um sistema operacional?",
+        options: [
+          "Um algoritmo que decide qual processo deve utilizar o processador",
+          "Uma unidade de hardware responsável pelo processamento",
+          "Um tipo de memória usada para armazenar processos",
+          "Um componente de rede que gerencia a comunicação entre processos"
+        ],
+        correctAnswer: "Um algoritmo que decide qual processo deve utilizar o processador",
+        id: 35,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },{
+        question: "Qual é a característica principal dos algoritmos de escalonamento preemptivos?",
+        options: [
+          "Processo executa até um tempo máximo fixado (quantum)",
+          "Processo executa até que seja bloqueado ou encerre",
+          "Processo é executado apenas se houver recursos suficientes",
+          "Processo é escalonado com base na prioridade estática"
+        ],
+        correctAnswer: "Processo executa até um tempo máximo fixado (quantum)",
+        id: 36,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é a característica principal dos algoritmos de escalonamento preemptivos?",
+        options: [
+          "Processo executa até um tempo máximo fixado (quantum)",
+          "Processo executa até que seja bloqueado ou encerre",
+          "Processo é executado apenas se houver recursos suficientes",
+          "Processo é escalonado com base na prioridade estática"
+        ],
+        correctAnswer: "Processo executa até um tempo máximo fixado (quantum)",
+        id: 36,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
       },
       
       
@@ -1063,6 +1156,7 @@ const customQuestions = [
       
       
       
+
       
       
       
@@ -1070,8 +1164,10 @@ const customQuestions = [
       
       
       
-              
-]
+      
+      
+
+    ]
   }
 
 ];
