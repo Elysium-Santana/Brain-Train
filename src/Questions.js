@@ -1645,7 +1645,7 @@ const customQuestions = [
       {
         question: "Qual é a função do relógio como dispositivo de entrada/saída?",
         options: [
-          "Fornecer a contagem do tempo para sincronização de processos",
+          "Fornecer impulsos de interrupção para organizar os processos",
           "Armazenar dados em blocos de tamanho fixo",
           "Gerenciar o fluxo de dados entre dispositivos de armazenamento",
           "Enviar cadeias de dados em fluxo contínuo"
@@ -1692,7 +1692,7 @@ const customQuestions = [
           "Equipamento especializado em processamento gráfico",
           "Servidor de pequeno porte para tarefas simples"
         ],
-        correctAnswer: "Computador de grande porte que utilizam múltiplos barramentos",
+        correctAnswer: "Computador de grande porte",
         id: 64,
         points: 0,
         repeat: 0,
