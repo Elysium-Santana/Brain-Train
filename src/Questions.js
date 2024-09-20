@@ -1581,7 +1581,8 @@ const customQuestions = [
         points: 0,
         repeat: 0,
         date: "1111-11-11"
-      }
+      },
+
       
       
       
@@ -1608,6 +1609,154 @@ const customQuestions = [
       
       
 
+    ]
+  },
+  {
+    theme:'UNIDADE 4',
+    questions:[
+      {
+        question: "O que caracteriza um dispositivo de bloco?",
+        options: [
+          "Armazena dados em blocos de tamanho fixo, como HD e pen drive",
+          "Envia ou recebe cadeias de dados em fluxo contínuo",
+          "Realiza a leitura de dados em tempo real",
+          "Controla dispositivos de entrada como mouse e teclado"
+        ],
+        correctAnswer: "Armazena dados em blocos de tamanho fixo, como HD e pen drive",
+        id: 56,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que caracteriza um dispositivo de caractere?",
+        options: [
+          "Fluxo contínuo de dados, como mouse e teclado",
+          "Armazena dados em blocos de tamanho fixo",
+          "Lê dados armazenados de forma permanente",
+          "Utiliza uma tabela de blocos para transferência de dados"
+        ],
+        correctAnswer: "Fluxo contínuo de dados, como mouse e teclado",
+        id: 57,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é a função do relógio como dispositivo de entrada/saída?",
+        options: [
+          "Fornecer a contagem do tempo para sincronização de processos",
+          "Armazenar dados em blocos de tamanho fixo",
+          "Gerenciar o fluxo de dados entre dispositivos de armazenamento",
+          "Enviar cadeias de dados em fluxo contínuo"
+        ],
+        correctAnswer: "Fornecer impulsos de interrupção para organizar os processos",
+        id: 58,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual componente de hardware manipula streams e blocos de dados, realiza a correção de erros (checksum), faz a bufferização e a interface entre o dispositivo e o barramento?",
+        options: [
+          "Registradores",
+          "Memória RAM",
+          "Controladores",
+          "Processadores"
+        ],
+        correctAnswer: "Controladores",
+        id: 61,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual componente de hardware é utilizado pelo sistema operacional para passar comandos, ligar/desligar dispositivos e controlar o estado dos dispositivos?",
+        options: [
+          "Controladores",
+          "Cache",
+          "Registradores",
+          "Disco rígido"
+        ],
+        correctAnswer: "Registradores",
+        id: 62,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que caracteriza um mainframe?",
+        options: [
+          "Computador de grande porte",
+          "Dispositivo utilizado exclusivamente para redes sem fio",
+          "Equipamento especializado em processamento gráfico",
+          "Servidor de pequeno porte para tarefas simples"
+        ],
+        correctAnswer: "Computador de grande porte que utilizam múltiplos barramentos",
+        id: 64,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é a função do barramento em um sistema de hardware?",
+        options: [
+          "Conectar e transferir dados entre componentes de hardware",
+          "Gerenciar o tempo de execução dos processos",
+          "Armazenar dados temporários durante a execução do programa",
+          "Controlar o uso de memória e CPU"
+        ],
+        correctAnswer: "Conectar e transferir dados entre componentes de hardware",
+        id: 63,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é uma das vantagens do uso de Thin Clients?",
+        options: [
+          "Melhor gerenciamento de arquivos e programas",
+          "Maior capacidade de processamento local",
+          "Autonomia para rodar sistemas operacionais sem servidor",
+          "Aumento no uso de recursos de hardware"
+        ],
+        correctAnswer: "Melhor gerenciamento de arquivos e programas",
+        id: 66,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é uma desvantagem do uso de Thin Clients?",
+        options: [
+          "Compartilhamento de recursos, perda de desempenho",
+          "Maior consumo de energia",
+          "Necessidade de hardware de alto custo",
+          "Impossibilidade de acessar servidores remotos"
+        ],
+        correctAnswer: "Compartilhamento de recursos, perda de desempenho",
+        id: 67,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+
+      
+      
+      
+      
+      
+      
+
+      
+      
+      
+    ]
+  },
+  {
+    theme:'Unidade 5',
+    questions:[
+      
     ]
   }
 
