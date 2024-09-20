@@ -1138,6 +1138,67 @@ const customQuestions = [
         repeat: 0,
         date: "1111-11-11"
       },
+      {
+        question: "O que caracteriza um impasse entre processos?",
+        options: [
+          "Processos esperando uns pelos outros",
+          "Os processos estão sendo executados simultaneamente",
+          "Um processo está aguardando entrada do usuário",
+          "Os processos estão utilizando o processador de forma contínua"
+        ],
+        correctAnswer: "Processos esperando uns pelos outros",
+        id: 38,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que é um deadlock em sistemas operacionais?",
+        options: [
+          "Dois processos bloqueando recursos que o outro precisa",
+          "Um processo que não libera a CPU",
+          "Um processo aguardando entrada do usuário",
+          "Dois processos executando em paralelo"
+        ],
+        correctAnswer: "Dois processos bloqueando recursos que o outro precisa",
+        id: 39,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Quais são as condições necessárias para que ocorra um impasse (deadlock)?",
+        options: [
+          "Exclusão mútua, posse e espera, inexistência de preempção e espera circular",
+          "Execução simultânea, prioridade, exclusão de CPU e bloqueio de memória",
+          "Preempção de processos, espera ativa, exclusão de I/O e alocação de memória",
+          "Exclusão de CPU, execução paralela, inexistência de bloqueio e espera ociosa"
+        ],
+        correctAnswer: "Exclusão mútua, posse e espera, inexistência de preempção e espera circular",
+        id: 40,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é a solução para evitar um deadlock?",
+        options: [
+          "Evitar uma das quatro condições necessárias",
+          "Interromper todos os processos",
+          "Aumentar recursos disponíveis",
+          "Dar maior prioridade aos processos bloqueados"
+        ],
+        correctAnswer: "Evitar uma das quatro condições necessárias",
+        id: 41,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+
+      
+      
+      
+      
       
       
       
@@ -1157,6 +1218,386 @@ const customQuestions = [
       
       
 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+    ]
+  },
+  {
+    theme:'Unidade 3',
+    questions:[
+      {
+        question: "Para que um processo possa ser executado, ele deve estar:",
+        options: [
+          "Integralmente ou parcialmente em memória",
+          "Somente no disco rígido",
+          "Em espera externa",
+          "Apenas no processador"
+        ],
+        correctAnswer: "Integralmente ou parcialmente em memória",
+        id: 42,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Quais são os níveis de memória em um sistema?",
+        options: [
+          "Embutida, Primária (Principal), Secundária (Externa)",
+          "Cache, RAM, Disco Rígido",
+          "Volátil, Não-volátil, Temporária",
+          "Operacional, Auxiliar, Remota"
+        ],
+        correctAnswer: "Embutida, Primária (Principal), Secundária (Externa)",
+        id: 43,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Na hierarquia de memória, como a capacidade de armazenamento se relaciona com a posição na hierarquia?",
+        options: [
+          "Quanto mais alto na hierarquia, menor a capacidade de armazenamento",
+          "Quanto mais baixo na hierarquia, menor a capacidade de armazenamento",
+          "A capacidade de armazenamento é a mesma em todos os níveis",
+          "A capacidade de armazenamento não é afetada pela posição na hierarquia"
+        ],
+        correctAnswer: "Quanto mais alto na hierarquia, menor a capacidade de armazenamento",
+        id: 44,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é uma característica dos dispositivos voláteis?",
+        options: [
+          "Perdem seus dados quando a energia é desligada",
+          "Armazenam dados permanentemente, mesmo sem energia",
+          "Têm alta capacidade de armazenamento e baixa velocidade de acesso",
+          "São utilizados principalmente para backup e recuperação de dados"
+        ],
+        correctAnswer: "Perdem seus dados quando a energia é desligada",
+        id: 46,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que é uma MMU (Unidade de Gerenciamento de Memória)?",
+        options: [
+          "Gerencia mapeamento de endereços de memória virtuais para físicos",
+          "Um dispositivo de armazenamento externo",
+          "Um tipo de memória volátil",
+          "Gerencia comunicação entre processador e dispositivos externos"
+        ],
+        correctAnswer: "Gerencia mapeamento de endereços de memória virtuais para físicos",
+        id: 47,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que é fragmentação em gerenciamento de memória?",
+        options: [
+          "Buracos de memória não utilizados devido à alocação e desalocação de processos",
+          "Processos que não conseguem acessar a memória",
+          "Aumento na velocidade de acesso à memória",
+          "Alocação contínua de memória para todos os processos"
+        ],
+        correctAnswer: "Buracos de memória não utilizados devido à alocação e desalocação de processos",
+        id: 48,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é a função da memória principal (RAM) em um SO?",
+        options: [
+          "Armazenar dados de processos de usuário e do SO",
+          "Servir como armazenamento permanente",
+          "Gerenciar dispositivos de entrada e saída",
+          "Executar programas do disco rígido"
+        ],
+        correctAnswer: "Armazenar dados de processos de usuário e do SO",
+        id: 49,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Quais são as estratégias comuns de alocação de memória?",
+        options: [
+          "Alocação contígua, alocação por segmentos, alocação paginada",
+          "Alocação dinâmica, alocação estática, alocação virtual",
+          "Alocação de disco, alocação de cache, alocação de RAM",
+          "Alocação sequencial, alocação aleatória, alocação circular"
+        ],
+        correctAnswer: "Alocação contígua, alocação por segmentos, alocação paginada",
+        id: 50,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Como a alocação contígua divide a memória?",
+        options: [
+          "Em duas partições: uma para o SO e outra para processos de usuário",
+          "Em várias partições para diferentes tipos de dados",
+          "Em partições dinâmicas baseadas em necessidade",
+          "Em uma única partição para todos os processos"
+        ],
+        correctAnswer: "Em duas partições: uma para o SO e outra para processos de usuário",
+        id: 51,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que caracteriza a alocação por segmentos na memória?",
+        options: [
+          "Memória fracionada em segmentos de tamanhos variados",
+          "Uso exclusivo de uma partição fixa",
+          "Alocação contígua de memória para todos os processos",
+          "Armazenamento de dados em uma única seção"
+        ],
+        correctAnswer: "Memória fracionada em segmentos de tamanhos variados",
+        id: 52,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      
+      {
+        question: "Qual é a desvantagem da alocação por segmentos?",
+        options: [
+          "Fragmentação externa",
+          "Alocação ineficiente de memória",
+          "Dificuldade na execução de processos",
+          "Impossibilidade de alocação dinâmica"
+        ],
+        correctAnswer: "Fragmentação externa",
+        id: 53,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que caracteriza a alocação paginada na memória?",
+        options: [
+          "Endereços divididos em blocos chamados páginas",
+          "Uso exclusivo de partições fixas",
+          "Memória alocada de forma contígua",
+          "Segmentos de tamanhos variados"
+        ],
+        correctAnswer: "Endereços divididos em blocos chamados páginas",
+        id: 54,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual técnica é utilizada na alocação paginada?",
+        options: [
+          "Tabela de páginas para associação página-quadro",
+          "Memória contígua para todos os processos",
+          "Alocação estática de memória",
+          "Segmentação dinâmica de processos"
+        ],
+        correctAnswer: "Tabela de páginas para associação página-quadro",
+        id: 55,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que é memória virtual?",
+        options: [
+          "Uma extensão da memória primária utilizando memória secundária",
+          "Um tipo de memória apenas para armazenamento permanente",
+          "Memória exclusiva para o sistema operacional",
+          "Memória utilizada apenas durante a inicialização do sistema"
+        ],
+        correctAnswer: "Uma extensão da memória primária utilizando memória secundária",
+        id: 56,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é a função do algoritmo de swapping na memória virtual?",
+        options: [
+          "Escolher dados para remover da memória primária e recuperar espaço",
+          "Aumentar a velocidade de acesso à memória",
+          "Armazenar permanentemente dados no disco rígido",
+          "Gerenciar a alocação de memória em tempo real"
+        ],
+        correctAnswer: "Escolher dados para remover da memória primária e recuperar espaço",
+        id: 57,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que são partições em um sistema operacional?",
+        options: [
+          "Regiões com setores onde o SO é instalado",
+          "Divisões de memória RAM para processos",
+          "Unidades de armazenamento externo",
+          "Segmentos de código em um programa"
+        ],
+        correctAnswer: "Regiões com setores onde o SO é instalado",
+        id: 56,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é a função do Master Boot Record (MBR) em um sistema?",
+        options: [
+          "Primeira partição acessada na inicialização",
+          "Formato de arquivo para partições",
+          "Área de memória para armazenamento temporário",
+          "Um tipo de sistema de arquivos"
+        ],
+        correctAnswer: "Primeira partição acessada na inicialização",
+        id: 57,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é a principal característica da alocação contígua de arquivos?",
+        options: [
+          "Armazena os blocos lado a lado",
+          "Blocos de arquivo são armazenados em locais aleatórios",
+          "Armazena os blocos em segmentos de tamanhos variados",
+          "Divide o arquivo em várias partes independentes"
+        ],
+        correctAnswer: "Armazena os blocos lado a lado",
+        id: 56,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },{
+        question: "Qual é uma vantagem da alocação contígua de arquivos?",
+        options: [
+          "Acesso e pesquisa rápidos com leitura em um único acesso sequencial",
+          "Reduz completamente a fragmentação de memória",
+          "Permite a alocação de blocos de forma dinâmica",
+          "Não necessita de um desfragmentador"
+        ],
+        correctAnswer: "Acesso e pesquisa rápidos com leitura em um único acesso sequencial",
+        id: 57,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é a desvantagem da alocação contígua de arquivos?",
+        options: [
+          "Está sujeita à fragmentação externa",
+          "Requer mais processamento para localizar os arquivos",
+          "Os arquivos são armazenados de forma não sequencial",
+          "Necessita de mais espaço de armazenamento para cada arquivo"
+        ],
+        correctAnswer: "Está sujeita à fragmentação externa",
+        id: 58,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },{
+        question: "O que caracteriza a alocação encadeada de arquivos?",
+        options: [
+          "Blocos são alocados onde for possível e cada bloco aponta para o próximo",
+          "Blocos são alocados de forma contígua",
+          "Todos os blocos são alocados em sequência no início do disco",
+          "A alocação só ocorre quando todos os blocos estão disponíveis"
+        ],
+        correctAnswer: "Blocos são alocados onde for possível e cada bloco aponta para o próximo",
+        id: 56,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é uma desvantagem da alocação encadeada de arquivos?",
+        options: [
+          "Perda de desempenho devido aos arquivos ficarem espalhados no disco",
+          "Necessidade de blocos contínuos de memória",
+          "Fragmentação externa causada pela disposição dos blocos",
+          "Impossibilidade de alocação de grandes arquivos"
+        ],
+        correctAnswer: "Perda de desempenho devido aos arquivos ficarem espalhados no disco",
+        id: 57,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é uma desvantagem da técnica de File Allocation Table (FAT)?",
+        options: [
+          "Pode ocupar muito espaço",
+          "Causa fragmentação externa",
+          "Não permite rastrear blocos alocados",
+          "Os blocos devem ser contíguos"
+        ],
+        correctAnswer: "Pode ocupar muito espaço",
+        id: 58,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que caracteriza a alocação indexada (i-nodes) em sistemas de arquivos?",
+        options: [
+          "Nó-índice que relaciona atributos e endereços dos blocos",
+          "Estrutura de dados que usa FAT para relacionar arquivos e diretórios",
+          "Tabela de endereços contínua para todos os arquivos",
+          "Memória segmentada para arquivos grandes"
+        ],
+        correctAnswer: "Nó-índice que relaciona atributos e endereços dos blocos",
+        id: 56,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é uma vantagem da alocação indexada (i-nodes) em sistemas de arquivos?",
+        options: [
+          "O nó-índice é carregado apenas quando o arquivo é aberto",
+          "É mais rápida para acesso a arquivos grandes",
+          "Elimina completamente a fragmentação de arquivos",
+          "Permite acesso simultâneo a múltiplos arquivos sem overhead"
+        ],
+        correctAnswer: "O nó-índice é carregado apenas quando o arquivo é aberto",
+        id: 57,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      
       
       
       
