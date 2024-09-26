@@ -589,173 +589,117 @@ const customQuestions = [
     theme:'Aula-1',
     questions:[
       {
-        question: 'O que é considerado hardware?',
-        options: ['Parte física do computador', 'Parte lógica do computador', 'Arquivos de texto', 'Planilhas eletrônicas'],
-        correctAnswer: 'Parte física do computador',
-        id: 12,
+        question: "O que é um Sistema Gerenciador de Banco de Dados (SGBD)?",
+        options: [
+          "Programas que gerenciam dados com o sistema operacional",
+          "Um software para criar interfaces gráficas",
+          "Um sistema para gerenciar redes de computadores",
+          "Um conjunto de ferramentas para desenvolvimento de aplicativos"
+        ],
+        correctAnswer: "Programas que gerenciam dados com o sistema operacional",
+        id: 71,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'O que é software?',
-        options: ['Parte física do computador', 'Parte lógica do computador', 'Teclado', 'Monitor'],
-        correctAnswer: 'Parte lógica do computador',
-        id: 13,
+        question: "Qual é uma das principais funções de um SGBD?",
+        options: [
+          "Processar, armazenar e gerenciar dados",
+          "Monitorar o desempenho de hardware",
+          "Criar documentos de texto",
+          "Gerenciar o uso da memória RAM"
+        ],
+        correctAnswer: "Processar, armazenar e gerenciar dados",
+        id: 72,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual é o software mais importante para o bom funcionamento do computador?',
-        options: ['Planilhas eletrônicas', 'Processadores de texto', 'Sistema operacional', 'Memória'],
-        correctAnswer: 'Sistema operacional',
-        id: 14,
+        question: "O que é uma transação no contexto de banco de dados?",
+        options: [
+          "Unidade de execução que acessa e atualiza dados",
+          "Um comando para criar tabelas",
+          "Um processo que faz backup de dados",
+          "Uma ação para monitorar o sistema operacional"
+        ],
+        correctAnswer: "Unidade de execução que acessa e atualiza dados",
+        id: 73,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Em qual camada o sistema operacional atua?',
-        options: ['Modo núcleo', 'Modo usuário', 'Hardware', 'Software'],
-        correctAnswer: 'Modo núcleo',
-        id: 15,
+        question: "Quais são as propriedades que uma transação deve garantir para manter a integridade dos dados?",
+        options: [
+          "Atomicidade, Consistência, Isolamento e Durabilidade",
+          "Acessibilidade, Controle, Inclusão e Durabilidade",
+          "Autenticação, Consistência, Inclusão e Dependência",
+          "Alocação, Controle, Identificação e Dinamismo"
+        ],
+        correctAnswer: "Atomicidade, Consistência, Isolamento e Durabilidade",
+        id: 74,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual é uma das funções principais de um sistema operacional?',
-        options: ['Gerenciar o uso dos componentes de hardware', 'Realizar backup de dados', 'Fazer diagnósticos automáticos', 'Desenvolver programas de software'],
-        correctAnswer: 'Gerenciar o uso dos componentes de hardware',
-        id: 1,
+        question: "O que significa a propriedade de atomicidade em uma transação de banco de dados?",
+        options: [
+          "Todas as operações são refletidas ou nenhuma delas",
+          "Os dados são sempre consistentes",
+          "As operações podem ser parcialmente realizadas",
+          "Os dados são replicados automaticamente"
+        ],
+        correctAnswer: "Todas as operações são refletidas ou nenhuma delas",
+        id: 75,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual termo é utilizado para descrever sistemas operacionais sem interfaces gráficas?',
-        options: ['Kernel', 'Driver', 'Shell', 'GUI'],
-        correctAnswer: 'Shell',
-        id: 2,
+        question: "O que significa a propriedade de consistência em uma transação de banco de dados?",
+        options: [
+          "A transação mantém a consistência do banco de dados",
+          "A transação pode alterar valores aleatoriamente",
+          "A transação sempre faz backup dos dados",
+          "A transação replica os dados em vários servidores"
+        ],
+        correctAnswer: "A transação mantém a consistência do banco de dados",
+        id: 76,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
-      },      
-      {
-        question: 'Quando os sistemas operacionais começaram a ser utilizados nos computadores modernos?',
-        options: ['Primeira geração (1945-1955)', 'Segunda geração (1955-1965)', 'Terceira geração (1965-1975)', 'Quarta geração (1975-1985)'],
-        correctAnswer: 'Segunda geração (1955-1965)',
-        id: 3,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Que tipo de tarefas os sistemas operacionais de computadores de grande porte normalmente desempenham?',
-        options: ['Tarefas gráficas', 'Tarefas em lote (batch)', 'Tarefas de navegação na web', 'Tarefas de desenvolvimento de software'],
-        correctAnswer: 'Tarefas em lote (batch)',
-        id: 12,
+        question: "O que significa a propriedade de isolamento em uma transação de banco de dados?",
+        options: [
+          "Resultados finais equivalentes, mesmo com operações simultâneas",
+          "Transações podem interferir umas nas outras",
+          "Transações devem ser executadas em sequência",
+          "Transações não precisam ser confirmadas"
+        ],
+        correctAnswer: "Resultados finais equivalentes, mesmo com operações simultâneas",
+        id: 78,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
       {
-        question: 'Qual dos seguintes sistemas operacionais é um exemplo de sistema usado em computadores de grande porte?',
-        options: ['Windows 10', 'macOS', 'OS/390', 'Ubuntu'],
-        correctAnswer: 'OS/390',
-        id: 13,
+        question: "O que significa a propriedade de durabilidade em uma transação de banco de dados?",
+        options: [
+          "Atualizações são persistidas após a transação bem-sucedida",
+          "Atualizações podem ser perdidas se o sistema falhar",
+          "Transação deve ser revertida em caso de erro",
+          "Atualizações são temporárias até o próximo backup"
+        ],
+        correctAnswer: "Atualizações são persistidas após a transação bem-sucedida",
+        id: 77,
         points: 0,
         repeat: 0,
-        date: '1111-11-11',
+        date: "1111-11-11"
       },
-      {
-        question: 'Computadores de grande porte geralmente possuem que tipo de interface?',
-        options: ['Interface gráfica', 'Modo shell', 'Interface touch', 'Nenhuma interface'],
-        correctAnswer: 'Modo shell',
-        id: 14,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11',
-      },
-      {
-        question: 'Qual dos seguintes sistemas operacionais é mais comumente utilizado em servidores?',
-        options: ['Windows 10', 'Solaris', 'Android', 'MacOS'],
-        correctAnswer: 'Solaris',
-        id: 12,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11'
-      },
-      {
-        question: 'Qual sistema operacional é tipicamente usado em sistemas de tempo real, como o controle de aviões e processos industriais?',
-        options: ['Windows', 'Linux', 'e-Cos', 'MacOS'],
-        correctAnswer: 'e-Cos',
-        id: 13,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11'
-      },
-      {
-        question: 'Qual dos seguintes sistemas operacionais é usado em dispositivos embarcados, como smart TVs e computadores de bordo?',
-        options: ['Windows', 'QNX', 'Ubuntu', 'MacOS'],
-        correctAnswer: 'QNX',
-        id: 14,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11'
-      },
-      {
-        question: 'Qual sistema operacional é mais associado a dispositivos portáteis como smartphones e tablets?',
-        options: ['FreeBSD', 'Android', 'Solaris', 'VxWorks'],
-        correctAnswer: 'Android',
-        id: 15,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11'
-      },
-      {
-        question: 'Qual sistema operacional é projetado para nós de sensores, usados por exemplo no monitoramento de perímetros?',
-        options: ['TinyOS', 'Linux', 'Windows Server', 'FreeBSD'],
-        correctAnswer: 'TinyOS',
-        id: 16,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11'
-      },      
-      {
-        question: 'O que são sistemas operacionais?',
-        options: ['Programas que gerenciam hardware e software, fornecendo uma interface para o usuário e gerenciando recursos', 'Aplicativos de escritório usados para criar documentos', 'Jogos de computador que operam em diversas plataformas', 'Redes sociais usadas para comunicação online'],
-        correctAnswer: 'Programas que gerenciam hardware e software, fornecendo uma interface para o usuário e gerenciando recursos',
-        id: 17,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11'
-      },
-      {
-        question: 'O Android pertence unicamente ao Google? Pesquise pelo menos três membros da OHA que você conheça.',
-        options: ['Não, o Android não pertence exclusivamente ao Google. Membros da OHA incluem HTC, Samsung e Sony', 'Sim, o Android pertence exclusivamente ao Google', 'Não, o Android é um sistema operacional open-source sem membros da OHA', 'Não, o Android pertence ao Google e à Microsoft'],
-        correctAnswer: 'Não, o Android não pertence exclusivamente ao Google. Membros da OHA incluem HTC, Samsung e Sony',
-        id: 19,
-        points: 0,
-        repeat: 0,
-        date: '1111-11-11'
-      }
-
-
-
-
-
-      
-      
-      
-
-      
-      
-      
-      
-      
-      
 
       
       
@@ -767,845 +711,149 @@ const customQuestions = [
       
       
 
-      
-      
-      
     ]
   },
   {
     theme:'Aula-2',
     questions:[
       {
-        question: "Em que consiste a estrutura de um Sistema Operacional (SO)?",
+        question: "O que é um atributo simples em um modelo relacional?",
         options: [
-          "Apenas gerenciamento de memória",
-          "Gerenciamento de processos e dispositivos",
-          "Gerenciamento de arquivos e proteção",
-          "Gerência de processador/processos, memória, dispositivos, arquivos e proteção"
+          "Contém um único valor para cada elemento da entidade",
+          "Contém vários valores para a mesma entidade",
+          "Identifica um item da entidade de forma única",
+          "Pode ser dividido em outros atributos"
         ],
-        correctAnswer: "Gerência de processador/processos, memória, dispositivos, arquivos e proteção",
-        id: 6,
+        correctAnswer: "Contém um único valor para cada elemento da entidade",
+        id: 78,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
       },
       {
-        question: "Como funcionavam os sistemas em lote (batch)?",
+        question: "O que é um atributo multivalorado em um modelo relacional?",
         options: [
-          "Executavam múltiplos jobs ao mesmo tempo",
-          "Executavam 1 job por vez",
-          "Permitiam multitarefa",
-          "Não utilizavam memória"
+          "Contém um único valor para cada elemento da entidade",
+          "Contém diversos valores para o mesmo elemento da entidade",
+          "Identifica um item da entidade de forma única",
+          "Pode ser dividido em outros atributos"
         ],
-        correctAnswer: "Executavam 1 job por vez",
-        id: 7,
+        correctAnswer: "Contém diversos valores para o mesmo elemento da entidade",
+        id: 79,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
       },
       {
-        question: "O que caracteriza a multiprogramação nos sistemas atuais?",
+        question: "Qual é a função de um atributo chave em um modelo relacional?",
         options: [
-          "Várias atividades simultâneas e processamento muito rápido",
-          "Apenas uma atividade por vez",
-          "Execução sequencial de tarefas",
-          "Dependência de sistemas batch"
+          "Contém um único valor para cada elemento da entidade",
+          "Contém diversos valores para o mesmo elemento da entidade",
+          "Identifica um item da entidade de maneira única",
+          "Pode ser dividido em outros atributos"
         ],
-        correctAnswer: "Várias atividades simultâneas e processamento muito rápido",
-        id: 8,
+        correctAnswer: "Identifica um item da entidade de maneira única",
+        id: 80,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
       },
       {
-        question: "O que caracteriza os sistemas monoprocessados?",
+        question: "O que caracteriza um atributo composto em um modelo relacional?",
         options: [
-          "Paralelismo de alta granularidade",
-          "Real paralelismo",
-          "Falsa sensação de paralelismo",
-          "Execução simultânea de múltiplos processos"
+          "Contém um único valor para cada elemento da entidade",
+          "Contém diversos valores para o mesmo elemento da entidade",
+          "Identifica um item da entidade de maneira única",
+          "Pode ser dividido em outros atributos"
         ],
-        correctAnswer: "Falsa sensação de paralelismo",
-        id: 9,
+        correctAnswer: "Pode ser dividido em outros atributos",
+        id: 81,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
       },
       {
-        question: "Como os sistemas multiprocessados operam?",
+        question: "O que é uma chave estrangeira em um modelo relacional?",
         options: [
-          "Falsa sensação de paralelismo",
-          "Paralelismo de alta granularidade",
-          "Apenas um processador",
-          "Execução sequencial de tarefas"
+          "Um atributo que aponta para a chave primária de outra tabela",
+          "Um identificador único de uma tabela",
+          "Um atributo que não pode ser nulo",
+          "Um atributo que contém vários valores"
         ],
-        correctAnswer: "Paralelismo de alta granularidade",
-        id: 10,
+        correctAnswer: "Um atributo que aponta para a chave primária de outra tabela",
+        id: 82,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
       },
       {
-        question: "Qual a função principal de um Sistema Operacional?",
-        options: [
-          "Executar um único processo",
-          "Coordenar acesso a recursos e gerenciar múltiplas requisições de processos",
-          "Apenas gerenciar memória",
-          "Controlar o uso da rede"
-        ],
-        correctAnswer: "Coordenar acesso a recursos e gerenciar múltiplas requisições de processos",
-        id: 11,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "De acordo com Andrew S. Tanenbaum, o que é um processo?",
-        options: [
-          "Um programa em execução",
-          "Um programa armazenado no disco",
-          "Um arquivo de dados",
-          "Um dispositivo de entrada/saída"
-        ],
-        correctAnswer: "Um programa em execução",
-        id: 12,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que um processo contém, de acordo com os tópicos abordados?",
-        options: [
-          "Endereçamento em memória, programa em execução e troca de contexto",
-          "Somente identificadores",
-          "Apenas o programa em execução",
-          "Somente endereçamento em memória"
-        ],
-        correctAnswer: "Endereçamento em memória, programa em execução e troca de contexto",
-        id: 13,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Quais são as áreas principais de um processo em memória e suas funções?",
-        options: [
-          "Seção de texto, seção de dados, heap e pilha",
-          "Somente a seção de texto e a pilha",
-          "Apenas o heap e a seção de dados",
-          "Somente variáveis globais e parâmetros de função"
-        ],
-        correctAnswer: "Seção de texto, seção de dados, heap e pilha",
-        id: 14,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual área de um processo em memória contém o código do programa e o contador do programa?",
-        options: [
-          "Seção de texto",
-          "Seção de dados",
-          "Heap",
-          "Pilha"
-        ],
-        correctAnswer: "Seção de texto",
-        id: 15,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Onde são armazenadas as variáveis globais de um processo?",
-        options: [
-          "Seção de dados",
-          "Seção de texto",
-          "Heap",
-          "Pilha"
-        ],
-        correctAnswer: "Seção de dados",
-        id: 16,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual área de um processo em memória é usada para alocação dinâmica de memória durante a execução?",
-        options: [
-          "Heap",
-          "Pilha",
-          "Seção de dados",
-          "Seção de texto"
-        ],
-        correctAnswer: "Heap",
-        id: 17,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual área do processo contém dados temporários como parâmetros de função e variáveis locais?",
-        options: [
-          "Pilha",
-          "Heap",
-          "Seção de dados",
-          "Seção de texto"
-        ],
-        correctAnswer: "Pilha",
-        id: 18,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que são recursos em um sistema operacional?",
-        options: [
-          "Componentes necessários para a execução de um processo",
-          "Apenas hardware físico",
-          "Somente software",
-          "Dados temporários do sistema"
-        ],
-        correctAnswer: "Componentes necessários para a execução de um processo",
-        id: 19,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Quais dos seguintes são exemplos de recursos necessários para a execução de um processo?",
-        options: [
-          "Tempo de CPU, registradores, memória, arquivos e dispositivos de entrada/saída",
-          "Apenas arquivos e memória",
-          "Somente tempo de CPU e registradores",
-          "Somente dispositivos de entrada/saída"
-        ],
-        correctAnswer: "Tempo de CPU, registradores, memória, arquivos e dispositivos de entrada/saída",
-        id: 20,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Término normal voluntário, término por erro, erro fatal involuntário e cancelamento por outro processo são exemplos de:",
-        options: [
-          "Situações de destruição de processos",
-          "Exceções de memória",
-          "Gerenciamento de arquivos",
-          "Recursos de sistema"
-        ],
-        correctAnswer: "Situações de destruição de processos",
-        id: 21,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é uma interrupção em um sistema operacional?",
-        options: [
-          "Um sinal de hardware que informa a ocorrência de um evento",
-          "Um processo que está aguardando resposta externa",
-          "Um erro de execução de programa",
-          "Uma função de gerenciamento de memória"
-        ],
-        correctAnswer: "Um sinal de hardware que informa a ocorrência de um evento",
-        id: 27,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que são threads em um processo?",
-        options: [
-          "Atividades (tarefas) que um processo executa",
-          "Unidades de armazenamento de dados",
-          "Componentes de hardware",
-          "Tipos de processos"
-        ],
-        correctAnswer: "Atividades (tarefas) que um processo executa",
-        id: 28,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é uma característica dos processos monothread?",
-        options: [
-          "1 batch job = 1 thread",
-          "Execução simultânea de múltiplas threads",
-          "Uso de múltiplos núcleos de processador",
-          "Execução apenas em sistemas multithread"
-        ],
-        correctAnswer: "1 batch job = 1 thread",
-        id: 29,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é um exemplo de processo multithread?",
-        options: [
-          "Computadores domésticos",
-          "Sistemas de processamento em lote",
-          "Batch jobs",
-          "Programas de linha de comando"
-        ],
-        correctAnswer: "Computadores domésticos",
-        id: 30,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é uma condição de corrida em sistemas operacionais?",
-        options: [
-          "Um processo dependendo do resultado de outro para continuar",
-          "Um erro de hardware",
-          "Um tipo de memória volátil",
-          "Uma técnica de gerenciamento de processos"
-        ],
-        correctAnswer: "Um processo dependendo do resultado de outro para continuar",
-        id: 31,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é a solução de Peterson em sistemas operacionais?",
-        options: [
-          "Uma fila de acessos à região crítica",
-          "Uma técnica de gerenciamento de memória",
-          "Um algoritmo de criptografia",
-          "Uma estratégia de alocação de recursos"
-        ],
-        correctAnswer: "Uma fila de acessos à região crítica",
-        id: 33,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é a principal desvantagem da solução de Peterson?",
-        options: [
-          "Espera ociosa",
-          "Baixa eficiência na alocação de memória",
-          "Complexidade de implementação",
-          "Alto consumo de CPU"
-        ],
-        correctAnswer: "Espera ociosa",
-        id: 34,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é um escalonador em um sistema operacional?",
-        options: [
-          "Um algoritmo que decide qual processo deve utilizar o processador",
-          "Uma unidade de hardware responsável pelo processamento",
-          "Um tipo de memória usada para armazenar processos",
-          "Um componente de rede que gerencia a comunicação entre processos"
-        ],
-        correctAnswer: "Um algoritmo que decide qual processo deve utilizar o processador",
-        id: 35,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },{
-        question: "Qual é a característica principal dos algoritmos de escalonamento preemptivos?",
-        options: [
-          "Processo executa até um tempo máximo fixado (quantum)",
-          "Processo executa até que seja bloqueado ou encerre",
-          "Processo é executado apenas se houver recursos suficientes",
-          "Processo é escalonado com base na prioridade estática"
-        ],
-        correctAnswer: "Processo executa até um tempo máximo fixado (quantum)",
-        id: 36,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é a característica principal dos algoritmos de escalonamento preemptivos?",
-        options: [
-          "Processo executa até um tempo máximo fixado (quantum)",
-          "Processo executa até que seja bloqueado ou encerre",
-          "Processo é executado apenas se houver recursos suficientes",
-          "Processo é escalonado com base na prioridade estática"
-        ],
-        correctAnswer: "Processo executa até um tempo máximo fixado (quantum)",
-        id: 36,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que caracteriza um impasse entre processos?",
-        options: [
-          "Processos esperando uns pelos outros",
-          "Os processos estão sendo executados simultaneamente",
-          "Um processo está aguardando entrada do usuário",
-          "Os processos estão utilizando o processador de forma contínua"
-        ],
-        correctAnswer: "Processos esperando uns pelos outros",
-        id: 38,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é um deadlock em sistemas operacionais?",
-        options: [
-          "Dois processos bloqueando recursos que o outro precisa",
-          "Um processo que não libera a CPU",
-          "Um processo aguardando entrada do usuário",
-          "Dois processos executando em paralelo"
-        ],
-        correctAnswer: "Dois processos bloqueando recursos que o outro precisa",
-        id: 39,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Quais são as condições necessárias para que ocorra um impasse (deadlock)?",
-        options: [
-          "Exclusão mútua, posse e espera, inexistência de preempção e espera circular",
-          "Execução simultânea, prioridade, exclusão de CPU e bloqueio de memória",
-          "Preempção de processos, espera ativa, exclusão de I/O e alocação de memória",
-          "Exclusão de CPU, execução paralela, inexistência de bloqueio e espera ociosa"
-        ],
-        correctAnswer: "Exclusão mútua, posse e espera, inexistência de preempção e espera circular",
-        id: 40,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é a solução para evitar um deadlock?",
-        options: [
-          "Evitar uma das quatro condições necessárias",
-          "Interromper todos os processos",
-          "Aumentar recursos disponíveis",
-          "Dar maior prioridade aos processos bloqueados"
-        ],
-        correctAnswer: "Evitar uma das quatro condições necessárias",
-        id: 41,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
+  question: "O que caracteriza a linguagem SQL (Structured Query Language)?",
+  options: [
+    "É uma linguagem declarativa onde definimos o que queremos como resultado",
+    "É uma linguagem procedural onde especificamos passo a passo o que será feito",
+    "É uma linguagem orientada a objetos para manipulação de dados",
+    "É uma linguagem para criação de estruturas de dados em memória"
+  ],
+  correctAnswer: "É uma linguagem declarativa onde definimos o que queremos como resultado",
+  id: 83,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+},
+{
+  question: "O que é um esquema (schema) em um banco de dados?",
+  options: [
+    "Uma área que reúne tabelas relacionadas para atender a um contexto de negócio",
+    "Uma tabela que contém os dados de uma entidade específica",
+    "Uma instrução SQL para criar uma tabela",
+    "Um procedimento armazenado para manipular dados"
+  ],
+  correctAnswer: "Uma área que reúne tabelas relacionadas para atender a um contexto de negócio",
+  id: 84,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+}
+
 
       
       
       
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-    ]
-  },
+    ] },
   {
     theme:'Unidade 3',
     questions:[
       {
-        question: "Para que um processo possa ser executado, ele deve estar:",
+        question: "Como se define uma chave primária com um único atributo em SQL?",
         options: [
-          "Integralmente ou parcialmente em memória",
-          "Somente no disco rígido",
-          "Em espera externa",
-          "Apenas no processador"
+          "id INT PRIMARY KEY",
+          "id PRIMARY CREATE KEY",
+          "id DEFAULT PRIMARY SET",
+          "id UNIQUE CREATE PRIMARY"
         ],
-        correctAnswer: "Integralmente ou parcialmente em memória",
-        id: 42,
+        correctAnswer: "id INT PRIMARY KEY",
+        id: 86,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
       },
       {
-        question: "Quais são os níveis de memória em um sistema?",
+        question: "Como se define uma chave primária com mais de um atributo em SQL?",
         options: [
-          "Embutida, Primária (Principal), Secundária (Externa)",
-          "Cache, RAM, Disco Rígido",
-          "Volátil, Não-volátil, Temporária",
-          "Operacional, Auxiliar, Remota"
+          "PRIMARY KEY (grupo fk, contato fk)",
+          "CREATE PRIMARY (grupo, contato fk)",
+          "PRIMARY KEY UNIQUE (grupo contato)",
+          "DEFINE PRIMARY (grupo fk, contato fk)"
         ],
-        correctAnswer: "Embutida, Primária (Principal), Secundária (Externa)",
-        id: 43,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Na hierarquia de memória, como a capacidade de armazenamento se relaciona com a posição na hierarquia?",
-        options: [
-          "Quanto mais alto na hierarquia, menor a capacidade de armazenamento",
-          "Quanto mais baixo na hierarquia, menor a capacidade de armazenamento",
-          "A capacidade de armazenamento é a mesma em todos os níveis",
-          "A capacidade de armazenamento não é afetada pela posição na hierarquia"
-        ],
-        correctAnswer: "Quanto mais alto na hierarquia, menor a capacidade de armazenamento",
-        id: 44,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é uma característica dos dispositivos voláteis?",
-        options: [
-          "Perdem seus dados quando a energia é desligada",
-          "Armazenam dados permanentemente, mesmo sem energia",
-          "Têm alta capacidade de armazenamento e baixa velocidade de acesso",
-          "São utilizados principalmente para backup e recuperação de dados"
-        ],
-        correctAnswer: "Perdem seus dados quando a energia é desligada",
-        id: 46,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é uma MMU (Unidade de Gerenciamento de Memória)?",
-        options: [
-          "Gerencia mapeamento de endereços de memória virtuais para físicos",
-          "Um dispositivo de armazenamento externo",
-          "Um tipo de memória volátil",
-          "Gerencia comunicação entre processador e dispositivos externos"
-        ],
-        correctAnswer: "Gerencia mapeamento de endereços de memória virtuais para físicos",
-        id: 47,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é fragmentação em gerenciamento de memória?",
-        options: [
-          "Buracos de memória não utilizados devido à alocação e desalocação de processos",
-          "Processos que não conseguem acessar a memória",
-          "Aumento na velocidade de acesso à memória",
-          "Alocação contínua de memória para todos os processos"
-        ],
-        correctAnswer: "Buracos de memória não utilizados devido à alocação e desalocação de processos",
-        id: 48,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é a função da memória principal (RAM) em um SO?",
-        options: [
-          "Armazenar dados de processos de usuário e do SO",
-          "Servir como armazenamento permanente",
-          "Gerenciar dispositivos de entrada e saída",
-          "Executar programas do disco rígido"
-        ],
-        correctAnswer: "Armazenar dados de processos de usuário e do SO",
-        id: 49,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Quais são as estratégias comuns de alocação de memória?",
-        options: [
-          "Alocação contígua, alocação por segmentos, alocação paginada",
-          "Alocação dinâmica, alocação estática, alocação virtual",
-          "Alocação de disco, alocação de cache, alocação de RAM",
-          "Alocação sequencial, alocação aleatória, alocação circular"
-        ],
-        correctAnswer: "Alocação contígua, alocação por segmentos, alocação paginada",
-        id: 50,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Como a alocação contígua divide a memória?",
-        options: [
-          "Em duas partições: uma para o SO e outra para processos de usuário",
-          "Em várias partições para diferentes tipos de dados",
-          "Em partições dinâmicas baseadas em necessidade",
-          "Em uma única partição para todos os processos"
-        ],
-        correctAnswer: "Em duas partições: uma para o SO e outra para processos de usuário",
-        id: 51,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que caracteriza a alocação por segmentos na memória?",
-        options: [
-          "Memória fracionada em segmentos de tamanhos variados",
-          "Uso exclusivo de uma partição fixa",
-          "Alocação contígua de memória para todos os processos",
-          "Armazenamento de dados em uma única seção"
-        ],
-        correctAnswer: "Memória fracionada em segmentos de tamanhos variados",
-        id: 52,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      
-      {
-        question: "Qual é a desvantagem da alocação por segmentos?",
-        options: [
-          "Fragmentação externa",
-          "Alocação ineficiente de memória",
-          "Dificuldade na execução de processos",
-          "Impossibilidade de alocação dinâmica"
-        ],
-        correctAnswer: "Fragmentação externa",
-        id: 53,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que caracteriza a alocação paginada na memória?",
-        options: [
-          "Endereços divididos em blocos chamados páginas",
-          "Uso exclusivo de partições fixas",
-          "Memória alocada de forma contígua",
-          "Segmentos de tamanhos variados"
-        ],
-        correctAnswer: "Endereços divididos em blocos chamados páginas",
-        id: 54,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual técnica é utilizada na alocação paginada?",
-        options: [
-          "Tabela de páginas para associação página-quadro",
-          "Memória contígua para todos os processos",
-          "Alocação estática de memória",
-          "Segmentação dinâmica de processos"
-        ],
-        correctAnswer: "Tabela de páginas para associação página-quadro",
-        id: 55,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é memória virtual?",
-        options: [
-          "Uma extensão da memória primária utilizando memória secundária",
-          "Um tipo de memória apenas para armazenamento permanente",
-          "Memória exclusiva para o sistema operacional",
-          "Memória utilizada apenas durante a inicialização do sistema"
-        ],
-        correctAnswer: "Uma extensão da memória primária utilizando memória secundária",
-        id: 56,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é a função do algoritmo de swapping na memória virtual?",
-        options: [
-          "Escolher dados para remover da memória primária e recuperar espaço",
-          "Aumentar a velocidade de acesso à memória",
-          "Armazenar permanentemente dados no disco rígido",
-          "Gerenciar a alocação de memória em tempo real"
-        ],
-        correctAnswer: "Escolher dados para remover da memória primária e recuperar espaço",
-        id: 57,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que são partições em um sistema operacional?",
-        options: [
-          "Regiões com setores onde o SO é instalado",
-          "Divisões de memória RAM para processos",
-          "Unidades de armazenamento externo",
-          "Segmentos de código em um programa"
-        ],
-        correctAnswer: "Regiões com setores onde o SO é instalado",
-        id: 56,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é a função do Master Boot Record (MBR) em um sistema?",
-        options: [
-          "Primeira partição acessada na inicialização",
-          "Formato de arquivo para partições",
-          "Área de memória para armazenamento temporário",
-          "Um tipo de sistema de arquivos"
-        ],
-        correctAnswer: "Primeira partição acessada na inicialização",
-        id: 57,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é a principal característica da alocação contígua de arquivos?",
-        options: [
-          "Armazena os blocos lado a lado",
-          "Blocos de arquivo são armazenados em locais aleatórios",
-          "Armazena os blocos em segmentos de tamanhos variados",
-          "Divide o arquivo em várias partes independentes"
-        ],
-        correctAnswer: "Armazena os blocos lado a lado",
-        id: 56,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },{
-        question: "Qual é uma vantagem da alocação contígua de arquivos?",
-        options: [
-          "Acesso e pesquisa rápidos com leitura em um único acesso sequencial",
-          "Reduz completamente a fragmentação de memória",
-          "Permite a alocação de blocos de forma dinâmica",
-          "Não necessita de um desfragmentador"
-        ],
-        correctAnswer: "Acesso e pesquisa rápidos com leitura em um único acesso sequencial",
-        id: 57,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é a desvantagem da alocação contígua de arquivos?",
-        options: [
-          "Está sujeita à fragmentação externa",
-          "Requer mais processamento para localizar os arquivos",
-          "Os arquivos são armazenados de forma não sequencial",
-          "Necessita de mais espaço de armazenamento para cada arquivo"
-        ],
-        correctAnswer: "Está sujeita à fragmentação externa",
-        id: 58,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },{
-        question: "O que caracteriza a alocação encadeada de arquivos?",
-        options: [
-          "Blocos são alocados onde for possível e cada bloco aponta para o próximo",
-          "Blocos são alocados de forma contígua",
-          "Todos os blocos são alocados em sequência no início do disco",
-          "A alocação só ocorre quando todos os blocos estão disponíveis"
-        ],
-        correctAnswer: "Blocos são alocados onde for possível e cada bloco aponta para o próximo",
-        id: 56,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é uma desvantagem da alocação encadeada de arquivos?",
-        options: [
-          "Perda de desempenho devido aos arquivos ficarem espalhados no disco",
-          "Necessidade de blocos contínuos de memória",
-          "Fragmentação externa causada pela disposição dos blocos",
-          "Impossibilidade de alocação de grandes arquivos"
-        ],
-        correctAnswer: "Perda de desempenho devido aos arquivos ficarem espalhados no disco",
-        id: 57,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é uma desvantagem da técnica de File Allocation Table (FAT)?",
-        options: [
-          "Pode ocupar muito espaço",
-          "Causa fragmentação externa",
-          "Não permite rastrear blocos alocados",
-          "Os blocos devem ser contíguos"
-        ],
-        correctAnswer: "Pode ocupar muito espaço",
-        id: 58,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que caracteriza a alocação indexada (i-nodes) em sistemas de arquivos?",
-        options: [
-          "Nó-índice que relaciona atributos e endereços dos blocos",
-          "Estrutura de dados que usa FAT para relacionar arquivos e diretórios",
-          "Tabela de endereços contínua para todos os arquivos",
-          "Memória segmentada para arquivos grandes"
-        ],
-        correctAnswer: "Nó-índice que relaciona atributos e endereços dos blocos",
-        id: 56,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é uma vantagem da alocação indexada (i-nodes) em sistemas de arquivos?",
-        options: [
-          "O nó-índice é carregado apenas quando o arquivo é aberto",
-          "É mais rápida para acesso a arquivos grandes",
-          "Elimina completamente a fragmentação de arquivos",
-          "Permite acesso simultâneo a múltiplos arquivos sem overhead"
-        ],
-        correctAnswer: "O nó-índice é carregado apenas quando o arquivo é aberto",
-        id: 57,
+        correctAnswer: "PRIMARY KEY (grupo fk, contato fk)",
+        id: 87,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
       },
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-      
-      
-      
-      
-      
-      
-      
-      
       
       
 
@@ -1615,139 +863,33 @@ const customQuestions = [
     theme:'UNIDADE 4',
     questions:[
       {
-        question: "O que caracteriza um dispositivo de bloco?",
+        question: "O que são consultas aninhadas em SQL?",
         options: [
-          "Armazena dados em blocos de tamanho fixo, como HD e pen drive",
-          "Envia ou recebe cadeias de dados em fluxo contínuo",
-          "Realiza a leitura de dados em tempo real",
-          "Controla dispositivos de entrada como mouse e teclado"
+          "Consultas que utilizam o resultado de outra consulta",
+          "Consultas que não retornam resultados válidos",
+          "Consultas que são executadas simultaneamente",
+          "Consultas que não podem ser combinadas"
         ],
-        correctAnswer: "Armazena dados em blocos de tamanho fixo, como HD e pen drive",
-        id: 56,
+        correctAnswer: "Consultas que utilizam o resultado de outra consulta",
+        id: 92,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
       },
       {
-        question: "O que caracteriza um dispositivo de caractere?",
+        question: "Como são chamadas as consultas dentro de outras consultas?",
         options: [
-          "Fluxo contínuo de dados, como mouse e teclado",
-          "Armazena dados em blocos de tamanho fixo",
-          "Lê dados armazenados de forma permanente",
-          "Utiliza uma tabela de blocos para transferência de dados"
+          "Subqueries ou consultas aninhadas",
+          "Joins ou agrupamentos de dados",
+          "Views ou tabelas virtuais",
+          "Triggers ou procedimentos automáticos"
         ],
-        correctAnswer: "Fluxo contínuo de dados, como mouse e teclado",
-        id: 57,
+        correctAnswer: "Subqueries ou consultas aninhadas",
+        id: 93,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
       },
-      {
-        question: "Qual é a função do relógio como dispositivo de entrada/saída?",
-        options: [
-          "Fornecer impulsos de interrupção para organizar os processos",
-          "Armazenar dados em blocos de tamanho fixo",
-          "Gerenciar o fluxo de dados entre dispositivos de armazenamento",
-          "Enviar cadeias de dados em fluxo contínuo"
-        ],
-        correctAnswer: "Fornecer impulsos de interrupção para organizar os processos",
-        id: 58,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual componente de hardware manipula streams e blocos de dados, realiza a correção de erros (checksum), faz a bufferização e a interface entre o dispositivo e o barramento?",
-        options: [
-          "Registradores",
-          "Memória RAM",
-          "Controladores",
-          "Processadores"
-        ],
-        correctAnswer: "Controladores",
-        id: 61,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual componente de hardware é utilizado pelo sistema operacional para passar comandos, ligar/desligar dispositivos e controlar o estado dos dispositivos?",
-        options: [
-          "Controladores",
-          "Cache",
-          "Registradores",
-          "Disco rígido"
-        ],
-        correctAnswer: "Registradores",
-        id: 62,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que caracteriza um mainframe?",
-        options: [
-          "Computador de grande porte",
-          "Dispositivo utilizado exclusivamente para redes sem fio",
-          "Equipamento especializado em processamento gráfico",
-          "Servidor de pequeno porte para tarefas simples"
-        ],
-        correctAnswer: "Computador de grande porte",
-        id: 64,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é a função do barramento em um sistema de hardware?",
-        options: [
-          "Conectar e transferir dados entre componentes de hardware",
-          "Gerenciar o tempo de execução dos processos",
-          "Armazenar dados temporários durante a execução do programa",
-          "Controlar o uso de memória e CPU"
-        ],
-        correctAnswer: "Conectar e transferir dados entre componentes de hardware",
-        id: 63,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é uma das vantagens do uso de Thin Clients?",
-        options: [
-          "Melhor gerenciamento de arquivos e programas",
-          "Maior capacidade de processamento local",
-          "Autonomia para rodar sistemas operacionais sem servidor",
-          "Aumento no uso de recursos de hardware"
-        ],
-        correctAnswer: "Melhor gerenciamento de arquivos e programas",
-        id: 66,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é uma desvantagem do uso de Thin Clients?",
-        options: [
-          "Compartilhamento de recursos, perda de desempenho",
-          "Maior consumo de energia",
-          "Necessidade de hardware de alto custo",
-          "Impossibilidade de acessar servidores remotos"
-        ],
-        correctAnswer: "Compartilhamento de recursos, perda de desempenho",
-        id: 67,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-
-      
-      
-      
-      
-      
-      
-
       
       
       
