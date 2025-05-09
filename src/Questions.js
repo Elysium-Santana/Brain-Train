@@ -584,308 +584,159 @@ const customQuestions = [
         date: '1111-11-11',
       },
     ],
-  },
+  },  
   {
-    theme:'Aula-1',
+    theme:'P.O.O',
     questions:[
       {
-        question: "O que é um Sistema Gerenciador de Banco de Dados (SGBD)?",
+        question: "Qual é a função principal da Máquina Virtual Java (JVM)?",
         options: [
-          "Programas que gerenciam dados com o sistema operacional",
-          "Um software para criar interfaces gráficas",
-          "Um sistema para gerenciar redes de computadores",
-          "Um conjunto de ferramentas para desenvolvimento de aplicativos"
+          "Interpretar Bytecode e traduzi-lo para o SO",
+          "Converter código Java diretamente em binário",
+          "Transformar Bytecode em arquivos de texto",
+          "Criar um ambiente para edição de código"
         ],
-        correctAnswer: "Programas que gerenciam dados com o sistema operacional",
-        id: 71,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é uma das principais funções de um SGBD?",
-        options: [
-          "Processar, armazenar e gerenciar dados",
-          "Monitorar o desempenho de hardware",
-          "Criar documentos de texto",
-          "Gerenciar o uso da memória RAM"
-        ],
-        correctAnswer: "Processar, armazenar e gerenciar dados",
-        id: 72,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é uma transação no contexto de banco de dados?",
-        options: [
-          "Unidade de execução que acessa e atualiza dados",
-          "Um comando para criar tabelas",
-          "Um processo que faz backup de dados",
-          "Uma ação para monitorar o sistema operacional"
-        ],
-        correctAnswer: "Unidade de execução que acessa e atualiza dados",
-        id: 73,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Quais são as propriedades que uma transação deve garantir para manter a integridade dos dados?",
-        options: [
-          "Atomicidade, Consistência, Isolamento e Durabilidade",
-          "Acessibilidade, Controle, Inclusão e Durabilidade",
-          "Autenticação, Consistência, Inclusão e Dependência",
-          "Alocação, Controle, Identificação e Dinamismo"
-        ],
-        correctAnswer: "Atomicidade, Consistência, Isolamento e Durabilidade",
-        id: 74,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que significa a propriedade de atomicidade em uma transação de banco de dados?",
-        options: [
-          "Todas as operações são refletidas ou nenhuma delas",
-          "Os dados são sempre consistentes",
-          "As operações podem ser parcialmente realizadas",
-          "Os dados são replicados automaticamente"
-        ],
-        correctAnswer: "Todas as operações são refletidas ou nenhuma delas",
-        id: 75,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que significa a propriedade de consistência em uma transação de banco de dados?",
-        options: [
-          "A transação mantém a consistência do banco de dados",
-          "A transação pode alterar valores aleatoriamente",
-          "A transação sempre faz backup dos dados",
-          "A transação replica os dados em vários servidores"
-        ],
-        correctAnswer: "A transação mantém a consistência do banco de dados",
-        id: 76,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que significa a propriedade de isolamento em uma transação de banco de dados?",
-        options: [
-          "Resultados finais equivalentes, mesmo com operações simultâneas",
-          "Transações podem interferir umas nas outras",
-          "Transações devem ser executadas em sequência",
-          "Transações não precisam ser confirmadas"
-        ],
-        correctAnswer: "Resultados finais equivalentes, mesmo com operações simultâneas",
-        id: 78,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que significa a propriedade de durabilidade em uma transação de banco de dados?",
-        options: [
-          "Atualizações são persistidas após a transação bem-sucedida",
-          "Atualizações podem ser perdidas se o sistema falhar",
-          "Transação deve ser revertida em caso de erro",
-          "Atualizações são temporárias até o próximo backup"
-        ],
-        correctAnswer: "Atualizações são persistidas após a transação bem-sucedida",
-        id: 77,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-    ]
-  },
-  {
-    theme:'Aula-2',
-    questions:[
-      {
-        question: "O que é um atributo simples em um modelo relacional?",
-        options: [
-          "Contém um único valor para cada elemento da entidade",
-          "Contém vários valores para a mesma entidade",
-          "Identifica um item da entidade de forma única",
-          "Pode ser dividido em outros atributos"
-        ],
-        correctAnswer: "Contém um único valor para cada elemento da entidade",
-        id: 78,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é um atributo multivalorado em um modelo relacional?",
-        options: [
-          "Contém um único valor para cada elemento da entidade",
-          "Contém diversos valores para o mesmo elemento da entidade",
-          "Identifica um item da entidade de forma única",
-          "Pode ser dividido em outros atributos"
-        ],
-        correctAnswer: "Contém diversos valores para o mesmo elemento da entidade",
-        id: 79,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Qual é a função de um atributo chave em um modelo relacional?",
-        options: [
-          "Contém um único valor para cada elemento da entidade",
-          "Contém diversos valores para o mesmo elemento da entidade",
-          "Identifica um item da entidade de maneira única",
-          "Pode ser dividido em outros atributos"
-        ],
-        correctAnswer: "Identifica um item da entidade de maneira única",
-        id: 80,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que caracteriza um atributo composto em um modelo relacional?",
-        options: [
-          "Contém um único valor para cada elemento da entidade",
-          "Contém diversos valores para o mesmo elemento da entidade",
-          "Identifica um item da entidade de maneira única",
-          "Pode ser dividido em outros atributos"
-        ],
-        correctAnswer: "Pode ser dividido em outros atributos",
-        id: 81,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "O que é uma chave estrangeira em um modelo relacional?",
-        options: [
-          "Um atributo que aponta para a chave primária de outra tabela",
-          "Um identificador único de uma tabela",
-          "Um atributo que não pode ser nulo",
-          "Um atributo que contém vários valores"
-        ],
-        correctAnswer: "Um atributo que aponta para a chave primária de outra tabela",
-        id: 82,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-  question: "O que caracteriza a linguagem SQL (Structured Query Language)?",
-  options: [
-    "É uma linguagem declarativa onde definimos o que queremos como resultado",
-    "É uma linguagem procedural onde especificamos passo a passo o que será feito",
-    "É uma linguagem orientada a objetos para manipulação de dados",
-    "É uma linguagem para criação de estruturas de dados em memória"
-  ],
-  correctAnswer: "É uma linguagem declarativa onde definimos o que queremos como resultado",
-  id: 83,
-  points: 0,
-  repeat: 0,
-  date: "1111-11-11"
-},
-{
-  question: "O que é um esquema (schema) em um banco de dados?",
-  options: [
-    "Uma área que reúne tabelas relacionadas para atender a um contexto de negócio",
-    "Uma tabela que contém os dados de uma entidade específica",
-    "Uma instrução SQL para criar uma tabela",
-    "Um procedimento armazenado para manipular dados"
-  ],
-  correctAnswer: "Uma área que reúne tabelas relacionadas para atender a um contexto de negócio",
-  id: 84,
-  points: 0,
-  repeat: 0,
-  date: "1111-11-11"
-}
-
-
-      
-      
-      
-      
-      
-    ] },
-  {
-    theme:'Unidade 3',
-    questions:[
-      {
-        question: "Como se define uma chave primária com um único atributo em SQL?",
-        options: [
-          "id INT PRIMARY KEY",
-          "id PRIMARY CREATE KEY",
-          "id DEFAULT PRIMARY SET",
-          "id UNIQUE CREATE PRIMARY"
-        ],
-        correctAnswer: "id INT PRIMARY KEY",
-        id: 86,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-      {
-        question: "Como se define uma chave primária com mais de um atributo em SQL?",
-        options: [
-          "PRIMARY KEY (grupo fk, contato fk)",
-          "CREATE PRIMARY (grupo, contato fk)",
-          "PRIMARY KEY UNIQUE (grupo contato)",
-          "DEFINE PRIMARY (grupo fk, contato fk)"
-        ],
-        correctAnswer: "PRIMARY KEY (grupo fk, contato fk)",
-        id: 87,
-        points: 0,
-        repeat: 0,
-        date: "1111-11-11"
-      },
-
-      
-      
-
-    ]
-  },
-  {
-    theme:'UNIDADE 4',
-    questions:[
-      {
-        question: "O que são consultas aninhadas em SQL?",
-        options: [
-          "Consultas que utilizam o resultado de outra consulta",
-          "Consultas que não retornam resultados válidos",
-          "Consultas que são executadas simultaneamente",
-          "Consultas que não podem ser combinadas"
-        ],
-        correctAnswer: "Consultas que utilizam o resultado de outra consulta",
+        correctAnswer: "Interpretar Bytecode e traduzi-lo para o SO",
         id: 92,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
       },
       {
-        question: "Como são chamadas as consultas dentro de outras consultas?",
+        question: "Por que o Java é considerado uma linguagem multiplataforma?",
         options: [
-          "Subqueries ou consultas aninhadas",
-          "Joins ou agrupamentos de dados",
-          "Views ou tabelas virtuais",
-          "Triggers ou procedimentos automáticos"
+          "O bytecode é interpretado por qualquer JVM",
+          "A JVM usa sempre o mesmo Sistema Operacional",
+          "O Java é instalado automaticamente em qualquer SO",
+          "Os programas são sempre escritos em uma só versão"
         ],
-        correctAnswer: "Subqueries ou consultas aninhadas",
+        correctAnswer: "O bytecode é interpretado por qualquer JVM",
         id: 93,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que acontece com o código Java após ser compilado?",
+        options: [
+          "É transformado em .class (bytecode)",
+          "É convertido diretamente em binário",
+          "Torna-se um arquivo de texto simples",
+          "É traduzido para outro código fonte"
+        ],
+        correctAnswer: "É transformado em .class (bytecode)",
+        id: 95,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que é o Java Runtime Environment (JRE)?",
+        options: [
+          "É o conjunto de bibliotecas que compõe a versão do Java",
+          "Um software para desenvolvimento de aplicativos Java",
+          "A interface gráfica para rodar programas Java no computador",
+          "É um programa que converte código Java para C++"
+        ],
+        correctAnswer: "É o conjunto de bibliotecas que compõe a versão do Java",
+        id: 96,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual a função do Garbage Collector (GC) no ambiente Java?",
+        options: [
+          "Desalocar memória e objetos sem referência",
+          "Converter bytecode em código binário",
+          "Verificar erros de compilação no código",
+          "Gerar relatórios de desempenho em tempo real"
+        ],
+        correctAnswer: "Desalocar memória e objetos sem referência",
+        id: 97,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },{
+        question: "O que é o Class Loader na JVM?",
+        options: [
+          "Espaço utilizado para carregar bytecode e endereços",
+          "Sistema que converte Java em código binário direto",
+          "Ferramenta que cria interfaces gráficas para aplicativos",
+          "Programa que verifica a sintaxe dos códigos em Java"
+        ],
+        correctAnswer: "Espaço utilizado para carregar bytecode e endereços",
+        id: 98,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é um exemplo de classe presente no Java Runtime Environent?",
+        options: [
+          "JOptionPane",
+          "FileLoader",
+          "ByteManager",
+          "SystemCheck"
+        ],
+        correctAnswer: "JOptionPane",
+        id: 99,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual tipo inteiro no Java é representado por 8 bits e armazena valores entre -128 e 127?",
+        options: [
+          "Byte",
+          "Short",
+          "Int",
+          "Long"
+        ],
+        correctAnswer: "Byte",
+        id: 100,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O tipo Short no Java armazena valores entre quais limites?",
+        options: [
+          "-32.768 a 32.767",
+          "-128 a 127",
+          "-2.147.483.648 a 2.147.483.647",
+          "-9223372.036.854.775.808 a 9223372.036.854.775.807"
+        ],
+        correctAnswer: "-32.768 a 32.767",
+        id: 101,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Quantos bits possui o tipo inteiro 'int' no Java?",
+        options: [
+          "32 bits (4 bytes)",
+          "8 bits (1 byte)",
+          "16 bits (2 bytes)",
+          "64 bits (8 bytes)"
+        ],
+        correctAnswer: "32 bits (4 bytes)",
+        id: 102,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é o intervalo de valores que o tipo 'long' pode armazenar no Java?",
+        options: [
+          "-9223372.036.854.775.808 a 9223372.036.854.775.807",
+          "-32.768 a 32.767",
+          "-128 a 127",
+          "-2.147.483.648 a 2.147.483.647"
+        ],
+        correctAnswer: "-9223372.036.854.775.808 a 9223372.036.854.775.807",
+        id: 103,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
@@ -893,14 +744,426 @@ const customQuestions = [
       
       
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     ]
   },
   {
-    theme:'Unidade 5',
-    questions:[
-      
+    theme:'A.P. Orientada a objetos',
+    questions: [
+      {
+        "question": "Como é representada a relação de inclusão (`<<include>>`) entre casos de uso em UML?",
+        "options": [
+          "Linha sólida com seta apontando para o caso de uso que inclui.",
+          "Linha tracejada com seta apontando para o caso de uso incluído e estereótipo `<<include>>`.",
+          "Linha tracejada sem seta, apenas com o texto 'inclui'.",
+          "Linha contínua com seta aberta e estereótipo `<<extend>>`."
+        ],
+        "correctAnswer": "Linha tracejada com seta apontando para o caso de uso incluído e estereótipo `<<include>>`.",
+        "id": 1,
+        "points": 0,
+        "repeat": 0,
+        "date": "1111-11-11"
+      },
+      {
+        "question": "Como atores são representados em diagramas de caso de uso UML?",
+        "options": [
+          "Elipses posicionadas dentro do limite do sistema.",
+          "Figuras de palito (stick figures) fora do limite do sistema.",
+          "Retângulos com o nome do ator sublinhado.",
+          "Ícones de usuário coloridos dentro do sistema."
+        ],
+        "correctAnswer": "Figuras de palito (stick figures) fora do limite do sistema.",
+        "id": 2,
+        "points": 0,
+        "repeat": 0,
+        "date": "1111-11-11"
+      },
+      {
+        "question": "Qual elemento gráfico representa um caso de uso em UML?",
+        "options": [
+          "Retângulo com bordas arredondadas.",
+          "Elipse com o nome da funcionalidade.",
+          "Hexágono conectado a atores.",
+          "Losango com estereótipo `<<use case>>`."
+        ],
+        "correctAnswer": "Elipse com o nome da funcionalidade.",
+        "id": 3,
+        "points": 0,
+        "repeat": 0,
+        "date": "1111-11-11"
+      },
+      {
+        "question": "O que o retângulo em um diagrama de casos de uso simboliza?",
+        "options": [
+          "A interface do usuário.",
+          "O banco de dados do sistema.",
+          "O limite (boundary) do sistema, englobando casos de uso.",
+          "Um ator genérico."
+        ],
+        "correctAnswer": "O limite (boundary) do sistema, englobando casos de uso.",
+        "id": 4,
+        "points": 0,
+        "repeat": 0,
+        "date": "1111-11-11"
+      },
+      {
+        "question": "Qual linha representa a interação entre um ator e um caso de uso em UML?",
+        "options": [
+          "Linha tracejada com estereótipo `<<communicate>>`.",
+          "Linha sólida sem seta.",
+          "Linha sólida com seta unidirecional.",
+          "Linha pontilhada com texto 'usa'."
+        ],
+        "correctAnswer": "Linha sólida sem seta.",
+        "id": 5,
+        "points": 0,
+        "repeat": 0,
+        "date": "1111-11-11"
+      },      
+      {
+        question: "Qual modelo da análise estruturada representa entidades e seus relacionamentos?",
+        options: [
+          "DER (Diagrama de Entidade-Relacionamento)",
+          "DFD (Diagrama de Fluxo de Dados)",
+          "Modelo de Objetos",
+          "Modelo de Classes"
+        ],
+        correctAnswer: "DER (Diagrama de Entidade-Relacionamento)",
+        id: 6,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual é um dos principais objetivos da análise de sistemas?",
+        options: [
+          "Programar o código-fonte",
+          "Identificar a necessidade do usuário",
+          "Testar a interface gráfica",
+          "Documentar o hardware"
+        ],
+        correctAnswer: "Identificar a necessidade do usuário",
+        id: 7,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Durante a análise de sistemas, qual atividade avalia viabilidade?",
+        options: [
+          "Executar análise econômica e técnica",
+          "Desenhar o banco de dados",
+          "Escrever casos de teste",
+          "Configurar servidores"
+        ],
+        correctAnswer: "Executar análise econômica e técnica",
+        id: 8,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "O que a análise de sistemas deve definir entre os componentes do sistema?",
+        options: [
+          "Cores da interface",
+          "Funções de hardware, software e pessoas",
+          "Linguagem de programação",
+          "Nomes de variáveis"
+        ],
+        correctAnswer: "Funções de hardware, software e pessoas",
+        id: 9,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Quais restrições a análise de sistemas deve estabelecer?",
+        options: [
+          "Restrições de prazo e custo",
+          "Limites de memória RAM",
+          "Número de linhas de código",
+          "Tamanho do monitor"
+        ],
+        correctAnswer: "Restrições de prazo e custo",
+        id: 10,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Quando objetos de classes diferentes respondem de formas distintas à mesma operação, isso é chamado de:",
+        options: [
+          "Objeto",
+          "Atributo",
+          "Abstração",
+          "Polimorfismo"
+        ],
+        correctAnswer: "Polimorfismo",
+        id: 11,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      {
+        question: "Qual afirmação melhor define o relacionamento de composição em OO?",
+        options: [
+          "Relação fraca onde partes sobrevivem sem o todo",
+          "Reutilização de métodos de subclasses por superclasses",
+          "Herança com reuso de atributos entre classes",
+          "Relação forte onde partes são destruídas com o todo"
+        ],
+        correctAnswer: "Relação forte onde partes são destruídas com o todo",
+        id: 12,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      // Questão 1 - Estados
+      {
+        question: "Qual diagrama de comportamento modela as mudanças de estado de um objeto?",
+        options: [
+          "Diagrama de Classes",
+          "Diagrama de Estados",
+          "Diagrama de Componentes",
+          "Diagrama de Pacotes"
+        ],
+        correctAnswer: "Diagrama de Estados",
+        id: 14,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+
+      // Questão 2 - Objetos
+      {
+        question: "Qual diagrama mostra a interação entre objetos em tempo de execução?",
+        options: [
+          "Diagrama de Caso de Uso",
+          "Diagrama de Objetos",
+          "Diagrama de Implantação",
+          "Diagrama de Atividades"
+        ],
+        correctAnswer: "Diagrama de Objetos",
+        id: 15,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+
+      // Questão 3 - Interação
+      {
+        question: "Qual destes é um diagrama de interação?",
+        options: [
+          "Diagrama de Sequência",
+          "Diagrama de Estados",
+          "Diagrama de Classes",
+          "Diagrama de Entidade-Relacionamento"
+        ],
+        correctAnswer: "Diagrama de Sequência",
+        id: 16,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+
+      // Questão 4 - Caso de Uso
+      {
+        question: "Qual diagrama captura requisitos funcionais do sistema?",
+        options: [
+          "Diagrama de Componentes",
+          "Diagrama de Caso de Uso",
+          "Diagrama de Máquina de Estados",
+          "Diagrama de Comunicação"
+        ],
+        correctAnswer: "Diagrama de Caso de Uso",
+        id: 17,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      // Questão 1 (Afirmativa I)
+      {
+        question: "Qual é o principal objetivo do diagrama de casos de uso?",
+        options: [
+          "Documentar a estrutura de classes",
+          "Identificar atores e funcionalidades do sistema",
+          "Especificar algoritmos internos",
+          "Modelar o banco de dados"
+        ],
+        correctAnswer: "Identificar atores e funcionalidades do sistema",
+        id: 18,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+
+      // Questão 2 (Afirmativa III)
+      {
+        question: "O que atores representam em diagramas de caso de uso?",
+        options: [
+          "Apenas usuários humanos",
+          "Classes do sistema",
+          "Humanos, sistemas ou dispositivos externos",
+          "Métodos internos"
+        ],
+        correctAnswer: "Humanos, sistemas ou dispositivos externos",
+        id: 19,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+
+      // Questão 3 (Afirmativa IV)
+      {
+        question: "Como diagramas de caso de uso podem ser complementados?",
+        options: [
+          "Com diagramas de sequência detalhados",
+          "Com descrições textuais das funcionalidades",
+          "Com código-fonte exemplar",
+          "Com modelos de dados relacionais"
+        ],
+        correctAnswer: "Com descrições textuais das funcionalidades",
+        id: 20,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      // Questão 1 (Afirmativa I)
+      {
+        question: "Por que a reutilização de código é importante em POO?",
+        options: [
+          "É um requisito principal no desenvolvimento",
+          "Aumenta a interdependência entre classes",
+          "Exige mais linhas de código",
+          "Limita a complexidade do sistema"
+        ],
+        correctAnswer: "É um requisito principal no desenvolvimento",
+        id: 21,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+
+      // Questão 2 (Afirmativa III)
+      {
+        question: "Qual vantagem da reutilização de código em POO?",
+        options: [
+          "Aumenta a duplicação de código",
+          "Reduz linhas de código mantendo funcionalidades",
+          "Exige maior acoplamento entre objetos",
+          "Diminui a manutenibilidade"
+        ],
+        correctAnswer: "Reduz linhas de código mantendo funcionalidades",
+        id: 22,
+        points: 0,
+        repeat: 0,
+        date: "1111-11-11"
+      },
+      // Questão 1 (Afirmativa I)
+{
+  question: "O que um diagrama de objetos representa na UML?",
+  options: [
+    "A estrutura estática de classes",
+    "Instâncias com valores de atributos em um momento específico",
+    "O fluxo de controle do sistema",
+    "A hierarquia de pacotes"
+  ],
+  correctAnswer: "Instâncias com valores de atributos em um momento específico",
+  id: 23,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+},
+
+// Questão 2 (Afirmativa II)
+{
+  question: "Como objetos são representados em diagramas de objetos UML?",
+  options: [
+    "Círculos com nome da classe",
+    "Retângulos com nome da classe sublinhado",
+    "Elipses com estereótipo <<objeto>>",
+    "Hexágonos com atributos"
+  ],
+  correctAnswer: "Retângulos com nome da classe sublinhado",
+  id: 24,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+},
+
+// Questão 3 (Afirmativa V)
+{
+  question: "Como diagramas de objetos complementam diagramas de classes?",
+  options: [
+    "Mostrando implementação de métodos",
+    "Validando a estrutura de classes com exemplos reais",
+    "Documentando interfaces gráficas",
+    "Substituindo a necessidade de diagramas de sequência"
+  ],
+  correctAnswer: "Validando a estrutura de classes com exemplos reais",
+  id: 25,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+},
+{
+  question: "Qual afirmação sobre diagrama de estados está correta?",
+  options: [
+    "É obrigatório para modelar qualquer classe UML",
+    "Só se aplica a classes com mais de 5 estados",
+    "Modela classes com mudanças de estado definidas",
+    "Representa apenas fluxos de dados entre objetos"
+  ],
+  correctAnswer: "Modela classes com mudanças de estado definidas",
+  id: 26,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+},
+{
+  question: "O que caracteriza classes 'candidatas' ou 'de análise'?",
+  options: [
+    "São estáveis e não mudam após definidas",
+    "Podem ser refinadas durante o desenvolvimento",
+    "Exigem implementação imediata",
+    "Representam apenas interfaces"
+  ],
+  correctAnswer: "Podem ser refinadas durante o desenvolvimento",
+  id: 27,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+},
+{
+  question: "Quais são os 5 aspectos principais da análise de viabilidade?",
+  options: [
+    "Técnico, legal, autoral, temporal e econômico",
+    "Técnico, legal, operacional, temporal e de custos",
+    "Funcional, legal, operacional, temporal e econômico",
+    "Técnico, legal, operacional, temporal e econômico"
+  ],
+  correctAnswer: "Técnico, legal, operacional, temporal e econômico",
+  id: 28,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+}
+
+
+
     ]
+
   }
+
 
 ];
 export let questions = { predefined, customQuestions };
