@@ -945,15 +945,15 @@ const customQuestions = [
 
       // Questão 2 - Objetos
       {
-        question: "Qual diagrama mostra a interação entre objetos em tempo de execução?",
+        question: "Qual diagrama de comportamento mostra a dinâmica entre objetos durante uma operação?",
         options: [
           "Diagrama de Caso de Uso",
-          "Diagrama de Objetos",
-          "Diagrama de Implantação",
-          "Diagrama de Atividades"
+          "Diagrama de Sequência",
+          "Diagrama de Componentes",
+          "Diagrama de Classes"
         ],
-        correctAnswer: "Diagrama de Objetos",
-        id: 15,
+        correctAnswer: "Diagrama de Sequência",
+        id: 17,
         points: 0,
         repeat: 0,
         date: "1111-11-11"
@@ -1153,6 +1153,48 @@ const customQuestions = [
   ],
   correctAnswer: "Técnico, legal, operacional, temporal e econômico",
   id: 28,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+},
+{
+  question: "O que um diagrama de objetos UML representa?",
+  options: [
+    "Classes abstratas do sistema",
+    "Instâncias específicas de classes em um momento de execução",
+    "Fluxo de dados entre componentes",
+    "Requisitos funcionais do usuário"
+  ],
+  correctAnswer: "Instâncias específicas de classes em um momento de execução",
+  id: 18,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+},
+{
+  question: "Como objetos são representados em um diagrama de objetos UML?",
+  options: [
+    "Elipses com o nome do objeto",
+    "Retângulos com nome da classe sublinhado",
+    "Hexágonos com estereótipo <<objeto>>",
+    "Círculos conectados por linhas tracejadas"
+  ],
+  correctAnswer: "Retângulos com nome da classe sublinhado",
+  id: 19,
+  points: 0,
+  repeat: 0,
+  date: "1111-11-11"
+},
+{
+  question: "Qual é a principal utilidade do diagrama de objetos UML?",
+  options: [
+    "Definir a arquitetura de rede do sistema",
+    "Validar cenários específicos do diagrama de classes",
+    "Modelar estados de um objeto",
+    "Documentar requisitos não funcionais"
+  ],
+  correctAnswer: "Validar cenários específicos do diagrama de classes",
+  id: 20,
   points: 0,
   repeat: 0,
   date: "1111-11-11"
